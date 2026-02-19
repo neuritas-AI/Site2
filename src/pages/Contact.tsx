@@ -62,7 +62,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Email Us</h3>
-                    <p className="text-gray-400">hello@neuritas-ai.com</p>
+                    <p className="text-gray-400">info@neuritas-ai.com</p>
                   </div>
                 </div>
 
