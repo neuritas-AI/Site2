@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import CustomerEngagement from './pages/CustomerEngagement';
 import WebsiteOptimization from './pages/WebsiteOptimization';
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="bg-black text-white overflow-x-hidden min-h-screen">
         <div
           className="fixed w-96 h-96 rounded-full pointer-events-none z-50 mix-blend-screen opacity-20 transition-all duration-300"
