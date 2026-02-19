@@ -46,7 +46,7 @@ export default function Contact() {
             <div>
               <div className="mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
-                  <span className="bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-cyan-200 bg-clip-text text-transparent">
                     Start Your Journey
                   </span>
                 </h2>
@@ -56,8 +56,8 @@ export default function Contact() {
               </div>
 
               <div className="space-y-8">
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
@@ -66,8 +66,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
@@ -76,8 +76,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
@@ -94,15 +94,15 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold mb-4">Quick Facts</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0" />
                     <span className="text-gray-300">Response within 24 hours</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0" />
                     <span className="text-gray-300">Free consultation call</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0" />
                     <span className="text-gray-300">Custom solution design</span>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
                       placeholder="John Doe"
                     />
                   </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
                       placeholder="Your Company"
                     />
                   </div>
@@ -184,14 +184,14 @@ export default function Contact() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all text-white placeholder-gray-500 resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500 resize-none"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full group px-8 py-4 bg-cyan-500 hover:bg-cyan-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-cyan-500/50 flex items-center justify-center gap-2"
+                    className="w-full group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
                   >
                     Send Message
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

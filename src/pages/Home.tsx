@@ -96,7 +96,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection('services')}
-              className="group px-8 py-4 bg-cyan-500 hover:bg-cyan-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-cyan-500/50 flex items-center justify-center gap-2"
+              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
             >
               Explore Solutions
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -112,7 +112,7 @@ export default function Home() {
 
         <button
           onClick={() => scrollToSection('services')}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-cyan-400 transition-colors animate-bounce cursor-pointer"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
         >
           <span className="text-sm tracking-widest">SCROLL TO EXPLORE</span>
         </button>
@@ -158,14 +158,14 @@ export default function Home() {
               <Link
                 key={index}
                 to={service.link}
-                className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 backdrop-blur-sm"
+                className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-sm"
               >
                 <div className="mb-6 w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{service.description}</p>
-                <div className="mt-6 flex items-center gap-2 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-6 flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-sm font-medium">Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -184,9 +184,9 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full mb-6">
-                <Brain className="w-4 h-4 text-cyan-400" />
-                <span className="text-sm text-cyan-400 font-medium">Advanced Technology</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-6">
+                <Brain className="w-4 h-4 text-purple-400" />
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Advanced Technology</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
                 Built for the
@@ -206,7 +206,7 @@ export default function Home() {
                   { label: 'Scalability', value: 'Unlimited' },
                 ].map((stat, index) => (
                   <div key={index} className="flex items-center gap-4">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
                     <span className="text-gray-400">{stat.label}:</span>
                     <span className="text-white font-semibold">{stat.value}</span>
                   </div>
@@ -221,7 +221,7 @@ export default function Home() {
                     {[...Array(3)].map((_, i) => (
                       <div
                         key={i}
-                        className="absolute inset-0 border-2 border-cyan-400/30 rounded-full"
+                        className="absolute inset-0 border-2 border-purple-400/30 rounded-full"
                         style={{
                           animation: `ping ${3 + i}s cubic-bezier(0, 0, 0.2, 1) infinite`,
                           animationDelay: `${i * 0.5}s`,
@@ -229,7 +229,7 @@ export default function Home() {
                       />
                     ))}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Brain className="w-32 h-32 text-cyan-400" />
+                      <Brain className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent" style={{ WebkitTextStroke: '2px transparent', backgroundClip: 'text', WebkitBackgroundClip: 'text' }} />
                     </div>
                   </div>
                 </div>
@@ -254,12 +254,12 @@ export default function Home() {
 
             <div className="relative p-12 md:p-16 rounded-3xl bg-black/50 border border-white/10 backdrop-blur-xl">
               <div className="mb-8 flex justify-center">
-                <Brain className="w-16 h-16 text-cyan-400 animate-pulse" />
+                <Brain className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse" style={{ filter: 'drop-shadow(0 0 20px rgba(168, 85, 247, 0.5))' }} />
               </div>
 
               <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
                 <span className="text-gray-400 italic">"</span>
-                <span className="bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent italic">
+                <span className="bg-gradient-to-r from-cyan-100 via-purple-100 to-cyan-100 bg-clip-text text-transparent italic">
                   Like Sherlock Holmes, we see patterns others miss — and turn them into intelligent automation.
                 </span>
                 <span className="text-gray-400 italic">"</span>
@@ -269,7 +269,7 @@ export default function Home() {
                 {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
-                    className="w-2 h-2 rounded-full bg-cyan-400/50"
+                    className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400"
                     style={{
                       animation: `pulse ${2 + i * 0.3}s ease-in-out infinite`,
                       animationDelay: `${i * 0.2}s`,
@@ -299,7 +299,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="group px-10 py-5 bg-cyan-500 hover:bg-cyan-400 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-cyan-500/50 flex items-center justify-center gap-3"
+                className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-3"
               >
                 Schedule a Demo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

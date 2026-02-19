@@ -37,12 +37,12 @@ export default function About() {
             ))}
 
             <div className="relative z-10 p-12 md:p-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 border border-cyan-500/30 rounded-full mb-8">
-                <Lightbulb className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-cyan-400 font-medium">Driven by Innovation</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-purple-500/30 rounded-full mb-8">
+                <Lightbulb className="w-5 h-5 text-purple-400" />
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Driven by Innovation</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">
-                <span className="bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-cyan-200 bg-clip-text text-transparent">
                   Driven by Innovation
                 </span>
               </h2>
@@ -112,20 +112,20 @@ export default function About() {
                 We specialize in three core areas that transform how businesses connect with customers:
               </p>
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                  <h3 className="text-2xl font-bold mb-3 text-cyan-400">Customer Engagement</h3>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Customer Engagement</h3>
                   <p className="text-gray-400">
                     AI that understands and responds to your customers with human-like empathy and precision.
                   </p>
                 </div>
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                  <h3 className="text-2xl font-bold mb-3 text-purple-400">Website Optimization</h3>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Website Optimization</h3>
                   <p className="text-gray-400">
                     Intelligent analytics that continuously improve your digital presence and conversion rates.
                   </p>
                 </div>
-                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                  <h3 className="text-2xl font-bold mb-3 text-cyan-400">Automated Booking</h3>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Automated Booking</h3>
                   <p className="text-gray-400">
                     Smart scheduling systems that turn leads into appointments without manual intervention.
                   </p>
@@ -153,12 +153,12 @@ export default function About() {
             </div>
 
             <div className="relative z-10 p-12 md:p-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 border border-cyan-500/30 rounded-full mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full mb-8">
                 <Rocket className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-cyan-400 font-medium">Our Mission</span>
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Our Mission</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">
-                <span className="bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-cyan-200 bg-clip-text text-transparent">
                   Our Mission
                 </span>
               </h2>
@@ -167,25 +167,25 @@ export default function About() {
               </p>
               <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
                     Make AI automation accessible to businesses of all sizes
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
                     Deliver measurable ROI through intelligent automation
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
                     Continuously innovate at the cutting edge of AI technology
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
                     Build lasting partnerships with our clients' success
                   </p>

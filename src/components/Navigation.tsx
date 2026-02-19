@@ -20,9 +20,11 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 w-full z-40 bg-black/50 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <Brain className="w-8 h-8 text-cyan-400" />
-          <span className="text-xl font-bold tracking-tight">NEURITAS-AI</span>
+        <Link to="/" className="flex items-center gap-2 group">
+          <Brain className="w-8 h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
+          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+            NEURITAS-AI
+          </span>
         </Link>
 
         <button
@@ -37,8 +39,8 @@ export default function Navigation() {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm hover:text-cyan-400 transition-colors ${
-                isActive(item.path) ? 'text-cyan-400' : ''
+              className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                isActive(item.path) ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
               }`}
             >
               {item.label}
@@ -46,7 +48,7 @@ export default function Navigation() {
           ))}
           <Link
             to="/contact"
-            className="px-6 py-2 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-all hover:shadow-lg hover:shadow-cyan-500/50 text-sm font-semibold"
+            className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full transition-all hover:shadow-lg hover:shadow-purple-500/50 text-sm font-semibold"
           >
             CONTACT
           </Link>
@@ -61,8 +63,8 @@ export default function Navigation() {
                 key={item.path}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block text-sm hover:text-cyan-400 transition-colors ${
-                  isActive(item.path) ? 'text-cyan-400' : ''
+                className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                  isActive(item.path) ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
                 }`}
               >
                 {item.label}

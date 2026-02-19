@@ -60,9 +60,9 @@ export default function HeroSection({
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {badge && (
-          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full backdrop-blur-sm">
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm">
             {badge.icon}
-            <span className="text-sm text-cyan-400 font-medium">{badge.text}</span>
+            <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{badge.text}</span>
           </div>
         )}
 
@@ -80,7 +80,7 @@ export default function HeroSection({
 
       <button
         onClick={() => scrollToSection(scrollTarget)}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-cyan-400 transition-colors animate-bounce cursor-pointer"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
       >
         <span className="text-sm tracking-widest">SCROLL TO EXPLORE</span>
         <ChevronDown className="w-6 h-6" />
