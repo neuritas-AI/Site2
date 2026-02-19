@@ -1,15 +1,18 @@
 import { Calendar, Clock, CheckCircle, Zap, Sparkles, ArrowRight } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function AppointmentSetting() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <Calendar className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: 'Appointment Setting' }}
-        title="AUTOMATED"
-        subtitle="SCHEDULING"
-        description="Streamline your sales process with intelligent appointment booking that automatically schedules, manages, and follows up with leads."
+        badge={{ icon: <Calendar className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('appointmentSetting.badge') }}
+        title={t('appointmentSetting.title1').toUpperCase()}
+        subtitle={t('appointmentSetting.title2').toUpperCase()}
+        description={t('appointmentSetting.description')}
         backgroundImage="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920"
         scrollTarget="content"
       />

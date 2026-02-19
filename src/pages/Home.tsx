@@ -78,21 +78,21 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full backdrop-blur-sm">
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm text-cyan-400 font-medium">{t('hero.title')}</span>
+            <span className="text-sm text-cyan-400 font-medium">{t('hero.badge')}</span>
           </div>
 
           <h1 className="text-7xl md:text-9xl font-bold mb-6 tracking-tighter">
             <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient uppercase">
-              {t('hero.title').split(' ')[0]}
+              {t('hero.title1')}
             </span>
-            <span className="block text-white mt-2 uppercase">{t('hero.title').split(' ').slice(1).join(' ')}</span>
+            <span className="block text-white mt-2 uppercase">{t('hero.title2')}</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-4 max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>
           <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-            {t('hero.subtitle')}
+            {t('hero.description')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -100,7 +100,7 @@ export default function Home() {
               onClick={() => scrollToSection('services')}
               className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
             >
-              {t('hero.learnMore')}
+              {t('hero.ctaMain')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <Link
@@ -116,7 +116,7 @@ export default function Home() {
           onClick={() => scrollToSection('services')}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
         >
-          <span className="text-sm tracking-widest uppercase">{t('hero.learnMore')}</span>
+          <span className="text-sm tracking-widest uppercase">{t('hero.scrollExplore')}</span>
         </button>
       </section>
 
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-6">
               <Cpu className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-purple-400 font-medium">{t('home.servicesTitle')}</span>
+              <span className="text-sm text-purple-400 font-medium">{t('home.servicesBadge')}</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent uppercase">
               {t('home.servicesTitle')}
@@ -188,16 +188,16 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-6">
                 <Brain className="w-4 h-4 text-purple-400" />
-                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('home.expertiseTitle')}</span>
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('home.featuresBadge')}</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
-                {t('home.whyChooseTitle')}
+                {t('home.featuresTitle1')}
                 <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  {t('home.whyChooseSubtitle')}
+                  {t('home.featuresTitle2')}
                 </span>
               </h2>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                {t('home.expertiseDesc')}
+                {t('home.featuresDesc')}
               </p>
 
               <div className="space-y-6">
@@ -262,7 +262,7 @@ export default function Home() {
               <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
                 <span className="text-gray-400 italic">"</span>
                 <span className="bg-gradient-to-r from-cyan-100 via-purple-100 to-cyan-100 bg-clip-text text-transparent italic">
-                  Like Sherlock Holmes, we see patterns others miss — and turn them into intelligent automation.
+                  {t('home.quotation')}
                 </span>
                 <span className="text-gray-400 italic">"</span>
               </blockquote>
@@ -295,7 +295,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              {t('home.ctaSubtitle')}
+              {t('home.ctaDesc')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -310,7 +310,7 @@ export default function Home() {
                 to="/contact"
                 className="px-10 py-5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold text-lg transition-all backdrop-blur-sm flex items-center justify-center"
               >
-                {t('nav.contact')}
+                {t('home.ctaButton2')}
               </Link>
             </div>
           </div>

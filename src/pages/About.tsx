@@ -1,14 +1,17 @@
 import { Lightbulb, Target, Rocket, Sparkles } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <Sparkles className="w-4 h-4 text-cyan-400" />, text: 'About Neuritas-AI' }}
-        title="INNOVATING"
-        subtitle="THE FUTURE"
-        description="We're on a mission to transform how businesses operate through intelligent AI automation that scales with your ambition."
+        badge={{ icon: <Sparkles className="w-4 h-4 text-cyan-400" />, text: t('about.badge') }}
+        title={t('about.title1').toUpperCase()}
+        subtitle={t('about.title2').toUpperCase()}
+        description={t('about.description')}
         backgroundImage="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920"
         scrollTarget="content"
       />

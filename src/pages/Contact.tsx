@@ -32,10 +32,10 @@ export default function Contact() {
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <Mail className="w-4 h-4 text-cyan-400" />, text: 'Get In Touch' }}
-        title="LET'S TALK"
-        subtitle="ABOUT YOUR FUTURE"
-        description="Ready to transform your business with AI automation? Reach out to our team and discover what's possible."
+        badge={{ icon: <Mail className="w-4 h-4 text-cyan-400" />, text: t('contact.badge') }}
+        title={t('contact.title1').toUpperCase()}
+        subtitle={t('contact.title2').toUpperCase()}
+        description={t('contact.description')}
         backgroundImage="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1920"
         scrollTarget="content"
       />

@@ -1,15 +1,18 @@
 import { BarChart3, Gauge, Target, Zap, Sparkles, ArrowRight } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function WebsiteOptimization() {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <BarChart3 className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: 'Website Optimization' }}
-        title="INTELLIGENT"
-        subtitle="OPTIMIZATION"
-        description="Maximize your website's potential with AI-driven analytics and optimization that continuously improves performance and conversions."
+        badge={{ icon: <BarChart3 className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('websiteOptimization.badge') }}
+        title={t('websiteOptimization.title1').toUpperCase()}
+        subtitle={t('websiteOptimization.title2').toUpperCase()}
+        description={t('websiteOptimization.description')}
         backgroundImage="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1920"
         scrollTarget="content"
       />
