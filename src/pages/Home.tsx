@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Zap, Globe, Calendar, Sparkles, Brain, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -76,21 +78,21 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full backdrop-blur-sm">
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm text-cyan-400 font-medium">AI-Powered Automation</span>
+            <span className="text-sm text-cyan-400 font-medium">{t('hero.title')}</span>
           </div>
 
           <h1 className="text-7xl md:text-9xl font-bold mb-6 tracking-tighter">
-            <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient">
-              INTELLIGENT
+            <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient uppercase">
+              {t('hero.title').split(' ')[0]}
             </span>
-            <span className="block text-white mt-2">AUTOMATION</span>
+            <span className="block text-white mt-2 uppercase">{t('hero.title').split(' ').slice(1).join(' ')}</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-4 max-w-3xl mx-auto">
-            AI-Powered Solutions for Customer Engagement
+            {t('hero.subtitle')}
           </p>
           <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-            Transform your business with cutting-edge AI automation for customer engagement, website optimization, and automated sales booking.
+            {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -98,14 +100,14 @@ export default function Home() {
               onClick={() => scrollToSection('services')}
               className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
             >
-              Explore Solutions
+              {t('hero.learnMore')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <Link
               to="/contact"
               className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center"
             >
-              Get Started
+              {t('hero.cta')}
             </Link>
           </div>
         </div>
@@ -114,7 +116,7 @@ export default function Home() {
           onClick={() => scrollToSection('services')}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
         >
-          <span className="text-sm tracking-widest">SCROLL TO EXPLORE</span>
+          <span className="text-sm tracking-widest uppercase">{t('hero.learnMore')}</span>
         </button>
       </section>
 
@@ -124,13 +126,13 @@ export default function Home() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-6">
               <Cpu className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-purple-400 font-medium">Our Services</span>
+              <span className="text-sm text-purple-400 font-medium">{t('home.servicesTitle')}</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              AI-POWERED SOLUTIONS
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent uppercase">
+              {t('home.servicesTitle')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Revolutionize your business operations with intelligent automation
+              {t('home.servicesSubtitle')}
             </p>
           </div>
 
@@ -138,20 +140,20 @@ export default function Home() {
             {[
               {
                 icon: <Zap className="w-8 h-8" />,
-                title: 'Customer Engagement',
-                description: 'AI-driven interactions that understand, respond, and engage your customers 24/7 with human-like conversations.',
+                title: t('home.customerTitle'),
+                description: t('home.customerDesc'),
                 link: '/customer-engagement',
               },
               {
                 icon: <Globe className="w-8 h-8" />,
-                title: 'Website Optimization',
-                description: 'Intelligent algorithms that analyze user behavior and optimize your website for maximum conversion and performance.',
+                title: t('home.websiteTitle'),
+                description: t('home.websiteDesc'),
                 link: '/website-optimization',
               },
               {
                 icon: <Calendar className="w-8 h-8" />,
-                title: 'Automated Booking',
-                description: 'Smart scheduling system that automatically books sales appointments, manages calendars, and follows up with leads.',
+                title: t('home.appointmentTitle'),
+                description: t('home.appointmentDesc'),
                 link: '/appointment-setting',
               },
             ].map((service, index) => (
@@ -166,7 +168,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{service.description}</p>
                 <div className="mt-6 flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">Learn More</span>
+                  <span className="text-sm font-medium">{t('hero.learnMore')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -186,16 +188,16 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-6">
                 <Brain className="w-4 h-4 text-purple-400" />
-                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Advanced Technology</span>
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('home.expertiseTitle')}</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
-                Built for the
+                {t('home.whyChooseTitle')}
                 <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  Future of Business
+                  {t('home.whyChooseSubtitle')}
                 </span>
               </h2>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Our AI-powered platform leverages cutting-edge machine learning and natural language processing to deliver intelligent automation that scales with your business.
+                {t('home.expertiseDesc')}
               </p>
 
               <div className="space-y-6">
@@ -287,13 +289,13 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
-              Ready to Transform
+              {t('home.ctaTitle')}
               <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Your Business?
+                {t('home.ctaSubtitle')}
               </span>
             </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              Join leading companies that trust Neuritas-AI to automate their customer engagement and drive growth.
+              {t('home.ctaSubtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -301,14 +303,14 @@ export default function Home() {
                 to="/contact"
                 className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-3"
               >
-                Schedule a Demo
+                {t('home.ctaButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/contact"
                 className="px-10 py-5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold text-lg transition-all backdrop-blur-sm flex items-center justify-center"
               >
-                Contact Sales
+                {t('nav.contact')}
               </Link>
             </div>
           </div>
