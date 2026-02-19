@@ -72,7 +72,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                    <p className="text-gray-400">+32 486 47 67 36</p>
                   </div>
                 </div>
 
