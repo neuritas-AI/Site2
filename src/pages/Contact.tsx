@@ -57,7 +57,7 @@ export default function Contact() {
 
               <div className="space-y-8">
                 <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
@@ -67,25 +67,12 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Call Us</h3>
                     <p className="text-gray-400">+32 486 47 67 36</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Visit Us</h3>
-                    <p className="text-gray-400">
-                      123 Innovation Drive<br />
-                      San Francisco, CA 94102
-                    </p>
                   </div>
                 </div>
               </div>
@@ -94,15 +81,15 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold mb-4">Quick Facts</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                     <span className="text-gray-300">Response within 24 hours</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
                     <span className="text-gray-300">Free consultation call</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                     <span className="text-gray-300">Custom solution design</span>
                   </div>
                 </div>
