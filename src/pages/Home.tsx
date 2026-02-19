@@ -118,47 +118,6 @@ export default function Home() {
         </button>
       </section>
 
-      <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-[150px] animate-pulse" />
-        </div>
-
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
-
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
-
-            <div className="relative p-12 md:p-16 rounded-3xl bg-black/50 border border-white/10 backdrop-blur-xl">
-              <div className="mb-8 flex justify-center">
-                <Brain className="w-16 h-16 text-cyan-400 animate-pulse" />
-              </div>
-
-              <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-                <span className="text-gray-400 italic">"</span>
-                <span className="bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent italic">
-                  Like Sherlock Holmes, we see patterns others miss — and turn them into intelligent automation.
-                </span>
-                <span className="text-gray-400 italic">"</span>
-              </blockquote>
-
-              <div className="mt-8 flex justify-center gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2 h-2 rounded-full bg-cyan-400/50"
-                    style={{
-                      animation: `pulse ${2 + i * 0.3}s ease-in-out infinite`,
-                      animationDelay: `${i * 0.2}s`,
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="services" className="relative py-32 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
         <div className="relative z-10 max-w-7xl mx-auto">
@@ -277,6 +236,47 @@ export default function Home() {
               </div>
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl animate-pulse" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl animate-pulse" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-[150px] animate-pulse" />
+        </div>
+
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+
+            <div className="relative p-12 md:p-16 rounded-3xl bg-black/50 border border-white/10 backdrop-blur-xl">
+              <div className="mb-8 flex justify-center">
+                <Brain className="w-16 h-16 text-cyan-400 animate-pulse" />
+              </div>
+
+              <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+                <span className="text-gray-400 italic">"</span>
+                <span className="bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent italic">
+                  Like Sherlock Holmes, we see patterns others miss — and turn them into intelligent automation.
+                </span>
+                <span className="text-gray-400 italic">"</span>
+              </blockquote>
+
+              <div className="mt-8 flex justify-center gap-2">
+                {[...Array(5)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-cyan-400/50"
+                    style={{
+                      animation: `pulse ${2 + i * 0.3}s ease-in-out infinite`,
+                      animationDelay: `${i * 0.2}s`,
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
