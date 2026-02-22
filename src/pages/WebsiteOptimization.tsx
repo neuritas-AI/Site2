@@ -24,13 +24,13 @@ export default function WebsiteOptimization() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-6">
               <Sparkles className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />
-              <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">AI-Powered Analytics</span>
+              <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('websiteOptimization.aiPoweredAnalyticsBadge')}</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              MAXIMIZE PERFORMANCE
+              {t('websiteOptimization.maximizePerformanceTitle')}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Transform your website into a high-performing conversion machine with intelligent optimization powered by advanced AI algorithms.
+              {t('websiteOptimization.maximizePerformanceDesc')}
             </p>
           </div>
 
@@ -38,23 +38,23 @@ export default function WebsiteOptimization() {
             {[
               {
                 icon: <BarChart3 className="w-8 h-8" />,
-                title: 'Real-Time Analytics',
-                description: 'Deep insights into user behavior, traffic patterns, and engagement metrics with AI-powered predictive analytics.',
+                title: t('websiteOptimization.feat1Title'),
+                description: t('websiteOptimization.feat1Desc'),
               },
               {
                 icon: <Gauge className="w-8 h-8" />,
-                title: 'Performance Monitoring',
-                description: 'Continuous monitoring and optimization of page load times, resource usage, and overall site performance.',
+                title: t('websiteOptimization.feat2Title'),
+                description: t('websiteOptimization.feat2Desc'),
               },
               {
                 icon: <Target className="w-8 h-8" />,
-                title: 'Conversion Optimization',
-                description: 'AI-driven A/B testing and personalization to maximize conversions and user engagement.',
+                title: t('websiteOptimization.feat3Title'),
+                description: t('websiteOptimization.feat3Desc'),
               },
               {
                 icon: <Zap className="w-8 h-8" />,
-                title: 'Automated Improvements',
-                description: 'Machine learning automatically identifies and implements optimization opportunities without manual intervention.',
+                title: t('websiteOptimization.feat4Title'),
+                description: t('websiteOptimization.feat4Desc'),
               },
             ].map((feature, index) => (
               <div
@@ -74,27 +74,27 @@ export default function WebsiteOptimization() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
             <div className="relative z-10">
               <h3 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
-                Performance Metrics
+                {t('websiteOptimization.performanceMetricsTitle')}
               </h3>
               <div className="grid md:grid-cols-3 gap-8 mb-10">
                 <div>
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">45%</div>
-                  <p className="text-gray-400">Increase in Conversions</p>
+                  <p className="text-gray-400">{t('websiteOptimization.stat1Label')}</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">60%</div>
-                  <p className="text-gray-400">Faster Load Times</p>
+                  <p className="text-gray-400">{t('websiteOptimization.stat2Label')}</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">80%</div>
-                  <p className="text-gray-400">Better User Engagement</p>
+                  <p className="text-gray-400">{t('websiteOptimization.stat3Label')}</p>
                 </div>
               </div>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50"
               >
-                Optimize Your Site
+                {t('websiteOptimization.optimizeYourSiteBtn')}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

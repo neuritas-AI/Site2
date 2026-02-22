@@ -42,15 +42,15 @@ export default function About() {
             <div className="relative z-10 p-12 md:p-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-purple-500/30 rounded-full mb-8">
                 <Lightbulb className="w-5 h-5 text-purple-400" />
-                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Driven by Innovation</span>
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('about.innovationBadge')}</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">
                 <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-cyan-200 bg-clip-text text-transparent">
-                  Driven by Innovation
+                  {t('about.innovationTitle')}
                 </span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed max-w-4xl">
-                At Neuritas-AI, we believe the future belongs to businesses that embrace intelligent automation. Founded by a team of AI researchers and business innovators, we've built a platform that doesn't just automate tasks — it thinks, learns, and evolves with your business needs.
+                {t('about.innovationDesc')}
               </p>
             </div>
           </div>
@@ -104,33 +104,33 @@ export default function About() {
             <div className="relative z-10 p-12 md:p-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 border border-purple-500/30 rounded-full mb-8">
                 <Target className="w-5 h-5 text-purple-400" />
-                <span className="text-sm text-purple-400 font-medium">What We Do</span>
+                <span className="text-sm text-purple-400 font-medium">{t('about.whatWeDoBadge')}</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">
                 <span className="bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-                  What We Do
+                  {t('about.whatWeDoTitle')}
                 </span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-4xl">
-                We specialize in three core areas that transform how businesses connect with customers:
+                {t('about.whatWeDoDesc')}
               </p>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
-                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Customer Engagement</h3>
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{t('about.service1Title')}</h3>
                   <p className="text-gray-400">
-                    AI that understands and responds to your customers with human-like empathy and precision.
+                    {t('about.service1Desc')}
                   </p>
                 </div>
                 <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
-                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Website Optimization</h3>
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{t('about.service2Title')}</h3>
                   <p className="text-gray-400">
-                    Intelligent analytics that continuously improve your digital presence and conversion rates.
+                    {t('about.service2Desc')}
                   </p>
                 </div>
                 <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
-                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Automated Booking</h3>
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{t('about.service3Title')}</h3>
                   <p className="text-gray-400">
-                    Smart scheduling systems that turn leads into appointments without manual intervention.
+                    {t('about.service3Desc')}
                   </p>
                 </div>
               </div>
@@ -158,39 +158,39 @@ export default function About() {
             <div className="relative z-10 p-12 md:p-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full mb-8">
                 <Rocket className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Our Mission</span>
+                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('about.ourMissionBadge')}</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">
                 <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-cyan-200 bg-clip-text text-transparent">
-                  Our Mission
+                  {t('about.ourMissionTitle')}
                 </span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-4xl">
-                To empower businesses of all sizes with enterprise-grade AI automation that's accessible, powerful, and transformative. We're not just building tools — we're building the future of how businesses operate.
+                {t('about.ourMissionDesc')}
               </p>
               <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
-                    Make AI automation accessible to businesses of all sizes
+                    {t('about.missionPoint1')}
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
-                    Deliver measurable ROI through intelligent automation
+                    {t('about.missionPoint2')}
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
-                    Continuously innovate at the cutting edge of AI technology
+                    {t('about.missionPoint3')}
                   </p>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 mt-2 flex-shrink-0" />
                   <p className="text-gray-300">
-                    Build lasting partnerships with our clients' success
+                    {t('about.missionPoint4')}
                   </p>
                 </div>
               </div>
@@ -203,13 +203,13 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/20 to-black" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
-            Ready to Join Us?
+            {t('about.readyToJoin')}
             <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Let's Build the Future Together
+              {t('about.buildFuture')}
             </span>
           </h2>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-            Discover how Neuritas-AI can transform your business with intelligent automation.
+            {t('about.discoverHow')}
           </p>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
 
@@ -49,11 +49,11 @@ export default function Contact() {
               <div className="mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
                   <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-cyan-200 bg-clip-text text-transparent">
-                    Start Your Journey
+                    {t('contact.startJourney')}
                   </span>
                 </h2>
                 <p className="text-xl text-gray-400 leading-relaxed">
-                  Whether you're looking to automate customer engagement, optimize your website, or streamline appointment booking, we're here to help you succeed.
+                  {t('contact.journeyDesc')}
                 </p>
               </div>
 
@@ -63,7 +63,7 @@ export default function Contact() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Email Us</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t('contact.emailTitle')}</h3>
                     <p className="text-gray-400">info@neuritas-ai.com</p>
                   </div>
                 </div>
@@ -73,26 +73,26 @@ export default function Contact() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Call Us</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t('contact.callTitle')}</h3>
                     <p className="text-gray-400">+32 486 47 67 36</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10">
-                <h3 className="text-2xl font-bold mb-4">Quick Facts</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('contact.quickFactsTitle')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                    <span className="text-gray-300">Response within 24 hours</span>
+                    <span className="text-gray-300">{t('contact.fact1')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                    <span className="text-gray-300">Free consultation call</span>
+                    <span className="text-gray-300">{t('contact.fact2')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                    <span className="text-gray-300">Custom solution design</span>
+                    <span className="text-gray-300">{t('contact.fact3')}</span>
                   </div>
                 </div>
               </div>
@@ -106,18 +106,18 @@ export default function Contact() {
                       <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <CheckCircle className="w-10 h-10 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                      <p className="text-gray-400">We'll get back to you soon.</p>
+                      <h3 className="text-2xl font-bold mb-2">{t('contact.successTitle')}</h3>
+                      <p className="text-gray-400">{t('contact.successMessage')}</p>
                     </div>
                   </div>
                 )}
 
-                <h3 className="text-3xl font-bold mb-8">Send us a message</h3>
+                <h3 className="text-3xl font-bold mb-8">{t('contact.formTitle')}</h3>
 
                 <div className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Full Name *
+                      {t('contact.formFullName')}
                     </label>
                     <input
                       type="text"
@@ -127,13 +127,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
-                      placeholder="John Doe"
+                      placeholder={t('contact.placeholderName')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email Address *
+                      {t('contact.formEmailAddress')}
                     </label>
                     <input
                       type="email"
@@ -143,13 +143,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
-                      placeholder="john@company.com"
+                      placeholder={t('contact.placeholderEmail')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                      Company Name
+                      {t('contact.formCompanyName')}
                     </label>
                     <input
                       type="text"
@@ -158,13 +158,13 @@ export default function Contact() {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
-                      placeholder="Your Company"
+                      placeholder={t('contact.placeholderCompany')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                      Message *
+                      {t('contact.formMessageLabel')}
                     </label>
                     <textarea
                       id="message"
@@ -174,7 +174,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500 resize-none"
-                      placeholder="Tell us about your project..."
+                      placeholder={t('contact.formMessagePlaceholder')}
                     />
                   </div>
 
@@ -182,7 +182,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
                   >
-                    Send Message
+                    {t('contact.formSubmit')}
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>

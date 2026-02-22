@@ -24,13 +24,13 @@ export default function AppointmentSetting() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-6">
               <Sparkles className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />
-              <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">Smart Scheduling</span>
+              <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('appointmentSetting.smartSchedulingBadge')}</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              EFFORTLESS BOOKING
+              {t('appointmentSetting.effortlessBookingTitle')}
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Let AI handle your appointment scheduling while you focus on closing deals. Smart automation that never misses a lead.
+              {t('appointmentSetting.effortlessBookingDesc')}
             </p>
           </div>
 
@@ -38,23 +38,23 @@ export default function AppointmentSetting() {
             {[
               {
                 icon: <Calendar className="w-8 h-8" />,
-                title: 'Intelligent Scheduling',
-                description: 'AI analyzes calendars, time zones, and availability to automatically book appointments at optimal times for all parties.',
+                title: t('appointmentSetting.feat1Title'),
+                description: t('appointmentSetting.feat1Desc'),
               },
               {
                 icon: <Clock className="w-8 h-8" />,
-                title: 'Instant Response',
-                description: 'Leads are engaged immediately with automated responses and booking options, maximizing conversion rates.',
+                title: t('appointmentSetting.feat2Title'),
+                description: t('appointmentSetting.feat2Desc'),
               },
               {
                 icon: <CheckCircle className="w-8 h-8" />,
-                title: 'Smart Follow-ups',
-                description: 'Automated reminders and follow-up sequences ensure no appointment is missed and engagement stays high.',
+                title: t('appointmentSetting.feat3Title'),
+                description: t('appointmentSetting.feat3Desc'),
               },
               {
                 icon: <Zap className="w-8 h-8" />,
-                title: 'Calendar Integration',
-                description: 'Seamlessly integrates with Google Calendar, Outlook, and other popular calendar platforms.',
+                title: t('appointmentSetting.feat4Title'),
+                description: t('appointmentSetting.feat4Desc'),
               },
             ].map((feature, index) => (
               <div
@@ -74,27 +74,27 @@ export default function AppointmentSetting() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
             <div className="relative z-10">
               <h3 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
-                Booking Success Rates
+                {t('appointmentSetting.successRatesTitle')}
               </h3>
               <div className="grid md:grid-cols-3 gap-8 mb-10">
                 <div>
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">85%</div>
-                  <p className="text-gray-400">Appointment Show Rate</p>
+                  <p className="text-gray-400">{t('appointmentSetting.stat1Label')}</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">5x</div>
-                  <p className="text-gray-400">More Bookings</p>
+                  <p className="text-gray-400">{t('appointmentSetting.stat2Label')}</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">90%</div>
-                  <p className="text-gray-400">Time Saved</p>
+                  <p className="text-gray-400">{t('appointmentSetting.stat3Label')}</p>
                 </div>
               </div>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50"
               >
-                Automate Scheduling
+                {t('appointmentSetting.automateSchedulingBtn')}
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
