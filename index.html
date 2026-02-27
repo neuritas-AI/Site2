@@ -32,7 +32,25 @@
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+<script type="module" src="/src/main.tsx"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+  const supabaseUrl = "https://wvxyhwzjeeoyvtshnykb.supabase.co"
+  const supabaseKey = "sb_publishable_8-JcHobTmEWIyQxhvN4Cgw_bAFK2oCA"
+
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+async function testConnection() {
+  const { data, error } = await supabase
+    .from("messages")
+    .select("*")
+
+  console.log("Data:", data)
+  console.log("Error:", error)
+}
+
+testConnection()
+  console.log("Supabase connected!")
+</script>
 </body>
 
 </html>
