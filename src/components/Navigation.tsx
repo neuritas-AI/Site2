@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Menu, X, Globe } from 'lucide-react';
+import { Brain, Menu, X, Globe, Zap, BarChart3, Calendar, Home, Info, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Navigation() {
@@ -10,12 +10,12 @@ export default function Navigation() {
   const { t, i18n } = useTranslation();
 
   const navItems = [
-    { path: '/', label: t('nav.home') },
-    { path: '/customer-engagement', label: t('nav.customerEngagement') },
-    { path: '/website-optimization', label: t('nav.websiteOptimization') },
-    { path: '/appointment-setting', label: t('nav.appointmentSetting') },
-    { path: '/about', label: t('nav.about') },
-    { path: '/contact', label: t('nav.contact') },
+    { path: '/', label: t('nav.home'), icon: <Home className="w-4 h-4" /> },
+    { path: '/customer-engagement', label: t('nav.customerEngagement'), icon: <Zap className="w-4 h-4" /> },
+    { path: '/website-optimization', label: t('nav.websiteOptimization'), icon: <BarChart3 className="w-4 h-4" /> },
+    { path: '/appointment-setting', label: t('nav.appointmentSetting'), icon: <Calendar className="w-4 h-4" /> },
+    { path: '/about', label: t('nav.about'), icon: <Info className="w-4 h-4" /> },
+    { path: '/contact', label: t('nav.contact'), icon: <Mail className="w-4 h-4" /> },
   ];
 
   const languages = [
@@ -58,10 +58,11 @@ export default function Navigation() {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+              className={`text-sm flex items-center gap-1.5 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
                 isActive(item.path) ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
               }`}
             >
+              <span className={`${isActive(item.path) ? 'text-cyan-400' : 'text-gray-500'} transition-colors duration-300`}>{item.icon}</span>
               {item.label}
             </Link>
           ))}
@@ -109,10 +110,11 @@ export default function Navigation() {
                 key={item.path}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                className={`flex items-center gap-2.5 py-2 text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
                   isActive(item.path) ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
                 }`}
               >
+                <span className={`${isActive(item.path) ? 'text-cyan-400' : 'text-gray-500'} transition-colors duration-300`}>{item.icon}</span>
                 {item.label}
               </Link>
             ))}
