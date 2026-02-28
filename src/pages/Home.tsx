@@ -139,19 +139,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                icon: <Zap className="w-6 md:w-8 h-6 md:h-8" />,
+                icon: '/icons/customer-engagement.png',
                 title: t('home.customerTitle'),
                 description: t('home.customerDesc'),
                 link: '/customer-engagement',
               },
               {
-                icon: <Globe className="w-6 md:w-8 h-6 md:h-8" />,
+                icon: '/icons/website-optimization.png',
                 title: t('home.websiteTitle'),
                 description: t('home.websiteDesc'),
                 link: '/website-optimization',
               },
               {
-                icon: <Calendar className="w-6 md:w-8 h-6 md:h-8" />,
+                icon: '/icons/appointment-planning.png',
                 title: t('home.appointmentTitle'),
                 description: t('home.appointmentDesc'),
                 link: '/appointment-setting',
@@ -162,8 +162,8 @@ export default function Home() {
                 to={service.link}
                 className="group relative p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-sm"
               >
-                <div className="mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                  {service.icon}
+                <div className="mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <img src={service.icon} alt={service.title} className="w-8 md:w-10 h-8 md:h-10 object-contain" />
                 </div>
                 <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4">{service.title}</h3>
                 <p className="text-sm md:text-base text-gray-400 leading-relaxed">{service.description}</p>
