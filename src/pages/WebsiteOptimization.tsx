@@ -2,6 +2,7 @@ import { BarChart3, Gauge, Target, Zap, Sparkles, ArrowRight } from 'lucide-reac
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { WebsiteOptimizationIcon } from '../components/ServiceIcons';
 
 export default function WebsiteOptimization() {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ export default function WebsiteOptimization() {
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <BarChart3 className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('websiteOptimization.badge') }}
+        badge={{ icon: <WebsiteOptimizationIcon className="w-5 h-5" />, text: t('websiteOptimization.badge') }}
         title={t('websiteOptimization.title1').toUpperCase()}
         subtitle={t('websiteOptimization.title2').toUpperCase()}
         description={t('websiteOptimization.description')}

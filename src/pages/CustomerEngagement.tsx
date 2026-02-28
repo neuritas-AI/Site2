@@ -2,6 +2,7 @@ import { MessageCircle, Users, Clock, TrendingUp, Sparkles, ArrowRight } from 'l
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { CustomerEngagementIcon } from '../components/ServiceIcons';
 
 export default function CustomerEngagement() {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ export default function CustomerEngagement() {
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <MessageCircle className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('customerEngagement.badge') }}
+        badge={{ icon: <CustomerEngagementIcon className="w-5 h-5" />, text: t('customerEngagement.badge') }}
         title={t('customerEngagement.title1').toUpperCase()}
         subtitle={t('customerEngagement.title2').toUpperCase()}
         description={t('customerEngagement.description')}

@@ -2,6 +2,7 @@ import { Calendar, Clock, CheckCircle, Zap, Sparkles, ArrowRight } from 'lucide-
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { AppointmentPlanningIcon } from '../components/ServiceIcons';
 
 export default function AppointmentSetting() {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ export default function AppointmentSetting() {
   return (
     <div className="bg-black text-white">
       <HeroSection
-        badge={{ icon: <Calendar className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('appointmentSetting.badge') }}
+        badge={{ icon: <AppointmentPlanningIcon className="w-5 h-5" />, text: t('appointmentSetting.badge') }}
         title={t('appointmentSetting.title1').toUpperCase()}
         subtitle={t('appointmentSetting.title2').toUpperCase()}
         description={t('appointmentSetting.description')}
