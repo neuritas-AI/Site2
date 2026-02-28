@@ -35,11 +35,14 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 w-full z-40 bg-black/50 backdrop-blur-xl border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <Brain className="w-8 h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
-          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+          <Brain className="w-6 md:w-8 h-6 md:h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
+          <span className="hidden md:inline text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
             NEURITAS-AI
+          </span>
+          <span className="md:hidden text-sm font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+            AI
           </span>
         </Link>
 
@@ -100,7 +103,7 @@ export default function Navigation() {
 
       {mobileMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/5">
-          <div className="px-6 py-4 space-y-4">
+          <div className="px-4 md:px-6 py-3 md:py-4 space-y-3 md:space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -114,10 +117,10 @@ export default function Navigation() {
               </Link>
             ))}
 
-            <div className="pt-4 border-t border-white/10">
-              <div className="flex items-center gap-2 mb-3 text-sm text-gray-400">
+            <div className="pt-3 md:pt-4 border-t border-white/10">
+              <div className="flex items-center gap-2 mb-3 text-xs md:text-sm text-gray-400">
                 <Globe className="w-4 h-4 text-cyan-400" />
-                <span>Taal / Language / Langue</span>
+                <span className="line-clamp-1">Taal / Language / Langue</span>
               </div>
               <div className="space-y-2">
                 {languages.map((lang) => (
@@ -127,7 +130,7 @@ export default function Navigation() {
                       changeLanguage(lang.code);
                       setMobileMenuOpen(false);
                     }}
-                    className={`w-full px-4 py-2 text-left text-sm rounded-lg transition-all ${
+                    className={`w-full px-3 md:px-4 py-2 text-left text-sm rounded-lg transition-all ${
                       i18n.language === lang.code
                         ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-purple-500/50 text-cyan-400'
                         : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10'

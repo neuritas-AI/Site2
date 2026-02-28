@@ -22,11 +22,11 @@ export default function Home() {
     <div className="bg-black text-white">
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/20 to-black">
-          <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 opacity-30 max-[768px]:opacity-15">
             {[...Array(50)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
+                className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse max-[768px]:hidden md:block"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -44,7 +44,7 @@ export default function Home() {
           className="absolute inset-0 flex items-center justify-center"
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
-          <div className="relative w-[600px] h-[600px]">
+          <div className="relative w-[300px] h-[300px] md:w-[600px] md:h-[600px]">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 animate-pulse shadow-2xl shadow-cyan-500/50" />
             {[...Array(8)].map((_, i) => (
               <div
@@ -81,31 +81,31 @@ export default function Home() {
             <span className="text-sm text-cyan-400 font-medium">{t('hero.badge')}</span>
           </div>
 
-          <h1 className="text-7xl md:text-9xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl font-bold mb-4 md:mb-6 tracking-tighter">
             <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient uppercase">
               {t('hero.title1')}
             </span>
-            <span className="block text-white mt-2 uppercase">{t('hero.title2')}</span>
+            <span className="block text-white mt-1 md:mt-2 uppercase">{t('hero.title2')}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-400 mb-4 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-3 md:mb-4 max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-8 md:mb-12 max-w-2xl mx-auto">
             {t('hero.description')}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col gap-3 justify-center md:flex-row md:gap-4">
             <button
               onClick={() => scrollToSection('services')}
-              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
+              className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2 text-sm md:text-base"
             >
               {t('hero.ctaMain')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <Link
               to="/contact"
-              className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center"
+              className="px-6 md:px-8 py-3 md:py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center text-sm md:text-base"
             >
               {t('hero.cta')}
             </Link>
@@ -114,44 +114,44 @@ export default function Home() {
 
         <button
           onClick={() => scrollToSection('services')}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
+          className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
         >
-          <span className="text-sm tracking-widest uppercase">{t('hero.scrollExplore')}</span>
+          <span className="text-xs md:text-sm tracking-widest uppercase">{t('hero.scrollExplore')}</span>
         </button>
       </section>
 
-      <section id="services" className="relative py-32 px-6">
+      <section id="services" className="relative py-16 md:py-32 px-4 md:px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-6">
+          <div className="text-center mb-12 md:mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-4 md:mb-6">
               <Cpu className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-purple-400 font-medium">{t('home.servicesBadge')}</span>
+              <span className="text-xs md:text-sm text-purple-400 font-medium">{t('home.servicesBadge')}</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 tracking-tighter bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent uppercase">
               {t('home.servicesTitle')}
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-gray-400 max-w-2xl mx-auto">
               {t('home.servicesSubtitle')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                icon: <Zap className="w-8 h-8" />,
+                icon: <Zap className="w-6 md:w-8 h-6 md:h-8" />,
                 title: t('home.customerTitle'),
                 description: t('home.customerDesc'),
                 link: '/customer-engagement',
               },
               {
-                icon: <Globe className="w-8 h-8" />,
+                icon: <Globe className="w-6 md:w-8 h-6 md:h-8" />,
                 title: t('home.websiteTitle'),
                 description: t('home.websiteDesc'),
                 link: '/website-optimization',
               },
               {
-                icon: <Calendar className="w-8 h-8" />,
+                icon: <Calendar className="w-6 md:w-8 h-6 md:h-8" />,
                 title: t('home.appointmentTitle'),
                 description: t('home.appointmentDesc'),
                 link: '/appointment-setting',
@@ -160,13 +160,13 @@ export default function Home() {
               <Link
                 key={index}
                 to={service.link}
-                className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-sm"
+                className="group relative p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-sm"
               >
-                <div className="mb-6 w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className="mb-4 md:mb-6 w-12 md:w-16 h-12 md:h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{service.description}</p>
+                <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4">{service.title}</h3>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed">{service.description}</p>
                 <div className="mt-6 flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-sm font-medium">{t('hero.learnMore')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -177,49 +177,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features" className="relative py-32 px-6 overflow-hidden">
+      <section id="features" className="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]" />
+          <div className="absolute top-1/4 left-1/4 w-48 md:w-96 h-48 md:h-96 bg-cyan-500/20 rounded-full blur-[80px] md:blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-48 md:w-96 h-48 md:h-96 bg-purple-500/20 rounded-full blur-[80px] md:blur-[120px]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full mb-4 md:mb-6">
                 <Brain className="w-4 h-4 text-purple-400" />
-                <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('home.featuresBadge')}</span>
+                <span className="text-xs md:text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{t('home.featuresBadge')}</span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-tighter">
                 {t('home.featuresTitle1')}
                 <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   {t('home.featuresTitle2')}
                 </span>
               </h2>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+              <p className="text-sm md:text-lg lg:text-xl text-gray-400 mb-6 md:mb-8 leading-relaxed">
                 {t('home.featuresDesc')}
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {[
                   { label: 'Response Time', value: '<100ms' },
                   { label: 'Accuracy Rate', value: '99.9%' },
                   { label: 'Uptime', value: '24/7' },
                   { label: 'Scalability', value: 'Unlimited' },
                 ].map((stat, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
-                    <span className="text-gray-400">{stat.label}:</span>
-                    <span className="text-white font-semibold">{stat.value}</span>
+                  <div key={index} className="flex items-center gap-3 md:gap-4">
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse flex-shrink-0" />
+                    <span className="text-sm md:text-base text-gray-400">{stat.label}:</span>
+                    <span className="text-sm md:text-base text-white font-semibold">{stat.value}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-sm overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-64 h-64">
+                  <div className="relative w-40 md:w-64 h-40 md:h-64">
                     {[...Array(3)].map((_, i) => (
                       <div
                         key={i}
@@ -231,7 +231,7 @@ export default function Home() {
                       />
                     ))}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Brain className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent" style={{ WebkitTextStroke: '2px transparent', backgroundClip: 'text', WebkitBackgroundClip: 'text' }} />
+                      <Brain className="w-20 md:w-32 h-20 md:h-32 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent" style={{ WebkitTextStroke: '2px transparent', backgroundClip: 'text', WebkitBackgroundClip: 'text' }} />
                     </div>
                   </div>
                 </div>
@@ -243,9 +243,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-32 px-6 overflow-hidden">
+      <section className="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-[150px] animate-pulse" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[200px] md:h-[400px] bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-[100px] md:blur-[150px] animate-pulse" />
         </div>
 
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
@@ -254,17 +254,17 @@ export default function Home() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
 
-            <div className="relative p-12 md:p-16 rounded-3xl bg-black/50 border border-white/10 backdrop-blur-xl">
-              <div className="mb-8 flex justify-center">
-                <Brain className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse" style={{ filter: 'drop-shadow(0 0 20px rgba(168, 85, 247, 0.5))' }} />
+            <div className="relative p-6 md:p-12 lg:p-16 rounded-3xl bg-black/50 border border-white/10 backdrop-blur-xl">
+              <div className="mb-4 md:mb-8 flex justify-center">
+                <Brain className="w-12 md:w-16 h-12 md:h-16 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse" style={{ filter: 'drop-shadow(0 0 20px rgba(168, 85, 247, 0.5))' }} />
               </div>
 
-              <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-                <span className="text-gray-400 italic">"</span>
+              <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-tight tracking-tight">
+                <span className="text-gray-400 italic text-lg">"</span>
                 <span className="bg-gradient-to-r from-cyan-100 via-purple-100 to-cyan-100 bg-clip-text text-transparent italic">
                   {t('home.quotation')}
                 </span>
-                <span className="text-gray-400 italic">"</span>
+                <span className="text-gray-400 italic text-lg">"</span>
               </blockquote>
 
               <div className="mt-8 flex justify-center gap-2">
@@ -284,31 +284,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative py-32 px-6">
+      <section id="contact" className="relative py-16 md:py-32 px-4 md:px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/20 to-black" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
+          <div className="p-6 md:p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-tighter">
               {t('home.ctaTitle')}
               <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 {t('home.ctaSubtitle')}
               </span>
             </h2>
-            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 md:mb-10 max-w-2xl mx-auto">
               {t('home.ctaDesc')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-3 md:flex-row md:gap-4 justify-center">
               <Link
                 to="/contact"
-                className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-3"
+                className="group px-6 md:px-10 py-3 md:py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold text-sm md:text-lg transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-3"
               >
                 {t('home.ctaButton')}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/contact"
-                className="px-10 py-5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold text-lg transition-all backdrop-blur-sm flex items-center justify-center"
+                className="px-6 md:px-10 py-3 md:py-5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold text-sm md:text-lg transition-all backdrop-blur-sm flex items-center justify-center"
               >
                 {t('home.ctaButton2')}
               </Link>

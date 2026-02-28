@@ -58,32 +58,32 @@ export default function HeroSection({
         </>
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 text-center">
         {badge && (
-          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm">
+          <div className="mb-4 md:mb-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm">
             {badge.icon}
-            <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{badge.text}</span>
+            <span className="text-xs md:text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{badge.text}</span>
           </div>
         )}
 
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-6 tracking-tighter">
           <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient">
             {title}
           </span>
-          {subtitle && <span className="block text-white mt-2">{subtitle}</span>}
+          {subtitle && <span className="block text-white mt-1 md:mt-2">{subtitle}</span>}
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-gray-400 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
           {description}
         </p>
       </div>
 
       <button
         onClick={() => scrollToSection(scrollTarget)}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
+        className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
       >
-        <span className="text-sm tracking-widest">SCROLL TO EXPLORE</span>
-        <ChevronDown className="w-6 h-6" />
+        <span className="text-xs md:text-sm tracking-widest">SCROLL TO EXPLORE</span>
+        <ChevronDown className="w-5 md:w-6 h-5 md:h-6" />
       </button>
 
       <style>{`
