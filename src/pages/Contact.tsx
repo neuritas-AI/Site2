@@ -10,16 +10,68 @@ export default function Contact() {
     email: '',
     company: '',
     message: '',
+    honeypot: '',
   });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
-    }, 3000);
+    setError(null);
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setError('Alle vereiste velden moeten worden ingevuld');
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setError('Voer een geldig e-mailadres in');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const response = await fetch(`${supabaseUrl}/functions/v1/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${anonKey}`,
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || undefined,
+          message: formData.message,
+          honeypot: formData.honeypot,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', company: '', message: '', honeypot: '' });
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Er is een fout opgetreden');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -100,6 +152,16 @@ export default function Contact() {
 
             <div>
               <form onSubmit={handleSubmit} className="relative p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={formData.honeypot}
+                  onChange={handleChange}
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 {submitted && (
                   <div className="absolute inset-0 bg-black/90 backdrop-blur-sm rounded-3xl flex items-center justify-center z-20">
                     <div className="text-center">
@@ -107,8 +169,14 @@ export default function Contact() {
                         <CheckCircle className="w-10 h-10 text-white" />
                       </div>
                       <h3 className="text-2xl font-bold mb-2">{t('contact.successTitle')}</h3>
-                      <p className="text-gray-400">{t('contact.successMessage')}</p>
+                      <p className="text-gray-400">Bedankt! We nemen zo snel mogelijk contact met je op.</p>
                     </div>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="mb-6 p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400">
+                    {error}
                   </div>
                 )}
 
@@ -180,10 +248,11 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="w-full group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
                   >
-                    {t('contact.formSubmit')}
-                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    {loading ? t('contact.formSending') : t('contact.formSubmit')}
+                    {!loading && <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                   </button>
                 </div>
               </form>
