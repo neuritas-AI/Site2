@@ -41,38 +41,219 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]" />
 
         <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
-          <div className="relative w-[600px] h-[600px]">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 animate-pulse shadow-2xl shadow-cyan-500/50" />
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute top-1/2 left-1/2 w-4 h-4"
-                style={{
-                  transform: `rotate(${i * 45}deg) translateX(200px)`,
-                  animation: `orbit ${10 + i}s linear infinite`,
-                }}
-              >
-                <div className="w-4 h-4 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/50" />
-              </div>
-            ))}
-            <svg className="absolute inset-0 w-full h-full">
-              {[...Array(8)].map((_, i) => (
-                <line
-                  key={i}
-                  x1="50%"
-                  y1="50%"
-                  x2={`${50 + 33 * Math.cos((i * 45 * Math.PI) / 180)}%`}
-                  y2={`${50 + 33 * Math.sin((i * 45 * Math.PI) / 180)}%`}
-                  stroke="rgba(6, 182, 212, 0.2)"
-                  strokeWidth="2"
-                  className="animate-pulse"
-                />
-              ))}
-            </svg>
-          </div>
+          <svg
+            viewBox="0 0 700 420"
+            className="w-full max-w-2xl h-auto opacity-70"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient id="glowTeal" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
+              </radialGradient>
+              <filter id="robotGlow">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="eyeGlow">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <linearGradient id="bodyGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#164e63" />
+                <stop offset="100%" stopColor="#0e7490" />
+              </linearGradient>
+              <linearGradient id="bodyGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#134e4a" />
+                <stop offset="100%" stopColor="#0f766e" />
+              </linearGradient>
+              <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.05" />
+              </linearGradient>
+            </defs>
+
+            {/* Ground line */}
+            <line x1="80" y1="400" x2="620" y2="400" stroke="#06b6d4" strokeWidth="1" opacity="0.2" />
+            <ellipse cx="210" cy="402" rx="80" ry="6" fill="#06b6d4" opacity="0.08" />
+            <ellipse cx="490" cy="402" rx="80" ry="6" fill="#2dd4bf" opacity="0.08" />
+
+            {/* ── ROBOT LEFT ── */}
+            <g>
+              {/* Floating bob animation */}
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="3.2s" repeatCount="indefinite" additive="sum" />
+
+              {/* Neck */}
+              <rect x="193" y="178" width="34" height="18" rx="4" fill="#0e7490" opacity="0.9" />
+
+              {/* Head */}
+              <rect x="160" y="110" width="100" height="75" rx="14" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.5" />
+              {/* Head top antenna */}
+              <rect x="205" y="88" width="10" height="24" rx="4" fill="#06b6d4" opacity="0.9" />
+              <circle cx="210" cy="82" r="7" fill="#22d3ee" filter="url(#eyeGlow)">
+                <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
+              </circle>
+              {/* Visor */}
+              <rect x="170" y="122" width="80" height="30" rx="8" fill="#082f49" stroke="#06b6d4" strokeWidth="1" opacity="0.95" />
+              {/* Eyes */}
+              <ellipse cx="192" cy="137" rx="10" ry="8" fill="#06b6d4" filter="url(#eyeGlow)">
+                <animate attributeName="rx" values="10;4;10" dur="4s" repeatCount="indefinite" />
+              </ellipse>
+              <ellipse cx="228" cy="137" rx="10" ry="8" fill="#06b6d4" filter="url(#eyeGlow)">
+                <animate attributeName="rx" values="10;4;10" dur="4s" repeatCount="indefinite" />
+              </ellipse>
+              <circle cx="192" cy="137" r="4" fill="white" opacity="0.9" />
+              <circle cx="228" cy="137" r="4" fill="white" opacity="0.9" />
+              {/* Mouth */}
+              <rect x="185" y="166" width="50" height="6" rx="3" fill="#06b6d4" opacity="0.6">
+                <animate attributeName="width" values="50;30;50" dur="3s" repeatCount="indefinite" />
+                <animate attributeName="x" values="185;195;185" dur="3s" repeatCount="indefinite" />
+              </rect>
+
+              {/* Body */}
+              <rect x="155" y="196" width="110" height="120" rx="12" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.5" />
+              {/* Chest panel */}
+              <rect x="170" y="210" width="80" height="55" rx="8" fill="url(#panelGrad)" stroke="#06b6d4" strokeWidth="0.8" />
+              <circle cx="210" cy="228" r="12" fill="#082f49" stroke="#22d3ee" strokeWidth="1">
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="210" cy="228" r="7" fill="#06b6d4" opacity="0.8" />
+              <rect x="178" y="248" width="15" height="8" rx="3" fill="#22d3ee" opacity="0.7">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite" />
+              </rect>
+              <rect x="199" y="248" width="15" height="8" rx="3" fill="#22d3ee" opacity="0.5">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite" />
+              </rect>
+              <rect x="220" y="248" width="15" height="8" rx="3" fill="#22d3ee" opacity="0.3">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite" />
+              </rect>
+
+              {/* LEFT arm (waving) */}
+              <g style={{ transformOrigin: '152px 210px' }}>
+                <animateTransform attributeName="transform" type="rotate" values="0 152 210; -35 152 210; 0 152 210" dur="2s" repeatCount="indefinite" additive="sum" />
+                <rect x="120" y="196" width="32" height="85" rx="12" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.2" />
+                <rect x="122" y="270" width="28" height="28" rx="10" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
+                {/* Fingers hint */}
+                <rect x="124" y="296" width="6" height="14" rx="3" fill="#06b6d4" opacity="0.7" />
+                <rect x="133" y="297" width="6" height="15" rx="3" fill="#06b6d4" opacity="0.7" />
+                <rect x="142" y="296" width="6" height="14" rx="3" fill="#06b6d4" opacity="0.7" />
+              </g>
+
+              {/* RIGHT arm (slight wave back) */}
+              <g style={{ transformOrigin: '268px 210px' }}>
+                <animateTransform attributeName="transform" type="rotate" values="0 268 210; 15 268 210; 0 268 210" dur="2.6s" repeatCount="indefinite" additive="sum" />
+                <rect x="268" y="196" width="32" height="85" rx="12" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.2" />
+                <rect x="270" y="270" width="28" height="28" rx="10" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
+              </g>
+
+              {/* Legs */}
+              <rect x="167" y="316" width="36" height="70" rx="10" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1" />
+              <rect x="217" y="316" width="36" height="70" rx="10" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1" />
+              {/* Feet */}
+              <rect x="160" y="378" width="50" height="20" rx="8" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
+              <rect x="210" y="378" width="50" height="20" rx="8" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
+
+              {/* Glow under body */}
+              <ellipse cx="210" cy="398" rx="55" ry="5" fill="url(#glowCyan)" />
+            </g>
+
+            {/* ── ROBOT RIGHT ── */}
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="2.8s" repeatCount="indefinite" begin="0.5s" additive="sum" />
+
+              {/* Neck */}
+              <rect x="473" y="178" width="34" height="18" rx="4" fill="#0f766e" opacity="0.9" />
+
+              {/* Head */}
+              <rect x="440" y="110" width="100" height="75" rx="14" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.5" />
+              {/* Head top antenna */}
+              <rect x="475" y="88" width="10" height="24" rx="4" fill="#2dd4bf" opacity="0.9" />
+              <circle cx="480" cy="82" r="7" fill="#5eead4" filter="url(#eyeGlow)">
+                <animate attributeName="r" values="6;9;6" dur="2.4s" repeatCount="indefinite" begin="0.3s" />
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite" begin="0.3s" />
+              </circle>
+              {/* Visor */}
+              <rect x="450" y="122" width="80" height="30" rx="8" fill="#042f2e" stroke="#2dd4bf" strokeWidth="1" opacity="0.95" />
+              {/* Eyes */}
+              <ellipse cx="472" cy="137" rx="10" ry="8" fill="#2dd4bf" filter="url(#eyeGlow)">
+                <animate attributeName="rx" values="10;4;10" dur="4.5s" repeatCount="indefinite" begin="0.5s" />
+              </ellipse>
+              <ellipse cx="508" cy="137" rx="10" ry="8" fill="#2dd4bf" filter="url(#eyeGlow)">
+                <animate attributeName="rx" values="10;4;10" dur="4.5s" repeatCount="indefinite" begin="0.5s" />
+              </ellipse>
+              <circle cx="472" cy="137" r="4" fill="white" opacity="0.9" />
+              <circle cx="508" cy="137" r="4" fill="white" opacity="0.9" />
+              {/* Mouth — smile curve */}
+              <path d="M465 166 Q490 176 515 166" stroke="#2dd4bf" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.8">
+                <animate attributeName="d" values="M465 166 Q490 176 515 166; M465 166 Q490 172 515 166; M465 166 Q490 176 515 166" dur="3s" repeatCount="indefinite" />
+              </path>
+
+              {/* Body */}
+              <rect x="435" y="196" width="110" height="120" rx="12" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.5" />
+              {/* Chest panel */}
+              <rect x="450" y="210" width="80" height="55" rx="8" fill="url(#panelGrad)" stroke="#2dd4bf" strokeWidth="0.8" />
+              <circle cx="490" cy="228" r="12" fill="#042f2e" stroke="#5eead4" strokeWidth="1">
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="490" cy="228" r="7" fill="#2dd4bf" opacity="0.8" />
+              <rect x="458" y="248" width="15" height="8" rx="3" fill="#5eead4" opacity="0.7">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite" />
+              </rect>
+              <rect x="479" y="248" width="15" height="8" rx="3" fill="#5eead4" opacity="0.5">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+              </rect>
+              <rect x="500" y="248" width="15" height="8" rx="3" fill="#5eead4" opacity="0.3">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite" />
+              </rect>
+
+              {/* LEFT arm (slight wave) */}
+              <g style={{ transformOrigin: '432px 210px' }}>
+                <animateTransform attributeName="transform" type="rotate" values="0 432 210; -12 432 210; 0 432 210" dur="2.8s" repeatCount="indefinite" begin="0.4s" additive="sum" />
+                <rect x="400" y="196" width="32" height="85" rx="12" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.2" />
+                <rect x="402" y="270" width="28" height="28" rx="10" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
+              </g>
+
+              {/* RIGHT arm (waving toward center) */}
+              <g style={{ transformOrigin: '548px 210px' }}>
+                <animateTransform attributeName="transform" type="rotate" values="0 548 210; 38 548 210; 0 548 210" dur="2s" repeatCount="indefinite" begin="0.2s" additive="sum" />
+                <rect x="548" y="196" width="32" height="85" rx="12" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.2" />
+                <rect x="550" y="270" width="28" height="28" rx="10" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
+                {/* Fingers */}
+                <rect x="552" y="296" width="6" height="14" rx="3" fill="#2dd4bf" opacity="0.7" />
+                <rect x="561" y="297" width="6" height="15" rx="3" fill="#2dd4bf" opacity="0.7" />
+                <rect x="570" y="296" width="6" height="14" rx="3" fill="#2dd4bf" opacity="0.7" />
+              </g>
+
+              {/* Legs */}
+              <rect x="447" y="316" width="36" height="70" rx="10" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1" />
+              <rect x="497" y="316" width="36" height="70" rx="10" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1" />
+              {/* Feet */}
+              <rect x="440" y="378" width="50" height="20" rx="8" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
+              <rect x="490" y="378" width="50" height="20" rx="8" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
+
+              {/* Glow under body */}
+              <ellipse cx="490" cy="398" rx="55" ry="5" fill="url(#glowTeal)" />
+            </g>
+
+            {/* Center connection beam between robots */}
+            <line x1="270" y1="250" x2="430" y2="250" stroke="url(#panelGrad)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4">
+              <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite" />
+              <animate attributeName="strokeDashoffset" values="0;-20;0" dur="1.5s" repeatCount="indefinite" />
+            </line>
+            <circle cx="350" cy="250" r="5" fill="#22d3ee" opacity="0.6">
+              <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+            </circle>
+          </svg>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
@@ -464,10 +645,6 @@ export default function Home() {
       </section>
 
       <style>{`
-        @keyframes orbit {
-          from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-          to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-        }
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
