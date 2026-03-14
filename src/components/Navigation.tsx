@@ -11,6 +11,7 @@ export default function Navigation() {
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -37,8 +38,20 @@ export default function Navigation() {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
   }, []);
+
+  const handleServicesEnter = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setServicesOpen(true);
+  };
+
+  const handleServicesLeave = () => {
+    closeTimerRef.current = setTimeout(() => setServicesOpen(false), 150);
+  };
 
   useEffect(() => {
     setServicesOpen(false);
@@ -108,8 +121,8 @@ export default function Navigation() {
           <div
             ref={servicesRef}
             className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
+            onMouseEnter={handleServicesEnter}
+            onMouseLeave={handleServicesLeave}
           >
             <Link
               to="/services"
@@ -122,6 +135,8 @@ export default function Navigation() {
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''} ${isServicesActive() ? 'text-cyan-400' : 'text-gray-400'}`}
               />
             </Link>
+
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 h-3" />
 
             <div
               className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-black/50 transition-all duration-200 ${
