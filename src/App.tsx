@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import CustomerEngagement from './pages/CustomerEngagement';
 import WebsiteOptimization from './pages/WebsiteOptimization';
 import AppointmentSetting from './pages/AppointmentSetting';
+import AIVoiceCaller from './pages/AIVoiceCaller';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
@@ -46,6 +47,7 @@ function App() {
           <Route path="/customer-engagement" element={<CustomerEngagement />} />
           <Route path="/website-optimization" element={<WebsiteOptimization />} />
           <Route path="/appointment-setting" element={<AppointmentSetting />} />
+          <Route path="/ai-voice-caller" element={<AIVoiceCaller />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

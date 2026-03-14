@@ -14,6 +14,7 @@ export default function Navigation() {
     { path: '/customer-engagement', label: t('nav.customerEngagement') },
     { path: '/website-optimization', label: t('nav.websiteOptimization') },
     { path: '/appointment-setting', label: t('nav.appointmentSetting') },
+    { path: '/ai-voice-caller', label: t('nav.aiVoiceCaller') },
     { path: '/about', label: t('nav.about') },
     { path: '/contact', label: t('nav.contact') },
   ];
