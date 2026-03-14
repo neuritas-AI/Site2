@@ -252,30 +252,42 @@ export default function Home() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
 
-            <div className="relative p-12 md:p-16 rounded-3xl bg-black/50 border border-white/10 backdrop-blur-xl">
-              <div className="mb-8 flex justify-center">
-                <Brain className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse" style={{ filter: 'drop-shadow(0 0 20px rgba(168, 85, 247, 0.5))' }} />
-              </div>
+            <div className="relative p-12 md:p-16 rounded-3xl border border-white/10 backdrop-blur-xl overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Futuristic AI network visualization"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ filter: 'hue-rotate(160deg) saturate(1.4) brightness(0.35)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-cyan-500/5" />
 
-              <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-                <span className="text-gray-400 italic">"</span>
-                <span className="bg-gradient-to-r from-cyan-100 via-purple-100 to-cyan-100 bg-clip-text text-transparent italic">
-                  {t('home.quotation')}
-                </span>
-                <span className="text-gray-400 italic">"</span>
-              </blockquote>
+              <div className="relative z-10">
+                <div className="mb-8 flex justify-center">
+                  <Brain className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse" style={{ filter: 'drop-shadow(0 0 20px rgba(6, 182, 212, 0.7))' }} />
+                </div>
 
-              <div className="mt-8 flex justify-center gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400"
-                    style={{
-                      animation: `pulse ${2 + i * 0.3}s ease-in-out infinite`,
-                      animationDelay: `${i * 0.2}s`,
-                    }}
-                  />
-                ))}
+                <blockquote className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+                  <span className="text-gray-300 italic">"</span>
+                  <span className="bg-gradient-to-r from-cyan-100 via-white to-cyan-100 bg-clip-text text-transparent italic">
+                    {t('home.quotation')}
+                  </span>
+                  <span className="text-gray-300 italic">"</span>
+                </blockquote>
+
+                <div className="mt-8 flex justify-center gap-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400"
+                      style={{
+                        animation: `pulse ${2 + i * 0.3}s ease-in-out infinite`,
+                        animationDelay: `${i * 0.2}s`,
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
