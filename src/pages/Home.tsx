@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, Zap, Globe, Calendar, Sparkles, Brain, Cpu } from 'lucide-react';
+import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -136,38 +136,60 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: <Zap className="w-8 h-8" />,
                 title: t('home.customerTitle'),
                 description: t('home.customerDesc'),
                 link: '/customer-engagement',
+                color: 'cyan',
               },
               {
                 icon: <Globe className="w-8 h-8" />,
                 title: t('home.websiteTitle'),
                 description: t('home.websiteDesc'),
                 link: '/website-optimization',
+                color: 'purple',
               },
               {
                 icon: <Calendar className="w-8 h-8" />,
                 title: t('home.appointmentTitle'),
                 description: t('home.appointmentDesc'),
                 link: '/appointment-setting',
+                color: 'purple',
+              },
+              {
+                icon: <Mic className="w-8 h-8" />,
+                title: t('nav.aiVoiceCaller'),
+                description: t('aiVoiceCaller.description'),
+                link: '/ai-voice-caller',
+                color: 'cyan',
               },
             ].map((service, index) => (
               <Link
                 key={index}
                 to={service.link}
-                className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-sm"
+                className={`group relative p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 hover:shadow-2xl backdrop-blur-sm ${
+                  service.color === 'cyan'
+                    ? 'hover:border-cyan-500/50 hover:shadow-cyan-500/20'
+                    : 'hover:border-purple-500/50 hover:shadow-purple-500/20'
+                }`}
               >
-                <div className="mb-6 w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className={`mb-6 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
+                  service.color === 'cyan'
+                    ? 'bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 text-cyan-400'
+                    : 'bg-gradient-to-br from-purple-500/20 to-purple-500/5 text-purple-400'
+                }`}>
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{service.description}</p>
-                <div className="mt-6 flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className={`mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity ${
+                  service.color === 'cyan'
+                    ? 'text-cyan-400'
+                    : 'text-purple-400'
+                }`}>
                   <span className="text-sm font-medium">{t('hero.learnMore')}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
