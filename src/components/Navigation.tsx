@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Brain, Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -6,15 +6,30 @@ import { useTranslation } from 'react-i18next';
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY.current || currentScrollY < 60) {
+        setVisible(true);
+      } else if (currentScrollY > lastScrollY.current && currentScrollY > 60) {
+        setVisible(false);
+        setMobileMenuOpen(false);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navItems = [
     { path: '/', label: t('nav.home') },
-    { path: '/customer-engagement', label: t('nav.customerEngagement') },
-    { path: '/website-optimization', label: t('nav.websiteOptimization') },
-    { path: '/appointment-setting', label: t('nav.appointmentSetting') },
-    { path: '/ai-voice-caller', label: t('nav.aiVoiceCaller') },
+    { path: '/services', label: t('nav.services') },
     { path: '/about', label: t('nav.about') },
     { path: '/contact', label: t('nav.contact') },
   ];
@@ -35,7 +50,15 @@ export default function Navigation() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full z-40 bg-black/50 backdrop-blur-xl border-b border-white/5">
+    <nav
+      className="fixed top-0 w-full z-40 bg-black/50 backdrop-blur-xl border-b border-white/5"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(-8px)',
+        transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+        pointerEvents: visible ? 'auto' : 'none',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <Brain className="w-8 h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
@@ -52,7 +75,7 @@ export default function Navigation() {
         </button>
 
         <div className="hidden md:flex items-center gap-6">
-          {navItems.slice(0, 5).map((item) => (
+          {navItems.slice(0, 3).map((item) => (
             <Link
               key={item.path}
               to={item.path}
