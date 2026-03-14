@@ -178,7 +178,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.name}
-                      className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:scale-110 transition-all duration-300"
+                      className={`w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:scale-110 transition-all duration-300 social-icon-${social.name.toLowerCase()}`}
                     >
                       <social.icon className="w-6 h-6" />
                     </a>

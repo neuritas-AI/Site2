@@ -14,3 +14,21 @@
 .animate-gradient {
   animation: gradient 3s ease infinite;
 }
+
+.social-icon-instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #dc2743;
+  color: white;
+}
+
+.social-icon-facebook:hover {
+  background-color: rgba(24, 119, 242, 0.2);
+  border-color: #1877F2;
+  color: #1877F2;
+}
+
+.social-icon-linkedin:hover {
+  background-color: rgba(10, 102, 194, 0.2);
+  border-color: #0A66C2;
+  color: #0A66C2;
+}
