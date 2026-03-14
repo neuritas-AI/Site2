@@ -13,7 +13,7 @@ export default function CustomerEngagement() {
         title={t('chatbots.title1').toUpperCase()}
         subtitle={t('chatbots.title2').toUpperCase()}
         description={t('chatbots.description')}
-        backgroundImage="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        backgroundImage="https://images.pexels.com/photos/7567228/pexels-photo-7567228.jpeg?auto=compress&cs=tinysrgb&w=1920"
         scrollTarget="content"
       />
 
