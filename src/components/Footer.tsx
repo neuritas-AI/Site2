@@ -1,6 +1,24 @@
-import { Brain, Mail, Clock } from 'lucide-react';
+import { Brain, Mail, Clock, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+
+const socialLinks = [
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/neuritas_ai/',
+    icon: Instagram,
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=61586244849568',
+    icon: Facebook,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/111895558/',
+    icon: Linkedin,
+  },
+];
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -103,10 +121,26 @@ export default function Footer() {
           </div>
 
           <div className="border-t border-white/5 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <p className="text-gray-500 text-sm">
                 © 2026 Neuritas-AI. {t('footer.rights')}
               </p>
+
+              <div className="flex items-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-300"
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </a>
+                ))}
+              </div>
+
               <div className="flex items-center gap-6">
                 <Link
                   to="/privacy"

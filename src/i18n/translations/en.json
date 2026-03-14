@@ -355,7 +355,9 @@
     "formMessageLabel": "Message *",
     "placeholderName": "John Doe",
     "placeholderEmail": "john@company.com",
-    "placeholderCompany": "Your Company"
+    "placeholderCompany": "Your Company",
+    "socialTitle": "Follow Us",
+    "socialDesc": "Want to learn more about Neuritas-AI? Follow us on our socials!"
   },
   "footer": {
     "tagline": "Transforming businesses worldwide with AI solutions",

@@ -355,7 +355,9 @@
     "formMessageLabel": "Bericht *",
     "placeholderName": "Jan Jansen",
     "placeholderEmail": "jan@bedrijf.nl",
-    "placeholderCompany": "Uw Bedrijf"
+    "placeholderCompany": "Uw Bedrijf",
+    "socialTitle": "Volg Ons",
+    "socialDesc": "Meer weten over Neuritas-AI? Volg ons op onze socials!"
   },
   "footer": {
     "tagline": "AI-oplossingen transformeren bedrijven wereldwijd",

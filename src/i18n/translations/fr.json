@@ -355,7 +355,9 @@
     "formMessageLabel": "Message *",
     "placeholderName": "Jean Dupont",
     "placeholderEmail": "jean@entreprise.fr",
-    "placeholderCompany": "Votre Entreprise"
+    "placeholderCompany": "Votre Entreprise",
+    "socialTitle": "Suivez-Nous",
+    "socialDesc": "Vous voulez en savoir plus sur Neuritas-AI? Suivez-nous sur nos réseaux sociaux!"
   },
   "footer": {
     "tagline": "Transformer les entreprises du monde entier avec des solutions d'IA",
