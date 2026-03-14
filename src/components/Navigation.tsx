@@ -148,16 +148,18 @@ export default function Navigation() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+                    className={`group/item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
                       isActive(item.path)
-                        ? 'bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 text-cyan-400'
-                        : 'text-gray-300 hover:bg-white/10 hover:text-white'
+                        ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-cyan-400'
+                        : 'text-gray-300 hover:bg-gradient-to-r hover:from-cyan-500/15 hover:to-purple-500/10 hover:text-white'
                     }`}
                   >
-                    <span className={isActive(item.path) ? 'text-cyan-400' : 'text-gray-500'}>
+                    <span className={`transition-colors duration-200 ${isActive(item.path) ? 'text-cyan-400' : 'text-gray-500 group-hover/item:text-cyan-400'}`}>
                       {item.icon}
                     </span>
-                    {item.label}
+                    <span className={`transition-all duration-200 ${!isActive(item.path) ? 'group-hover/item:bg-gradient-to-r group-hover/item:from-cyan-400 group-hover/item:to-purple-400 group-hover/item:bg-clip-text group-hover/item:text-transparent' : ''}`}>
+                      {item.label}
+                    </span>
                   </Link>
                 ))}
               </div>

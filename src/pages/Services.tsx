@@ -26,10 +26,10 @@ export default function Services() {
       title: t('nav.websiteOptimization'),
       description: t('home.websiteDesc'),
       link: '/website-optimization',
-      gradient: 'from-cyan-500/20 to-cyan-500/5',
-      borderHover: 'hover:border-cyan-500/50',
-      shadowHover: 'hover:shadow-cyan-500/20',
-      iconColor: 'text-cyan-400',
+      gradient: 'from-purple-500/20 to-purple-500/5',
+      borderHover: 'hover:border-purple-500/50',
+      shadowHover: 'hover:shadow-purple-500/20',
+      iconColor: 'text-purple-400',
       stat: '+30%',
       statLabel: t('websiteOptimization.benefit3').split('via')[0].trim(),
     },
@@ -39,10 +39,10 @@ export default function Services() {
       title: t('nav.appointmentSetting'),
       description: t('home.appointmentDesc'),
       link: '/appointment-setting',
-      gradient: 'from-cyan-500/20 to-cyan-500/5',
-      borderHover: 'hover:border-cyan-500/50',
-      shadowHover: 'hover:shadow-cyan-500/20',
-      iconColor: 'text-cyan-400',
+      gradient: 'from-purple-500/20 to-purple-500/5',
+      borderHover: 'hover:border-purple-500/50',
+      shadowHover: 'hover:shadow-purple-500/20',
+      iconColor: 'text-purple-400',
       stat: '40%',
       statLabel: t('appointmentSetting.stat2Label'),
     },
@@ -100,11 +100,11 @@ export default function Services() {
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
-                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/10 flex items-center justify-center ${service.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center ${service.iconColor} group-hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">
+                      <div className={`text-3xl font-bold bg-gradient-to-r ${service.iconColor === 'text-purple-400' ? 'from-purple-400 to-purple-300' : 'from-cyan-400 to-cyan-300'} bg-clip-text text-transparent`}>
                         {service.stat}
                       </div>
                       <div className="text-xs text-gray-500 mt-1 max-w-[120px] text-right leading-tight">
@@ -114,7 +114,7 @@ export default function Services() {
                   </div>
 
                   <div className="mb-3">
-                    <span className="text-xs font-semibold text-cyan-400 uppercase tracking-widest">
+                    <span className={`text-xs font-semibold uppercase tracking-widest ${service.iconColor}`}>
                       {service.badge}
                     </span>
                   </div>
@@ -127,7 +127,7 @@ export default function Services() {
                     {service.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-cyan-400 font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                  <div className={`flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all duration-300 ${service.iconColor}`}>
                     <span>{t('hero.learnMore')}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
