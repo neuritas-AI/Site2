@@ -114,7 +114,7 @@ export default function About() {
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-4xl">
                 {t('about.whatWeDoDesc')}
               </p>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
                   <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{t('about.service1Title')}</h3>
                   <p className="text-gray-400">
@@ -131,6 +131,12 @@ export default function About() {
                   <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{t('about.service3Title')}</h3>
                   <p className="text-gray-400">
                     {t('about.service3Desc')}
+                  </p>
+                </div>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{t('about.service4Title')}</h3>
+                  <p className="text-gray-400">
+                    {t('about.service4Desc')}
                   </p>
                 </div>
               </div>
