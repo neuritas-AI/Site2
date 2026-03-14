@@ -19,7 +19,7 @@ export default function AppointmentSetting() {
         title={t('aiTraining.title1').toUpperCase()}
         subtitle={t('aiTraining.title2').toUpperCase()}
         description={t('aiTraining.description')}
-        backgroundImage="https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        backgroundImage="/business-silhouette.svg"
         scrollTarget="content"
       />
 
