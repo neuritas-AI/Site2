@@ -13,7 +13,7 @@ export default function AIVoiceCaller() {
         title={t('aiVoiceCaller.title1').toUpperCase()}
         subtitle={t('aiVoiceCaller.title2').toUpperCase()}
         description={t('aiVoiceCaller.description')}
-        backgroundImage="https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        backgroundImage="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1920"
         scrollTarget="content"
       />
 
