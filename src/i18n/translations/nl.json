@@ -124,8 +124,8 @@
   },
   "aiVoiceCaller": {
     "badge": "AI Voice Caller",
-    "title1": "AI Voice",
-    "title2": "Caller",
+    "title1": "AI Voice Caller",
+    "title2": "",
     "description": "Automatiseer uw telefoongesprekken met AI. Onze Voice Caller voert professionele gesprekken namens uw bedrijf, plant afspraken in en bespaart u kostbare tijd.",
     "introductionBadge": "Slimme Telefonie",
     "introductionTitle": "Bellen Zonder Medewerkers",
