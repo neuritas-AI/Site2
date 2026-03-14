@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LanguageManager from './components/LanguageManager';
 import Home from './pages/Home';
+import Services from './pages/Services';
 import CustomerEngagement from './pages/CustomerEngagement';
 import WebsiteOptimization from './pages/WebsiteOptimization';
 import AppointmentSetting from './pages/AppointmentSetting';
@@ -44,6 +45,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/customer-engagement" element={<CustomerEngagement />} />
           <Route path="/website-optimization" element={<WebsiteOptimization />} />
           <Route path="/appointment-setting" element={<AppointmentSetting />} />

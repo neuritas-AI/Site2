@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Menu, X, Globe } from 'lucide-react';
+import { Brain, Menu, X, Globe, ChevronDown, Bot, Calendar, Mic } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -27,11 +30,26 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { path: '/', label: t('nav.home') },
-    { path: '/services', label: t('nav.services') },
-    { path: '/about', label: t('nav.about') },
-    { path: '/contact', label: t('nav.contact') },
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    setServicesOpen(false);
+    setLangMenuOpen(false);
+  }, [location.pathname]);
+
+  const serviceItems = [
+    { path: '/customer-engagement', label: t('nav.customerEngagement'), icon: <Bot className="w-4 h-4" /> },
+    { path: '/website-optimization', label: t('nav.websiteOptimization'), icon: <Globe className="w-4 h-4" /> },
+    { path: '/appointment-setting', label: t('nav.appointmentSetting'), icon: <Calendar className="w-4 h-4" /> },
+    { path: '/ai-voice-caller', label: t('nav.aiVoiceCaller'), icon: <Mic className="w-4 h-4" /> },
   ];
 
   const languages = [
@@ -48,6 +66,9 @@ export default function Navigation() {
   };
 
   const isActive = (path: string) => location.pathname === path;
+  const isServicesActive = () =>
+    location.pathname === '/services' ||
+    serviceItems.some(item => location.pathname === item.path);
 
   return (
     <nav
@@ -75,17 +96,68 @@ export default function Navigation() {
         </button>
 
         <div className="hidden md:flex items-center gap-6">
-          {navItems.slice(0, 3).map((item) => (
+          <Link
+            to="/"
+            className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+              isActive('/') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+            }`}
+          >
+            {t('nav.home')}
+          </Link>
+
+          <div
+            ref={servicesRef}
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
             <Link
-              key={item.path}
-              to={item.path}
-              className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-                isActive(item.path) ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+              to="/services"
+              className={`flex items-center gap-1 text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                isServicesActive() ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
               }`}
             >
-              {item.label}
+              {t('nav.services')}
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''} ${isServicesActive() ? 'text-cyan-400' : 'text-gray-400'}`}
+              />
             </Link>
-          ))}
+
+            <div
+              className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-black/50 transition-all duration-200 ${
+                servicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
+              }`}
+            >
+              <div className="p-1.5">
+                {serviceItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+                      isActive(item.path)
+                        ? 'bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 text-cyan-400'
+                        : 'text-gray-300 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <span className={isActive(item.path) ? 'text-cyan-400' : 'text-gray-500'}>
+                      {item.icon}
+                    </span>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <Link
+            to="/about"
+            className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+              isActive('/about') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+            }`}
+          >
+            {t('nav.about')}
+          </Link>
+
           <Link
             to="/contact"
             className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full transition-all hover:shadow-lg hover:shadow-purple-500/50 text-sm font-semibold uppercase"
@@ -125,18 +197,72 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/5">
           <div className="px-6 py-4 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-                  isActive(item.path) ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+            <Link
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                isActive('/') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+              }`}
+            >
+              {t('nav.home')}
+            </Link>
+
+            <div>
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className={`flex items-center gap-1 text-sm w-full text-left hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                  isServicesActive() ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
                 }`}
               >
-                {item.label}
-              </Link>
-            ))}
+                {t('nav.services')}
+                <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-200 text-gray-400 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {mobileServicesOpen && (
+                <div className="mt-2 ml-4 space-y-2 border-l border-white/10 pl-4">
+                  <Link
+                    to="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block text-sm py-1 transition-all duration-300 ${
+                      isActive('/services') ? 'text-cyan-400' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    {t('home.servicesBadge')}
+                  </Link>
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center gap-2 text-sm py-1 transition-all duration-300 ${
+                        isActive(item.path) ? 'text-cyan-400' : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      <span className="text-gray-500">{item.icon}</span>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              to="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                isActive('/about') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+              }`}
+            >
+              {t('nav.about')}
+            </Link>
+
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300"
+            >
+              {t('nav.contact')}
+            </Link>
 
             <div className="pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 mb-3 text-sm text-gray-400">
