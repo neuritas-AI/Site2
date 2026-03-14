@@ -13,7 +13,8 @@ export default function CustomerEngagement() {
         title={t('chatbots.title1').toUpperCase()}
         subtitle={t('chatbots.title2').toUpperCase()}
         description={t('chatbots.description')}
-        backgroundImage="/ChatGPT_Image_14_mrt_2026,_22_31_20.png"
+        backgroundImage="/ChatGPT_Image_14_mrt_2026,_22_38_27.png"
+        overlayClassName="bg-gradient-to-b from-black/60 via-black/50 to-black"
         scrollTarget="content"
       />
 

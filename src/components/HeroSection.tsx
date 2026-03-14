@@ -10,6 +10,7 @@ interface HeroSectionProps {
   subtitle?: string;
   description: string;
   backgroundImage?: string;
+  overlayClassName?: string;
   scrollTarget?: string;
 }
 
@@ -19,6 +20,7 @@ export default function HeroSection({
   subtitle,
   description,
   backgroundImage,
+  overlayClassName = 'bg-gradient-to-b from-black/80 via-black/70 to-black',
   scrollTarget = 'content',
 }: HeroSectionProps) {
   const scrollToSection = (id: string) => {
@@ -34,7 +36,7 @@ export default function HeroSection({
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black" />
+          <div className={`absolute inset-0 ${overlayClassName}`} />
         </>
       ) : (
         <>
