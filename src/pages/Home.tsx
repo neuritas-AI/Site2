@@ -217,26 +217,16 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-sm overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-64 h-64">
-                    {[...Array(3)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute inset-0 border-2 border-purple-400/30 rounded-full"
-                        style={{
-                          animation: `ping ${3 + i}s cubic-bezier(0, 0, 0.2, 1) infinite`,
-                          animationDelay: `${i * 0.5}s`,
-                        }}
-                      />
-                    ))}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Brain className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-400 bg-clip-text text-transparent" style={{ WebkitTextStroke: '2px transparent', backgroundClip: 'text', WebkitBackgroundClip: 'text' }} />
-                    </div>
-                  </div>
-                </div>
+              <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 border border-white/10 backdrop-blur-sm overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="AI Technology and Business Innovation"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent mix-blend-overlay" />
               </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl animate-pulse" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl animate-pulse" />
             </div>
           </div>
