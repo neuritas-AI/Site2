@@ -41,7 +41,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-white">{t('footer.services')}</h3>
+              <Link to="/services" className="text-lg font-semibold mb-6 text-white hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors block">{t('footer.services')}</Link>
               <ul className="space-y-4">
                 <li>
                   <Link
