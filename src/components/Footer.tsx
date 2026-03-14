@@ -87,7 +87,7 @@ export default function Footer() {
                   <div>
                     <p className="text-sm text-gray-500 mb-1">{t('footer.email')}</p>
                     <a href="mailto:info@neuritas-ai.com" className="hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors">
-                      info@neuritas-ai.com
+                      chat@neuritas-ai.com
                     </a>
                   </div>
                 </li>
