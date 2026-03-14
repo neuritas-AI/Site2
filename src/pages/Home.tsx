@@ -42,216 +42,493 @@ export default function Home() {
 
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          style={{ transform: `translateY(${scrollY * 0.25}px)` }}
         >
           <svg
-            viewBox="0 0 700 420"
-            className="w-full max-w-2xl h-auto opacity-70"
+            viewBox="0 0 800 500"
+            className="w-full max-w-3xl h-auto"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
             <defs>
-              <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.6" />
+              <radialGradient id="shadowL" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.25" />
                 <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
               </radialGradient>
-              <radialGradient id="glowTeal" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
+              <radialGradient id="shadowR" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
               </radialGradient>
-              <filter id="robotGlow">
+              <radialGradient id="bgGlowL" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#0891b2" stopOpacity="0.12" />
+                <stop offset="100%" stopColor="#0891b2" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient id="bgGlowR" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
+              </radialGradient>
+
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="eyeshine" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="3" result="blur" />
                 <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
               </filter>
-              <filter id="eyeGlow">
-                <feGaussianBlur stdDeviation="2" result="blur" />
-                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
-              <linearGradient id="bodyGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#164e63" />
-                <stop offset="100%" stopColor="#0e7490" />
+
+              {/* Left robot body gradient — steel blue */}
+              <linearGradient id="armorL" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1e3a5f" />
+                <stop offset="40%" stopColor="#1e4976" />
+                <stop offset="100%" stopColor="#0c2d4a" />
               </linearGradient>
-              <linearGradient id="bodyGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#134e4a" />
-                <stop offset="100%" stopColor="#0f766e" />
+              <linearGradient id="armorLLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2563a8" />
+                <stop offset="100%" stopColor="#1a4a80" />
               </linearGradient>
-              <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.05" />
+              <linearGradient id="armorLDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0f2540" />
+                <stop offset="100%" stopColor="#091929" />
+              </linearGradient>
+
+              {/* Right robot body gradient — slate teal */}
+              <linearGradient id="armorR" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0f3d3a" />
+                <stop offset="40%" stopColor="#145e5a" />
+                <stop offset="100%" stopColor="#0a2e2c" />
+              </linearGradient>
+              <linearGradient id="armorRLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0e7a74" />
+                <stop offset="100%" stopColor="#0a5e59" />
+              </linearGradient>
+              <linearGradient id="armorRDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#071e1d" />
+                <stop offset="100%" stopColor="#040f0e" />
+              </linearGradient>
+
+              {/* Visor gradients */}
+              <linearGradient id="visorL" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#001829" />
+                <stop offset="100%" stopColor="#001020" />
+              </linearGradient>
+              <linearGradient id="visorR" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#001a18" />
+                <stop offset="100%" stopColor="#000d0c" />
+              </linearGradient>
+
+              {/* Chest screen */}
+              <linearGradient id="screenL" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#0369a1" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#0c4a6e" stopOpacity="0.2" />
+              </linearGradient>
+              <linearGradient id="screenR" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#0f766e" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#134e4a" stopOpacity="0.2" />
+              </linearGradient>
+
+              {/* Shoulder highlight */}
+              <linearGradient id="shoulderHL" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="shoulderHR" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
               </linearGradient>
             </defs>
 
-            {/* Ground line */}
-            <line x1="80" y1="400" x2="620" y2="400" stroke="#06b6d4" strokeWidth="1" opacity="0.2" />
-            <ellipse cx="210" cy="402" rx="80" ry="6" fill="#06b6d4" opacity="0.08" />
-            <ellipse cx="490" cy="402" rx="80" ry="6" fill="#2dd4bf" opacity="0.08" />
+            {/* Ambient glow blobs behind robots */}
+            <ellipse cx="215" cy="280" rx="130" ry="160" fill="url(#bgGlowL)" />
+            <ellipse cx="585" cy="280" rx="130" ry="160" fill="url(#bgGlowR)" />
 
-            {/* ── ROBOT LEFT ── */}
+            {/* Ground shadows */}
+            <ellipse cx="215" cy="470" rx="100" ry="12" fill="url(#shadowL)" />
+            <ellipse cx="585" cy="470" rx="100" ry="12" fill="url(#shadowR)" />
+
+            {/* ═══════════════════════════════
+                ROBOT LEFT — steel blue
+            ═══════════════════════════════ */}
             <g>
-              {/* Floating bob animation */}
-              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="3.2s" repeatCount="indefinite" additive="sum" />
+              {/* Gentle idle float */}
+              <animateTransform attributeName="transform" type="translate"
+                values="0,0; 0,-7; 0,0" dur="4s" calcMode="spline"
+                keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                repeatCount="indefinite" additive="sum" />
 
-              {/* Neck */}
-              <rect x="193" y="178" width="34" height="18" rx="4" fill="#0e7490" opacity="0.9" />
-
-              {/* Head */}
-              <rect x="160" y="110" width="100" height="75" rx="14" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.5" />
-              {/* Head top antenna */}
-              <rect x="205" y="88" width="10" height="24" rx="4" fill="#06b6d4" opacity="0.9" />
-              <circle cx="210" cy="82" r="7" fill="#22d3ee" filter="url(#eyeGlow)">
-                <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
+              {/* ── HEAD ── */}
+              {/* Head main */}
+              <rect x="163" y="100" width="104" height="90" rx="18" fill="url(#armorL)" stroke="#1d4ed8" strokeWidth="1" opacity="0.95" />
+              {/* Head top bevel */}
+              <rect x="173" y="100" width="84" height="12" rx="6" fill="url(#armorLLight)" opacity="0.6" />
+              {/* Head side details */}
+              <rect x="163" y="118" width="8" height="40" rx="3" fill="url(#armorLDark)" />
+              <rect x="259" y="118" width="8" height="40" rx="3" fill="url(#armorLDark)" />
+              {/* Ear sensor discs */}
+              <circle cx="161" cy="142" r="10" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="1" />
+              <circle cx="161" cy="142" r="5" fill="#1e40af" opacity="0.8" />
+              <circle cx="161" cy="142" r="2.5" fill="#60a5fa">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite" />
               </circle>
-              {/* Visor */}
-              <rect x="170" y="122" width="80" height="30" rx="8" fill="#082f49" stroke="#06b6d4" strokeWidth="1" opacity="0.95" />
+              <circle cx="269" cy="142" r="10" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="1" />
+              <circle cx="269" cy="142" r="5" fill="#1e40af" opacity="0.8" />
+              <circle cx="269" cy="142" r="2.5" fill="#60a5fa">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite" begin="1.4s" />
+              </circle>
+
+              {/* Antenna */}
+              <rect x="210" y="72" width="10" height="30" rx="4" fill="url(#armorLLight)" />
+              <rect x="207" y="98" width="16" height="6" rx="2" fill="url(#armorLLight)" />
+              <circle cx="215" cy="66" r="9" fill="#0ea5e9" filter="url(#glow)">
+                <animate attributeName="r" values="7;11;7" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+              </circle>
+              <circle cx="215" cy="66" r="4" fill="white" opacity="0.6" />
+
+              {/* Visor band */}
+              <rect x="174" y="120" width="82" height="36" rx="10" fill="url(#visorL)" stroke="#1e40af" strokeWidth="1" />
+              {/* Visor inner rim */}
+              <rect x="177" y="123" width="76" height="30" rx="8" fill="none" stroke="#1d4ed8" strokeWidth="0.5" opacity="0.5" />
+              {/* Visor glass sheen */}
+              <rect x="180" y="125" width="35" height="8" rx="4" fill="white" opacity="0.04" />
+
               {/* Eyes */}
-              <ellipse cx="192" cy="137" rx="10" ry="8" fill="#06b6d4" filter="url(#eyeGlow)">
-                <animate attributeName="rx" values="10;4;10" dur="4s" repeatCount="indefinite" />
+              <ellipse cx="200" cy="138" rx="13" ry="10" fill="#0284c7" filter="url(#eyeshine)">
+                <animate attributeName="ry" values="10;2;10" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.8 0 0.2 1; 0.8 0 0.2 1" />
               </ellipse>
-              <ellipse cx="228" cy="137" rx="10" ry="8" fill="#06b6d4" filter="url(#eyeGlow)">
-                <animate attributeName="rx" values="10;4;10" dur="4s" repeatCount="indefinite" />
+              <ellipse cx="230" cy="138" rx="13" ry="10" fill="#0284c7" filter="url(#eyeshine)">
+                <animate attributeName="ry" values="10;2;10" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.8 0 0.2 1; 0.8 0 0.2 1" begin="0.1s" />
               </ellipse>
-              <circle cx="192" cy="137" r="4" fill="white" opacity="0.9" />
-              <circle cx="228" cy="137" r="4" fill="white" opacity="0.9" />
-              {/* Mouth */}
-              <rect x="185" y="166" width="50" height="6" rx="3" fill="#06b6d4" opacity="0.6">
-                <animate attributeName="width" values="50;30;50" dur="3s" repeatCount="indefinite" />
-                <animate attributeName="x" values="185;195;185" dur="3s" repeatCount="indefinite" />
+              <circle cx="200" cy="136" r="5" fill="#7dd3fc" opacity="0.9" />
+              <circle cx="230" cy="136" r="5" fill="#7dd3fc" opacity="0.9" />
+              <circle cx="202" cy="134" r="2" fill="white" opacity="0.7" />
+              <circle cx="232" cy="134" r="2" fill="white" opacity="0.7" />
+
+              {/* Lower face — mouth grille */}
+              <rect x="183" y="160" width="64" height="18" rx="6" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.5" />
+              <rect x="188" y="164" width="8" height="10" rx="2" fill="#0284c7" opacity="0.5">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.6s" repeatCount="indefinite" />
+              </rect>
+              <rect x="200" y="164" width="8" height="10" rx="2" fill="#0284c7" opacity="0.4">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.9s" repeatCount="indefinite" />
+              </rect>
+              <rect x="212" y="164" width="8" height="10" rx="2" fill="#0284c7" opacity="0.6">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.3s" repeatCount="indefinite" />
+              </rect>
+              <rect x="224" y="164" width="8" height="10" rx="2" fill="#0284c7" opacity="0.35">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.1s" repeatCount="indefinite" />
+              </rect>
+              <rect x="236" y="164" width="8" height="10" rx="2" fill="#0284c7" opacity="0.5">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.7s" repeatCount="indefinite" />
               </rect>
 
-              {/* Body */}
-              <rect x="155" y="196" width="110" height="120" rx="12" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.5" />
-              {/* Chest panel */}
-              <rect x="170" y="210" width="80" height="55" rx="8" fill="url(#panelGrad)" stroke="#06b6d4" strokeWidth="0.8" />
-              <circle cx="210" cy="228" r="12" fill="#082f49" stroke="#22d3ee" strokeWidth="1">
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite" />
+              {/* ── NECK ── */}
+              <rect x="200" y="190" width="30" height="22" rx="5" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.5" />
+              <rect x="206" y="193" width="18" height="16" rx="3" fill="#0c1f3a" />
+
+              {/* ── TORSO ── */}
+              {/* Main torso */}
+              <rect x="150" y="212" width="130" height="140" rx="16" fill="url(#armorL)" stroke="#1d4ed8" strokeWidth="1" />
+              {/* Torso top bevel */}
+              <rect x="160" y="212" width="110" height="14" rx="8" fill="url(#armorLLight)" opacity="0.5" />
+              {/* Torso center spine */}
+              <rect x="210" y="226" width="10" height="120" rx="3" fill="url(#armorLDark)" opacity="0.8" />
+              {/* Torso side panels */}
+              <rect x="153" y="228" width="20" height="90" rx="6" fill="url(#armorLDark)" opacity="0.7" />
+              <rect x="257" y="228" width="20" height="90" rx="6" fill="url(#armorLDark)" opacity="0.7" />
+
+              {/* Chest screen */}
+              <rect x="170" y="228" width="90" height="60" rx="10" fill="url(#screenL)" stroke="#1d4ed8" strokeWidth="0.8" />
+              <rect x="174" y="232" width="82" height="52" rx="8" fill="#020e1f" opacity="0.8" />
+              {/* Screen content — pulsing core */}
+              <circle cx="215" cy="258" r="16" fill="#0369a1" opacity="0.2">
+                <animate attributeName="r" values="14;18;14" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
               </circle>
-              <circle cx="210" cy="228" r="7" fill="#06b6d4" opacity="0.8" />
-              <rect x="178" y="248" width="15" height="8" rx="3" fill="#22d3ee" opacity="0.7">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite" />
-              </rect>
-              <rect x="199" y="248" width="15" height="8" rx="3" fill="#22d3ee" opacity="0.5">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite" />
-              </rect>
-              <rect x="220" y="248" width="15" height="8" rx="3" fill="#22d3ee" opacity="0.3">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite" />
-              </rect>
-
-              {/* LEFT arm (waving) */}
-              <g style={{ transformOrigin: '152px 210px' }}>
-                <animateTransform attributeName="transform" type="rotate" values="0 152 210; -35 152 210; 0 152 210" dur="2s" repeatCount="indefinite" additive="sum" />
-                <rect x="120" y="196" width="32" height="85" rx="12" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.2" />
-                <rect x="122" y="270" width="28" height="28" rx="10" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
-                {/* Fingers hint */}
-                <rect x="124" y="296" width="6" height="14" rx="3" fill="#06b6d4" opacity="0.7" />
-                <rect x="133" y="297" width="6" height="15" rx="3" fill="#06b6d4" opacity="0.7" />
-                <rect x="142" y="296" width="6" height="14" rx="3" fill="#06b6d4" opacity="0.7" />
-              </g>
-
-              {/* RIGHT arm (slight wave back) */}
-              <g style={{ transformOrigin: '268px 210px' }}>
-                <animateTransform attributeName="transform" type="rotate" values="0 268 210; 15 268 210; 0 268 210" dur="2.6s" repeatCount="indefinite" additive="sum" />
-                <rect x="268" y="196" width="32" height="85" rx="12" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1.2" />
-                <rect x="270" y="270" width="28" height="28" rx="10" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
-              </g>
-
-              {/* Legs */}
-              <rect x="167" y="316" width="36" height="70" rx="10" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1" />
-              <rect x="217" y="316" width="36" height="70" rx="10" fill="url(#bodyGradLeft)" stroke="#06b6d4" strokeWidth="1" />
-              {/* Feet */}
-              <rect x="160" y="378" width="50" height="20" rx="8" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
-              <rect x="210" y="378" width="50" height="20" rx="8" fill="#0e7490" stroke="#06b6d4" strokeWidth="1" />
-
-              {/* Glow under body */}
-              <ellipse cx="210" cy="398" rx="55" ry="5" fill="url(#glowCyan)" />
-            </g>
-
-            {/* ── ROBOT RIGHT ── */}
-            <g>
-              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="2.8s" repeatCount="indefinite" begin="0.5s" additive="sum" />
-
-              {/* Neck */}
-              <rect x="473" y="178" width="34" height="18" rx="4" fill="#0f766e" opacity="0.9" />
-
-              {/* Head */}
-              <rect x="440" y="110" width="100" height="75" rx="14" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.5" />
-              {/* Head top antenna */}
-              <rect x="475" y="88" width="10" height="24" rx="4" fill="#2dd4bf" opacity="0.9" />
-              <circle cx="480" cy="82" r="7" fill="#5eead4" filter="url(#eyeGlow)">
-                <animate attributeName="r" values="6;9;6" dur="2.4s" repeatCount="indefinite" begin="0.3s" />
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite" begin="0.3s" />
+              <circle cx="215" cy="258" r="10" fill="#0284c7" opacity="0.6" filter="url(#soft)">
+                <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
               </circle>
-              {/* Visor */}
-              <rect x="450" y="122" width="80" height="30" rx="8" fill="#042f2e" stroke="#2dd4bf" strokeWidth="1" opacity="0.95" />
-              {/* Eyes */}
-              <ellipse cx="472" cy="137" rx="10" ry="8" fill="#2dd4bf" filter="url(#eyeGlow)">
-                <animate attributeName="rx" values="10;4;10" dur="4.5s" repeatCount="indefinite" begin="0.5s" />
-              </ellipse>
-              <ellipse cx="508" cy="137" rx="10" ry="8" fill="#2dd4bf" filter="url(#eyeGlow)">
-                <animate attributeName="rx" values="10;4;10" dur="4.5s" repeatCount="indefinite" begin="0.5s" />
-              </ellipse>
-              <circle cx="472" cy="137" r="4" fill="white" opacity="0.9" />
-              <circle cx="508" cy="137" r="4" fill="white" opacity="0.9" />
-              {/* Mouth — smile curve */}
-              <path d="M465 166 Q490 176 515 166" stroke="#2dd4bf" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.8">
-                <animate attributeName="d" values="M465 166 Q490 176 515 166; M465 166 Q490 172 515 166; M465 166 Q490 176 515 166" dur="3s" repeatCount="indefinite" />
-              </path>
+              <circle cx="215" cy="258" r="5" fill="#7dd3fc" opacity="0.9" />
+              <circle cx="216" cy="256" r="2" fill="white" opacity="0.5" />
+              {/* Screen bars */}
+              <rect x="178" y="273" width="20" height="4" rx="2" fill="#0284c7" opacity="0.5">
+                <animate attributeName="width" values="20;30;20" dur="2.4s" repeatCount="indefinite" />
+              </rect>
+              <rect x="201" y="273" width="14" height="4" rx="2" fill="#0284c7" opacity="0.35">
+                <animate attributeName="width" values="14;22;14" dur="3s" repeatCount="indefinite" />
+              </rect>
+              <rect x="178" y="280" width="35" height="3" rx="1.5" fill="#0284c7" opacity="0.2">
+                <animate attributeName="opacity" values="0.1;0.35;0.1" dur="1.8s" repeatCount="indefinite" />
+              </rect>
 
-              {/* Body */}
-              <rect x="435" y="196" width="110" height="120" rx="12" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.5" />
-              {/* Chest panel */}
-              <rect x="450" y="210" width="80" height="55" rx="8" fill="url(#panelGrad)" stroke="#2dd4bf" strokeWidth="0.8" />
-              <circle cx="490" cy="228" r="12" fill="#042f2e" stroke="#5eead4" strokeWidth="1">
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite" />
+              {/* Lower torso belt */}
+              <rect x="155" y="342" width="120" height="14" rx="5" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.5" />
+              <circle cx="215" cy="349" r="5" fill="#0284c7" opacity="0.6">
+                <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" />
               </circle>
-              <circle cx="490" cy="228" r="7" fill="#2dd4bf" opacity="0.8" />
-              <rect x="458" y="248" width="15" height="8" rx="3" fill="#5eead4" opacity="0.7">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite" />
-              </rect>
-              <rect x="479" y="248" width="15" height="8" rx="3" fill="#5eead4" opacity="0.5">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
-              </rect>
-              <rect x="500" y="248" width="15" height="8" rx="3" fill="#5eead4" opacity="0.3">
-                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite" />
-              </rect>
 
-              {/* LEFT arm (slight wave) */}
-              <g style={{ transformOrigin: '432px 210px' }}>
-                <animateTransform attributeName="transform" type="rotate" values="0 432 210; -12 432 210; 0 432 210" dur="2.8s" repeatCount="indefinite" begin="0.4s" additive="sum" />
-                <rect x="400" y="196" width="32" height="85" rx="12" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.2" />
-                <rect x="402" y="270" width="28" height="28" rx="10" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
-              </g>
+              {/* ── SHOULDER PADS ── */}
+              <ellipse cx="148" cy="222" rx="22" ry="16" fill="url(#armorLLight)" stroke="#1e40af" strokeWidth="0.8" />
+              <ellipse cx="148" cy="220" rx="16" ry="8" fill="url(#shoulderHL)" opacity="0.7" />
+              <ellipse cx="282" cy="222" rx="22" ry="16" fill="url(#armorLLight)" stroke="#1e40af" strokeWidth="0.8" />
+              <ellipse cx="282" cy="220" rx="16" ry="8" fill="url(#shoulderHL)" opacity="0.7" />
 
-              {/* RIGHT arm (waving toward center) */}
-              <g style={{ transformOrigin: '548px 210px' }}>
-                <animateTransform attributeName="transform" type="rotate" values="0 548 210; 38 548 210; 0 548 210" dur="2s" repeatCount="indefinite" begin="0.2s" additive="sum" />
-                <rect x="548" y="196" width="32" height="85" rx="12" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1.2" />
-                <rect x="550" y="270" width="28" height="28" rx="10" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
+              {/* ── LEFT ARM (waving up, smooth sine) ── */}
+              <g>
+                <animateTransform attributeName="transform" type="rotate"
+                  values="-5 132 228; -38 132 228; -5 132 228" dur="3.6s"
+                  calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                  repeatCount="indefinite" additive="sum" />
+                {/* Upper arm */}
+                <rect x="118" y="222" width="30" height="72" rx="12" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.8" />
+                <rect x="122" y="226" width="10" height="64" rx="5" fill="url(#armorLLight)" opacity="0.4" />
+                {/* Elbow joint */}
+                <circle cx="133" cy="298" r="13" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.8" />
+                <circle cx="133" cy="298" r="7" fill="url(#armorL)" />
+                <circle cx="133" cy="298" r="3" fill="#1e40af" opacity="0.7" />
+                {/* Forearm */}
+                <rect x="119" y="306" width="28" height="60" rx="10" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.8" />
+                <rect x="124" y="312" width="8" height="48" rx="4" fill="url(#armorLLight)" opacity="0.35" />
+                {/* Hand */}
+                <rect x="116" y="360" width="34" height="26" rx="10" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.8" />
                 {/* Fingers */}
-                <rect x="552" y="296" width="6" height="14" rx="3" fill="#2dd4bf" opacity="0.7" />
-                <rect x="561" y="297" width="6" height="15" rx="3" fill="#2dd4bf" opacity="0.7" />
-                <rect x="570" y="296" width="6" height="14" rx="3" fill="#2dd4bf" opacity="0.7" />
+                <rect x="118" y="384" width="7" height="18" rx="3.5" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.5" />
+                <rect x="128" y="383" width="7" height="20" rx="3.5" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.5" />
+                <rect x="138" y="384" width="7" height="18" rx="3.5" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.5" />
+                {/* Wrist LED */}
+                <rect x="120" y="362" width="26" height="4" rx="2" fill="#0284c7" opacity="0.6">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.5s" repeatCount="indefinite" />
+                </rect>
               </g>
 
-              {/* Legs */}
-              <rect x="447" y="316" width="36" height="70" rx="10" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1" />
-              <rect x="497" y="316" width="36" height="70" rx="10" fill="url(#bodyGradRight)" stroke="#2dd4bf" strokeWidth="1" />
-              {/* Feet */}
-              <rect x="440" y="378" width="50" height="20" rx="8" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
-              <rect x="490" y="378" width="50" height="20" rx="8" fill="#0f766e" stroke="#2dd4bf" strokeWidth="1" />
+              {/* ── RIGHT ARM (relaxed, gentle sway) ── */}
+              <g>
+                <animateTransform attributeName="transform" type="rotate"
+                  values="5 298 228; 12 298 228; 5 298 228" dur="4.2s"
+                  calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                  repeatCount="indefinite" additive="sum" begin="0.8s" />
+                <rect x="282" y="222" width="30" height="72" rx="12" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.8" />
+                <rect x="284" y="226" width="10" height="64" rx="5" fill="url(#armorLLight)" opacity="0.4" />
+                <circle cx="297" cy="298" r="13" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.8" />
+                <circle cx="297" cy="298" r="7" fill="url(#armorL)" />
+                <circle cx="297" cy="298" r="3" fill="#1e40af" opacity="0.7" />
+                <rect x="283" y="306" width="28" height="60" rx="10" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.8" />
+                <rect x="288" y="312" width="8" height="48" rx="4" fill="url(#armorLLight)" opacity="0.35" />
+                <rect x="283" y="360" width="34" height="26" rx="10" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.8" />
+                <rect x="285" y="384" width="7" height="18" rx="3.5" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.5" />
+                <rect x="295" y="383" width="7" height="20" rx="3.5" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.5" />
+                <rect x="305" y="384" width="7" height="18" rx="3.5" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.5" />
+              </g>
 
-              {/* Glow under body */}
-              <ellipse cx="490" cy="398" rx="55" ry="5" fill="url(#glowTeal)" />
+              {/* ── LEGS ── */}
+              {/* Hip block */}
+              <rect x="158" y="356" width="114" height="22" rx="8" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.5" />
+              {/* Left leg */}
+              <rect x="163" y="374" width="42" height="72" rx="12" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.8" />
+              <rect x="167" y="378" width="14" height="64" rx="6" fill="url(#armorLLight)" opacity="0.3" />
+              {/* Knee joint */}
+              <ellipse cx="184" cy="418" rx="20" ry="10" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.5" />
+              {/* Right leg */}
+              <rect x="225" y="374" width="42" height="72" rx="12" fill="url(#armorL)" stroke="#1e40af" strokeWidth="0.8" />
+              <rect x="229" y="378" width="14" height="64" rx="6" fill="url(#armorLLight)" opacity="0.3" />
+              <ellipse cx="246" cy="418" rx="20" ry="10" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.5" />
+              {/* Feet */}
+              <rect x="155" y="440" width="58" height="22" rx="9" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.8" />
+              <rect x="158" y="440" width="52" height="8" rx="4" fill="url(#armorLLight)" opacity="0.35" />
+              <rect x="217" y="440" width="58" height="22" rx="9" fill="url(#armorLDark)" stroke="#1e40af" strokeWidth="0.8" />
+              <rect x="220" y="440" width="52" height="8" rx="4" fill="url(#armorLLight)" opacity="0.35" />
+
+              {/* Ankle LED strips */}
+              <rect x="158" y="457" width="52" height="3" rx="1.5" fill="#0284c7" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite" />
+              </rect>
+              <rect x="220" y="457" width="52" height="3" rx="1.5" fill="#0284c7" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite" begin="1.5s" />
+              </rect>
             </g>
 
-            {/* Center connection beam between robots */}
-            <line x1="270" y1="250" x2="430" y2="250" stroke="url(#panelGrad)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4">
-              <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite" />
-              <animate attributeName="strokeDashoffset" values="0;-20;0" dur="1.5s" repeatCount="indefinite" />
-            </line>
-            <circle cx="350" cy="250" r="5" fill="#22d3ee" opacity="0.6">
-              <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+            {/* ═══════════════════════════════
+                ROBOT RIGHT — teal/slate
+            ═══════════════════════════════ */}
+            <g>
+              {/* Gentle idle float, offset phase */}
+              <animateTransform attributeName="transform" type="translate"
+                values="0,0; 0,-6; 0,0" dur="3.8s" calcMode="spline"
+                keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                repeatCount="indefinite" additive="sum" begin="0.7s" />
+
+              {/* ── HEAD ── */}
+              <rect x="483" y="100" width="104" height="90" rx="18" fill="url(#armorR)" stroke="#0d9488" strokeWidth="1" opacity="0.95" />
+              <rect x="493" y="100" width="84" height="12" rx="6" fill="url(#armorRLight)" opacity="0.6" />
+              <rect x="483" y="118" width="8" height="40" rx="3" fill="url(#armorRDark)" />
+              <rect x="579" y="118" width="8" height="40" rx="3" fill="url(#armorRDark)" />
+
+              {/* Ear sensors */}
+              <circle cx="481" cy="142" r="10" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="1" />
+              <circle cx="481" cy="142" r="5" fill="#0d9488" opacity="0.8" />
+              <circle cx="481" cy="142" r="2.5" fill="#34d399">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3.1s" repeatCount="indefinite" begin="0.5s" />
+              </circle>
+              <circle cx="589" cy="142" r="10" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="1" />
+              <circle cx="589" cy="142" r="5" fill="#0d9488" opacity="0.8" />
+              <circle cx="589" cy="142" r="2.5" fill="#34d399">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3.1s" repeatCount="indefinite" begin="1.9s" />
+              </circle>
+
+              {/* Antenna — slightly different shape, two fins */}
+              <rect x="526" y="74" width="8" height="28" rx="3" fill="url(#armorRLight)" />
+              <rect x="516" y="90" width="8" height="14" rx="3" fill="url(#armorRLight)" opacity="0.7" />
+              <rect x="536" y="90" width="8" height="14" rx="3" fill="url(#armorRLight)" opacity="0.7" />
+              <rect x="523" y="98" width="14" height="6" rx="2" fill="url(#armorRLight)" />
+              <circle cx="530" cy="68" r="9" fill="#06b6d4" filter="url(#glow)">
+                <animate attributeName="r" values="7;11;7" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" begin="0.4s" />
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" begin="0.4s" />
+              </circle>
+              <circle cx="530" cy="68" r="4" fill="white" opacity="0.55" />
+
+              {/* Visor */}
+              <rect x="494" y="120" width="82" height="36" rx="10" fill="url(#visorR)" stroke="#0d9488" strokeWidth="1" />
+              <rect x="497" y="123" width="76" height="30" rx="8" fill="none" stroke="#0f766e" strokeWidth="0.5" opacity="0.5" />
+              <rect x="500" y="125" width="35" height="8" rx="4" fill="white" opacity="0.04" />
+
+              {/* Eyes */}
+              <ellipse cx="520" cy="138" rx="13" ry="10" fill="#0d9488" filter="url(#eyeshine)">
+                <animate attributeName="ry" values="10;2;10" dur="5.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.8 0 0.2 1; 0.8 0 0.2 1" begin="0.6s" />
+              </ellipse>
+              <ellipse cx="550" cy="138" rx="13" ry="10" fill="#0d9488" filter="url(#eyeshine)">
+                <animate attributeName="ry" values="10;2;10" dur="5.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.8 0 0.2 1; 0.8 0 0.2 1" begin="0.7s" />
+              </ellipse>
+              <circle cx="520" cy="136" r="5" fill="#5eead4" opacity="0.9" />
+              <circle cx="550" cy="136" r="5" fill="#5eead4" opacity="0.9" />
+              <circle cx="522" cy="134" r="2" fill="white" opacity="0.7" />
+              <circle cx="552" cy="134" r="2" fill="white" opacity="0.7" />
+
+              {/* Mouth — elegant smile arc */}
+              <path d="M500 163 Q535 178 570 163" stroke="#0d9488" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.75" />
+              <path d="M505 163 Q535 175 565 163" stroke="#5eead4" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.4" />
+
+              {/* ── NECK ── */}
+              <rect x="520" y="190" width="30" height="22" rx="5" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.5" />
+              <rect x="526" y="193" width="18" height="16" rx="3" fill="#041a19" />
+
+              {/* ── TORSO ── */}
+              <rect x="470" y="212" width="130" height="140" rx="16" fill="url(#armorR)" stroke="#0d9488" strokeWidth="1" />
+              <rect x="480" y="212" width="110" height="14" rx="8" fill="url(#armorRLight)" opacity="0.5" />
+              <rect x="530" y="226" width="10" height="120" rx="3" fill="url(#armorRDark)" opacity="0.8" />
+              <rect x="473" y="228" width="20" height="90" rx="6" fill="url(#armorRDark)" opacity="0.7" />
+              <rect x="577" y="228" width="20" height="90" rx="6" fill="url(#armorRDark)" opacity="0.7" />
+
+              {/* Chest screen */}
+              <rect x="490" y="228" width="90" height="60" rx="10" fill="url(#screenR)" stroke="#0d9488" strokeWidth="0.8" />
+              <rect x="494" y="232" width="82" height="52" rx="8" fill="#02100f" opacity="0.8" />
+              <circle cx="535" cy="258" r="16" fill="#0d9488" opacity="0.18">
+                <animate attributeName="r" values="14;18;14" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" begin="0.5s" />
+                <animate attributeName="opacity" values="0.12;0.28;0.12" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" begin="0.5s" />
+              </circle>
+              <circle cx="535" cy="258" r="10" fill="#0d9488" opacity="0.65" filter="url(#soft)">
+                <animate attributeName="opacity" values="0.4;0.95;0.4" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" begin="0.5s" />
+              </circle>
+              <circle cx="535" cy="258" r="5" fill="#5eead4" opacity="0.9" />
+              <circle cx="536" cy="256" r="2" fill="white" opacity="0.5" />
+              <rect x="498" y="273" width="20" height="4" rx="2" fill="#0d9488" opacity="0.5">
+                <animate attributeName="width" values="20;32;20" dur="2.8s" repeatCount="indefinite" begin="0.3s" />
+              </rect>
+              <rect x="521" y="273" width="14" height="4" rx="2" fill="#0d9488" opacity="0.35">
+                <animate attributeName="width" values="14;24;14" dur="3.4s" repeatCount="indefinite" begin="0.3s" />
+              </rect>
+              <rect x="498" y="280" width="35" height="3" rx="1.5" fill="#0d9488" opacity="0.2">
+                <animate attributeName="opacity" values="0.1;0.35;0.1" dur="2.2s" repeatCount="indefinite" begin="0.5s" />
+              </rect>
+
+              {/* Belt */}
+              <rect x="475" y="342" width="120" height="14" rx="5" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.5" />
+              <circle cx="535" cy="349" r="5" fill="#0d9488" opacity="0.6">
+                <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.8s" repeatCount="indefinite" begin="0.5s" />
+              </circle>
+
+              {/* ── SHOULDER PADS ── */}
+              <ellipse cx="468" cy="222" rx="22" ry="16" fill="url(#armorRLight)" stroke="#0d9488" strokeWidth="0.8" />
+              <ellipse cx="468" cy="220" rx="16" ry="8" fill="url(#shoulderHR)" opacity="0.7" />
+              <ellipse cx="602" cy="222" rx="22" ry="16" fill="url(#armorRLight)" stroke="#0d9488" strokeWidth="0.8" />
+              <ellipse cx="602" cy="220" rx="16" ry="8" fill="url(#shoulderHR)" opacity="0.7" />
+
+              {/* ── LEFT ARM (relaxed slight sway) ── */}
+              <g>
+                <animateTransform attributeName="transform" type="rotate"
+                  values="-5 452 228; -14 452 228; -5 452 228" dur="4s"
+                  calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                  repeatCount="indefinite" additive="sum" begin="0.3s" />
+                <rect x="438" y="222" width="30" height="72" rx="12" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.8" />
+                <rect x="442" y="226" width="10" height="64" rx="5" fill="url(#armorRLight)" opacity="0.4" />
+                <circle cx="453" cy="298" r="13" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.8" />
+                <circle cx="453" cy="298" r="7" fill="url(#armorR)" />
+                <circle cx="453" cy="298" r="3" fill="#0d9488" opacity="0.7" />
+                <rect x="439" y="306" width="28" height="60" rx="10" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.8" />
+                <rect x="444" y="312" width="8" height="48" rx="4" fill="url(#armorRLight)" opacity="0.35" />
+                <rect x="436" y="360" width="34" height="26" rx="10" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.8" />
+                <rect x="438" y="384" width="7" height="18" rx="3.5" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.5" />
+                <rect x="448" y="383" width="7" height="20" rx="3.5" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.5" />
+                <rect x="458" y="384" width="7" height="18" rx="3.5" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.5" />
+              </g>
+
+              {/* ── RIGHT ARM (waving up toward viewer) ── */}
+              <g>
+                <animateTransform attributeName="transform" type="rotate"
+                  values="5 618 228; 42 618 228; 5 618 228" dur="3.8s"
+                  calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                  repeatCount="indefinite" additive="sum" begin="0.2s" />
+                <rect x="602" y="222" width="30" height="72" rx="12" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.8" />
+                <rect x="604" y="226" width="10" height="64" rx="5" fill="url(#armorRLight)" opacity="0.4" />
+                <circle cx="617" cy="298" r="13" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.8" />
+                <circle cx="617" cy="298" r="7" fill="url(#armorR)" />
+                <circle cx="617" cy="298" r="3" fill="#0d9488" opacity="0.7" />
+                <rect x="603" y="306" width="28" height="60" rx="10" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.8" />
+                <rect x="608" y="312" width="8" height="48" rx="4" fill="url(#armorRLight)" opacity="0.35" />
+                <rect x="603" y="360" width="34" height="26" rx="10" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.8" />
+                <rect x="605" y="384" width="7" height="18" rx="3.5" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.5" />
+                <rect x="615" y="383" width="7" height="20" rx="3.5" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.5" />
+                <rect x="625" y="384" width="7" height="18" rx="3.5" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.5" />
+                <rect x="606" y="362" width="26" height="4" rx="2" fill="#0d9488" opacity="0.6">
+                  <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.8s" repeatCount="indefinite" begin="0.2s" />
+                </rect>
+              </g>
+
+              {/* ── LEGS ── */}
+              <rect x="478" y="356" width="114" height="22" rx="8" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.5" />
+              <rect x="483" y="374" width="42" height="72" rx="12" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.8" />
+              <rect x="487" y="378" width="14" height="64" rx="6" fill="url(#armorRLight)" opacity="0.3" />
+              <ellipse cx="504" cy="418" rx="20" ry="10" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.5" />
+              <rect x="545" y="374" width="42" height="72" rx="12" fill="url(#armorR)" stroke="#0d9488" strokeWidth="0.8" />
+              <rect x="549" y="378" width="14" height="64" rx="6" fill="url(#armorRLight)" opacity="0.3" />
+              <ellipse cx="566" cy="418" rx="20" ry="10" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.5" />
+              <rect x="475" y="440" width="58" height="22" rx="9" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.8" />
+              <rect x="478" y="440" width="52" height="8" rx="4" fill="url(#armorRLight)" opacity="0.35" />
+              <rect x="537" y="440" width="58" height="22" rx="9" fill="url(#armorRDark)" stroke="#0d9488" strokeWidth="0.8" />
+              <rect x="540" y="440" width="52" height="8" rx="4" fill="url(#armorRLight)" opacity="0.35" />
+              <rect x="478" y="457" width="52" height="3" rx="1.5" fill="#0d9488" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.3s" repeatCount="indefinite" begin="0.5s" />
+              </rect>
+              <rect x="540" y="457" width="52" height="3" rx="1.5" fill="#0d9488" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.3s" repeatCount="indefinite" begin="2s" />
+              </rect>
+            </g>
+
+            {/* Subtle connection particle between robots */}
+            <circle r="2.5" fill="#22d3ee" opacity="0.5" filter="url(#soft)">
+              <animateMotion dur="5s" repeatCount="indefinite" calcMode="spline"
+                keySplines="0.45 0 0.55 1"
+                path="M340,260 Q400,230 460,260" />
+              <animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite" />
+            </circle>
+            <circle r="2" fill="#a5f3fc" opacity="0.4" filter="url(#soft)">
+              <animateMotion dur="5s" repeatCount="indefinite" begin="2.5s" calcMode="spline"
+                keySplines="0.45 0 0.55 1"
+                path="M460,260 Q400,230 340,260" />
+              <animate attributeName="opacity" values="0;0.6;0" dur="5s" repeatCount="indefinite" begin="2.5s" />
             </circle>
           </svg>
         </div>
