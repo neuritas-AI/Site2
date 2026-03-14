@@ -13,8 +13,8 @@ export default function AIVoiceCaller() {
         title={t('aiVoiceCaller.title1').toUpperCase()}
         subtitle={t('aiVoiceCaller.title2').toUpperCase()}
         description={t('aiVoiceCaller.description')}
-        backgroundImage="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920"
-        overlayClassName="bg-gradient-to-b from-black/65 via-black/55 to-black"
+        backgroundImage="/robot-voice-caller.png"
+        overlayClassName="bg-gradient-to-b from-black/70 via-black/60 to-black"
         scrollTarget="content"
       />
 
