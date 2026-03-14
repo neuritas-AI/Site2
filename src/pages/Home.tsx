@@ -253,15 +253,129 @@ export default function Home() {
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
 
             <div className="relative p-12 md:p-16 rounded-3xl border border-white/10 backdrop-blur-xl overflow-hidden">
-              <img
-                src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Futuristic AI network visualization"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'hue-rotate(160deg) saturate(1.4) brightness(0.35)' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-cyan-500/5" />
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 800 400"
+                preserveAspectRatio="xMidYMid slice"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ opacity: 0.2 }}
+              >
+                <defs>
+                  <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#06b6d4" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
+                  </radialGradient>
+                  <radialGradient id="nodeGlowPurple" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#a855f7" stopOpacity="1" />
+                    <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+                  </radialGradient>
+                  <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.15" />
+                    <stop offset="70%" stopColor="#06b6d4" stopOpacity="0.05" />
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
+                  </radialGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="2.5" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="glowStrong">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <clipPath id="lensClip">
+                    <circle cx="530" cy="175" r="105" />
+                  </clipPath>
+                  <mask id="lensMask">
+                    <circle cx="530" cy="175" r="105" fill="white" />
+                  </mask>
+                </defs>
+
+                {/* Data network lines */}
+                <g stroke="#06b6d4" strokeWidth="0.6" opacity="0.5">
+                  <line x1="80" y1="60" x2="200" y2="130"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" /></line>
+                  <line x1="200" y1="130" x2="310" y2="80"><animate attributeName="opacity" values="0.5;0.9;0.5" dur="3.2s" repeatCount="indefinite" /></line>
+                  <line x1="200" y1="130" x2="280" y2="220"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite" /></line>
+                  <line x1="310" y1="80" x2="420" y2="140"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.8s" repeatCount="indefinite" /></line>
+                  <line x1="280" y1="220" x2="420" y2="140"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="4.5s" repeatCount="indefinite" /></line>
+                  <line x1="280" y1="220" x2="340" y2="320"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite" /></line>
+                  <line x1="420" y1="140" x2="500" y2="200"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.8s" repeatCount="indefinite" /></line>
+                  <line x1="500" y1="200" x2="600" y2="240"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4.2s" repeatCount="indefinite" /></line>
+                  <line x1="600" y1="240" x2="700" y2="180"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.9s" repeatCount="indefinite" /></line>
+                  <line x1="600" y1="240" x2="660" y2="340"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.7s" repeatCount="indefinite" /></line>
+                  <line x1="100" y1="300" x2="200" y2="350"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="5.2s" repeatCount="indefinite" /></line>
+                  <line x1="200" y1="350" x2="340" y2="320"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite" /></line>
+                  <line x1="340" y1="320" x2="500" y2="200" strokeDasharray="4 3"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.6s" repeatCount="indefinite" /></line>
+                  <line x1="80" y1="60" x2="100" y2="300" strokeDasharray="3 4"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="6s" repeatCount="indefinite" /></line>
+                  <line x1="700" y1="180" x2="720" y2="80"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="4.4s" repeatCount="indefinite" /></line>
+                  <line x1="420" y1="140" x2="310" y2="80" strokeDasharray="5 3"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="5.5s" repeatCount="indefinite" /></line>
+                </g>
+
+                {/* Purple accent lines */}
+                <g stroke="#a855f7" strokeWidth="0.5" opacity="0.35">
+                  <line x1="150" y1="180" x2="280" y2="220"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="6s" repeatCount="indefinite" /></line>
+                  <line x1="420" y1="140" x2="480" y2="80"><animate attributeName="opacity" values="0.15;0.45;0.15" dur="4.8s" repeatCount="indefinite" /></line>
+                  <line x1="600" y1="240" x2="550" y2="130"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.7s" repeatCount="indefinite" /></line>
+                </g>
+
+                {/* Data nodes — outer network */}
+                <g filter="url(#glow)">
+                  <circle cx="80" cy="60" r="4" fill="#06b6d4"><animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" /></circle>
+                  <circle cx="200" cy="130" r="5" fill="#06b6d4"><animate attributeName="r" values="4;6;4" dur="3.5s" repeatCount="indefinite" /></circle>
+                  <circle cx="310" cy="80" r="3.5" fill="#a855f7"><animate attributeName="r" values="3;5;3" dur="4s" repeatCount="indefinite" /></circle>
+                  <circle cx="280" cy="220" r="4" fill="#06b6d4"><animate attributeName="r" values="3;5;3" dur="2.8s" repeatCount="indefinite" /></circle>
+                  <circle cx="340" cy="320" r="3" fill="#a855f7"><animate attributeName="r" values="2.5;4;2.5" dur="4.5s" repeatCount="indefinite" /></circle>
+                  <circle cx="100" cy="300" r="3.5" fill="#06b6d4"><animate attributeName="r" values="3;4.5;3" dur="3.2s" repeatCount="indefinite" /></circle>
+                  <circle cx="200" cy="350" r="3" fill="#a855f7"><animate attributeName="r" values="2;4;2" dur="5s" repeatCount="indefinite" /></circle>
+                  <circle cx="600" cy="240" r="4.5" fill="#06b6d4"><animate attributeName="r" values="3.5;5.5;3.5" dur="3.8s" repeatCount="indefinite" /></circle>
+                  <circle cx="700" cy="180" r="3.5" fill="#a855f7"><animate attributeName="r" values="3;5;3" dur="4.2s" repeatCount="indefinite" /></circle>
+                  <circle cx="720" cy="80" r="3" fill="#06b6d4"><animate attributeName="r" values="2.5;4;2.5" dur="3.6s" repeatCount="indefinite" /></circle>
+                  <circle cx="660" cy="340" r="3" fill="#a855f7"><animate attributeName="r" values="2;4;2" dur="4.8s" repeatCount="indefinite" /></circle>
+                  <circle cx="150" cy="180" r="3" fill="#06b6d4"><animate attributeName="r" values="2.5;4;2.5" dur="5.5s" repeatCount="indefinite" /></circle>
+                  <circle cx="480" cy="80" r="3" fill="#a855f7"><animate attributeName="r" values="2;3.5;2" dur="4s" repeatCount="indefinite" /></circle>
+                </g>
+
+                {/* Highlighted nodes inside lens area — brighter */}
+                <g filter="url(#glowStrong)">
+                  <circle cx="420" cy="140" r="6" fill="#06b6d4"><animate attributeName="r" values="5;8;5" dur="2.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.8;1;0.8" dur="2.5s" repeatCount="indefinite" /></circle>
+                  <circle cx="500" cy="200" r="5.5" fill="#22d3ee"><animate attributeName="r" values="4.5;7;4.5" dur="3s" repeatCount="indefinite" /><animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" /></circle>
+                  <circle cx="550" cy="130" r="4" fill="#a855f7"><animate attributeName="r" values="3;5.5;3" dur="3.5s" repeatCount="indefinite" /></circle>
+                </g>
+
+                {/* Travelling data pulse along a path */}
+                <circle r="3" fill="#22d3ee" opacity="0.9" filter="url(#glow)">
+                  <animateMotion dur="6s" repeatCount="indefinite" path="M80,60 L200,130 L280,220 L340,320 L500,200 L600,240 L700,180" />
+                </circle>
+                <circle r="2.5" fill="#a855f7" opacity="0.8" filter="url(#glow)">
+                  <animateMotion dur="8s" repeatCount="indefinite" begin="2s" path="M720,80 L700,180 L600,240 L500,200 L420,140 L310,80 L200,130 L80,60" />
+                </circle>
+
+                {/* Lens glow fill */}
+                <circle cx="530" cy="175" r="105" fill="url(#lensGlow)" />
+
+                {/* Magnifying glass circle */}
+                <circle cx="530" cy="175" r="100" fill="none" stroke="#06b6d4" strokeWidth="2.5" opacity="0.9" filter="url(#glowStrong)" />
+                <circle cx="530" cy="175" r="100" fill="none" stroke="#22d3ee" strokeWidth="0.8" opacity="0.4" />
+
+                {/* Inner lens rim */}
+                <circle cx="530" cy="175" r="94" fill="none" stroke="#06b6d4" strokeWidth="0.5" strokeDasharray="6 4" opacity="0.5">
+                  <animateTransform attributeName="transform" type="rotate" from="0 530 175" to="360 530 175" dur="30s" repeatCount="indefinite" />
+                </circle>
+
+                {/* Scanning line inside lens */}
+                <line x1="430" y1="175" x2="630" y2="175" stroke="#06b6d4" strokeWidth="0.8" opacity="0.3" mask="url(#lensMask)">
+                  <animate attributeName="y1" values="110;240;110" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="y2" values="110;240;110" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite" />
+                </line>
+
+                {/* Handle */}
+                <line x1="607" y1="247" x2="670" y2="320" stroke="#06b6d4" strokeWidth="6" strokeLinecap="round" opacity="0.7" filter="url(#glow)" />
+                <line x1="607" y1="247" x2="670" y2="320" stroke="#22d3ee" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+
+                {/* Lens glare */}
+                <ellipse cx="488" cy="135" rx="22" ry="10" fill="white" opacity="0.04" transform="rotate(-30 488 135)" />
+              </svg>
+              <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/50" />
 
               <div className="relative z-10">
                 <div className="mb-8 flex justify-center">
