@@ -8,16 +8,19 @@ const generalColors = [
     icon: 'text-blue-400',
     iconBg: 'from-blue-500/20 to-cyan-500/20',
     border: 'border-blue-500/20',
+    hover: 'hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20',
   },
   {
     icon: 'text-purple-400',
     iconBg: 'from-purple-500/20 to-blue-500/20',
     border: 'border-purple-500/20',
+    hover: 'hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20',
   },
   {
     icon: 'text-blue-400',
     iconBg: 'from-blue-500/20 to-purple-500/20',
     border: 'border-blue-500/20',
+    hover: 'hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20',
   },
 ];
 
@@ -128,9 +131,9 @@ export default function WebsiteOptimization() {
               return (
                 <div
                   key={index}
-                  className={`flex gap-4 p-6 rounded-2xl bg-white/5 border ${color.border} backdrop-blur-sm`}
+                  className={`group flex gap-4 p-6 rounded-2xl bg-white/5 border ${color.border} ${color.hover} transition-all duration-300 backdrop-blur-sm`}
                 >
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${color.iconBg} flex items-center justify-center ${color.icon}`}>
+                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${color.iconBg} flex items-center justify-center ${color.icon} group-hover:scale-110 transition-transform duration-300`}>
                     {item.icon}
                   </div>
                   <p className="text-gray-300 leading-relaxed">{item.text}</p>
