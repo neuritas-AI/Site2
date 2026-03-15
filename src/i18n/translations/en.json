@@ -164,8 +164,8 @@
   },
   "chatbots": {
     "badge": "Chatbots",
-    "title1": "Intelligent",
-    "title2": "Chatbots",
+    "title1": "Chatbots",
+    "title2": "",
     "description": "Discover the power of AI chatbots that support your customers 24/7, respond automatically, and gather valuable insights.",
     "introductionBadge": "AI-Chatbot Technology",
     "introductionTitle": "The Future of Customer Interaction",
@@ -234,8 +234,8 @@
   },
   "websiteOptimization": {
     "badge": "Website Development",
-    "title1": "Website",
-    "title2": "Development",
+    "title1": "Website Development",
+    "title2": "",
     "description": "We build websites from scratch and upgrade existing ones to keep your site up-to-date with the latest technology, representing your business optimally online.",
     "introBadge": "Build & Upgrade",
     "introTitle": "Professional Website Development",
