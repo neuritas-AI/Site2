@@ -44,8 +44,8 @@
   },
   "aiTraining": {
     "badge": "AI Training",
-    "title1": "AI",
-    "title2": "Training",
+    "title1": "AI Training",
+    "title2": "",
     "description": "Learn how to optimally deploy AI in your business or daily life. From basic concepts to advanced strategies — we make the AI world accessible to everyone.",
     "introductionBadge": "Practical AI Knowledge",
     "introductionTitle": "Become An AI Expert",
@@ -124,8 +124,8 @@
   },
   "aiVoiceCaller": {
     "badge": "AI Voice Caller",
-    "title1": "AI Voice",
-    "title2": "Caller",
+    "title1": "AI Voice Caller",
+    "title2": "",
     "description": "Automate your phone calls with AI. Our Voice Caller conducts professional conversations on behalf of your company, schedules appointments, and saves you valuable time.",
     "introductionBadge": "Smart Telephony",
     "introductionTitle": "Calling Without Staff",
