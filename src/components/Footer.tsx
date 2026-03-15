@@ -111,7 +111,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-gray-400">
                   <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                  <a href="mailto:info@neuritas-ai.com" className="hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors">
+                  <a href="mailto:chat@neuritas-ai.com" className="hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors">
                     chat@neuritas-ai.com
                   </a>
                 </li>
