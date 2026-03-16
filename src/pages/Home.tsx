@@ -81,17 +81,17 @@ export default function Home() {
             <span className="text-sm text-cyan-400 font-medium">{t('hero.badge')}</span>
           </div>
 
-          <h1 className="text-7xl md:text-9xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold mb-6 tracking-tighter">
             <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient uppercase">
               {t('hero.title1')}
             </span>
             <span className="block text-white mt-2 uppercase">{t('hero.title2')}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-400 mb-4 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-4 max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
             {t('hero.description')}
           </p>
 

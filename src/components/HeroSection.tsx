@@ -68,18 +68,18 @@ export default function HeroSection({
           </div>
         )}
 
-        <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 tracking-tighter">
           <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient">
             {title}
           </span>
         </h1>
         {subtitle && (
-          <p className="text-xl md:text-2xl font-medium text-gray-300 mb-6 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-300 mb-6 max-w-3xl mx-auto">
             {subtitle}
           </p>
         )}
 
-        <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
           {description}
         </p>
       </div>
