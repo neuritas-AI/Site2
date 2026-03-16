@@ -150,14 +150,12 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-6">
-                <a
-                  href="/PRIVACYBELEID.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/privacy"
                   className="text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent text-sm transition-colors"
                 >
                   {t('footer.privacy')}
-                </a>
+                </Link>
                 <Link
                   to="/terms"
                   className="text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent text-sm transition-colors"
