@@ -116,7 +116,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-white">{t('footer.contact')}</h3>
+              <Link to="/contact" className="text-lg font-semibold mb-6 text-white hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors block">{t('footer.contact')}</Link>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-gray-400">
                   <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
