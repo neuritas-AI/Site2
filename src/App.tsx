@@ -14,6 +14,7 @@ import AppointmentSetting from './pages/AppointmentSetting';
 import AIVoiceCaller from './pages/AIVoiceCaller';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Terms from './pages/Terms';
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -52,6 +53,7 @@ function App() {
           <Route path="/ai-voice-caller" element={<AIVoiceCaller />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
 
         <Footer />
