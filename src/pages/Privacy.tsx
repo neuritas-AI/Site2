@@ -20,7 +20,7 @@ export default function Privacy() {
             </h1>
           </div>
 
-          <p className="text-gray-400 text-sm mb-12">Laatste update: 01/03/2026</p>
+          <p className="text-gray-400 text-sm mb-12">Laatste update: 16/03/2026</p>
 
           <div className="prose prose-invert prose-lg max-w-none">
             <section className="mb-12">
@@ -30,7 +30,7 @@ export default function Privacy() {
               </p>
               <div className="text-gray-300 leading-relaxed mb-4">
                 <p className="mb-2"><strong>Neuritas-AI</strong></p>
-                <p>Commanditaire vennootschap met beperkte aansprakelijkheid</p>
+                <p>Besloten vennootschap met beperkte aansprakelijkheid</p>
                 <p>Maatschappelijke zetel: Groeneweg 53, 2400 Mol</p>
                 <p>Ondernemingsnummer: 1035.569.723</p>
                 <p>E-mail: chat@neuritas-ai.com</p>
