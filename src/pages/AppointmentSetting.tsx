@@ -40,6 +40,17 @@ export default function AppointmentSetting() {
             </p>
           </div>
 
+          <div className="mb-32 relative rounded-3xl overflow-hidden">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <img
+                src="/Ai-training.png.png"
+                alt="AI Training Session"
+                className="w-full h-auto rounded-3xl border border-white/10 shadow-2xl shadow-cyan-500/10"
+              />
+            </div>
+          </div>
+
           <div className="mb-32 relative p-12 rounded-3xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-white/10 backdrop-blur-xl overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
