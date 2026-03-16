@@ -27,7 +27,7 @@ export default function Terms() {
                 Deze algemene voorwaarden zijn van toepassing op alle offertes opgesteld door en overeenkomsten aangegaan door:
               </p>
               <p className="text-gray-300 leading-relaxed mb-2">
-                <strong>Neuritas-AI</strong>, commanditaire vennootschap met beperkte aansprakelijkheid,<br />
+                <strong>Neuritas-AI</strong>, Besloten vennootschap met beperkte aansprakelijkheid,<br />
                 met maatschappelijke zetel te 2400 Mol, Groeneweg 53<br />
                 ingeschreven in de Kruispuntbank van Ondernemingen onder het nummer 1035.569.723
               </p>
