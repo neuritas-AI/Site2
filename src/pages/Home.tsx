@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu } from 'lucide-react';
+import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -139,7 +139,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <Zap className="w-8 h-8" />,
+                icon: <Bot className="w-8 h-8" />,
                 title: t('home.customerTitle'),
                 description: t('home.customerDesc'),
                 link: '/customer-engagement',
