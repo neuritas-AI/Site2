@@ -125,9 +125,14 @@ export default function Footer() {
 
           <div className="border-t border-white/5 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <p className="text-gray-500 text-sm">
-                © 2026 Neuritas-AI. {t('footer.rights')}
-              </p>
+              <div className="text-center md:text-left">
+                <p className="text-gray-500 text-sm">
+                  © 2026 Neuritas-AI. {t('footer.rights')}
+                </p>
+                <p className="text-gray-500 text-sm mt-1">
+                  BTW: BE 1035.569.723
+                </p>
+              </div>
 
               <div className="flex items-center gap-4">
                 {socialLinks.map((social) => (
