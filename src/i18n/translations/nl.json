@@ -366,5 +366,33 @@
   },
   "privacy": {
     "title": "Privacybeleid"
+  },
+  "faq": {
+    "badge": "Veelgestelde Vragen",
+    "title": "FAQ",
+    "subtitle": "Vind antwoorden op de meest gestelde vragen over onze AI-oplossingen",
+    "q1": "Wat is AI en hoe kan het mijn bedrijf helpen?",
+    "a1": "Kunstmatige Intelligentie (AI) is technologie die machines in staat stelt te leren van data en mensachtige taken uit te voeren. Voor uw bedrijf betekent dit: geautomatiseerde klantenservice via chatbots, efficiëntere planning met slimme afspraaksystemen, betere beslissingen door data-analyse, en tijdsbesparing door automatisering van repetitieve taken.",
+    "q2": "Hoeveel kost een AI-oplossing?",
+    "a2": "De kosten variëren per oplossing en afhankelijk van uw specifieke behoeften. Een chatbot kan vanaf €500/maand, terwijl complexere implementaties op maat geprijsd worden. We bieden altijd eerst een gratis consultatiegesprek aan om uw situatie te analyseren en een transparante offerte op te stellen.",
+    "q3": "Hoe lang duurt het om een AI-oplossing te implementeren?",
+    "a3": "De implementatietijd hangt af van de complexiteit:\n• Simpele chatbot: 2-4 weken\n• Website-optimalisatie: 4-6 weken\n• AI Voice Caller: 3-5 weken\n• Custom AI-oplossingen: 6-12 weken\n\nWe werken volgens een duidelijke planning en houden u tijdens het hele proces op de hoogte.",
+    "q4": "Heeft mijn bedrijf technische kennis nodig om AI te gebruiken?",
+    "a4": "Nee, absoluut niet. Wij verzorgen de volledige technische implementatie en training. Onze AI-oplossingen zijn gebruiksvriendelijk en we bieden uitgebreide ondersteuning. Bovendien kunnen we AI-trainings verzorgen zodat uw team optimaal leert werken met de nieuwe tools.",
+    "q5": "Zijn mijn gegevens veilig bij gebruik van AI?",
+    "a5": "Gegevensveiligheid staat bij ons voorop. We werken conform GDPR-wetgeving, gebruiken versleutelde verbindingen, slaan data veilig op in Europa, en hebben strikte toegangscontroles. In ons privacybeleid vindt u alle details over hoe we met uw data omgaan.",
+    "q6": "Kan ik de AI-oplossing aanpassen aan mijn bedrijf?",
+    "a6": "Ja, alle oplossingen worden op maat gemaakt voor uw bedrijf. We analyseren uw processen, passen de AI aan uw huisstijl en tone-of-voice aan, integreren met uw bestaande systemen, en blijven de oplossing optimaliseren op basis van resultaten.",
+    "q7": "Wat gebeurt er als de AI een fout maakt?",
+    "a7": "We minimaliseren fouten door grondige testing voor lancering, continue monitoring van prestaties, en menselijke back-up voor complexe situaties. Mocht er toch iets misgaan, dan hebben we 24/7 support beschikbaar en lossen we problemen direct op.",
+    "q8": "Kan ik de AI-oplossing later uitbreiden?",
+    "a8": "Absoluut. Onze oplossingen zijn schaalbaar opgezet. U kunt beginnen met één functie en later uitbreiden met nieuwe features, meer capaciteit of extra talen. We denken proactief mee over toekomstige groeimogelijkheden.",
+    "q9": "Bieden jullie support na implementatie?",
+    "a9": "Ja, continue ondersteuning is onderdeel van onze dienstverlening:\n• Technische support via e-mail en telefoon\n• Regelmatige updates en verbeteringen\n• Maandelijkse rapportages over prestaties\n• Trainingen voor nieuwe medewerkers\n• Proactieve optimalisatievoorstellen",
+    "q10": "Voor welke bedrijven zijn jullie AI-oplossingen geschikt?",
+    "a10": "Onze oplossingen zijn geschikt voor diverse sectoren: e-commerce, professionele dienstverlening, zorg en welzijn, horeca en toerisme, vastgoed, en educatie. Of u nu een klein bedrijf, MKB of grote onderneming bent - we hebben passende oplossingen voor elke schaalgrootte.",
+    "contactTitle": "Nog een vraag?",
+    "contactText": "Staat uw vraag er niet tussen? Neem gerust contact met ons op.",
+    "contactButton": "Contacteer Ons"
   }
 }

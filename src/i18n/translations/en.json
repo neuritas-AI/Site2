@@ -366,5 +366,33 @@
   },
   "privacy": {
     "title": "Privacy Policy"
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "FAQ",
+    "subtitle": "Find answers to the most common questions about our AI solutions",
+    "q1": "What is AI and how can it help my business?",
+    "a1": "Artificial Intelligence (AI) is technology that enables machines to learn from data and perform human-like tasks. For your business, this means: automated customer service via chatbots, more efficient planning with smart appointment systems, better decisions through data analysis, and time savings through automation of repetitive tasks.",
+    "q2": "How much does an AI solution cost?",
+    "a2": "Costs vary per solution and depending on your specific needs. A chatbot can start from €500/month, while more complex implementations are priced on a custom basis. We always offer a free consultation first to analyze your situation and provide a transparent quote.",
+    "q3": "How long does it take to implement an AI solution?",
+    "a3": "Implementation time depends on complexity:\n• Simple chatbot: 2-4 weeks\n• Website optimization: 4-6 weeks\n• AI Voice Caller: 3-5 weeks\n• Custom AI solutions: 6-12 weeks\n\nWe work according to a clear schedule and keep you informed throughout the entire process.",
+    "q4": "Does my business need technical knowledge to use AI?",
+    "a4": "No, absolutely not. We handle the complete technical implementation and training. Our AI solutions are user-friendly and we provide comprehensive support. Additionally, we can provide AI training so your team learns to work optimally with the new tools.",
+    "q5": "Is my data safe when using AI?",
+    "a5": "Data security is our top priority. We work in compliance with GDPR legislation, use encrypted connections, store data securely in Europe, and have strict access controls. Our privacy policy contains all details about how we handle your data.",
+    "q6": "Can I customize the AI solution to my business?",
+    "a6": "Yes, all solutions are custom-made for your business. We analyze your processes, adapt the AI to your brand identity and tone of voice, integrate with your existing systems, and continue to optimize the solution based on results.",
+    "q7": "What happens if the AI makes a mistake?",
+    "a7": "We minimize errors through thorough testing before launch, continuous performance monitoring, and human backup for complex situations. Should something go wrong, we have 24/7 support available and resolve issues immediately.",
+    "q8": "Can I expand the AI solution later?",
+    "a8": "Absolutely. Our solutions are designed to be scalable. You can start with one function and expand later with new features, more capacity, or additional languages. We proactively think along about future growth opportunities.",
+    "q9": "Do you offer support after implementation?",
+    "a9": "Yes, continuous support is part of our services:\n• Technical support via email and phone\n• Regular updates and improvements\n• Monthly performance reports\n• Training for new employees\n• Proactive optimization suggestions",
+    "q10": "For which businesses are your AI solutions suitable?",
+    "a10": "Our solutions are suitable for various sectors: e-commerce, professional services, healthcare and wellness, hospitality and tourism, real estate, and education. Whether you're a small business, SME, or large enterprise - we have suitable solutions for every scale.",
+    "contactTitle": "Still have a question?",
+    "contactText": "Is your question not listed? Feel free to contact us.",
+    "contactButton": "Contact Us"
   }
 }

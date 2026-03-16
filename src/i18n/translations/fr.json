@@ -366,5 +366,33 @@
   },
   "privacy": {
     "title": "Politique de Confidentialité"
+  },
+  "faq": {
+    "badge": "Questions Fréquemment Posées",
+    "title": "FAQ",
+    "subtitle": "Trouvez des réponses aux questions les plus fréquentes sur nos solutions d'IA",
+    "q1": "Qu'est-ce que l'IA et comment peut-elle aider mon entreprise?",
+    "a1": "L'Intelligence Artificielle (IA) est une technologie qui permet aux machines d'apprendre à partir de données et d'effectuer des tâches similaires à celles des humains. Pour votre entreprise, cela signifie : service client automatisé via des chatbots, planification plus efficace avec des systèmes de rendez-vous intelligents, de meilleures décisions grâce à l'analyse de données, et gain de temps grâce à l'automatisation des tâches répétitives.",
+    "q2": "Combien coûte une solution d'IA?",
+    "a2": "Les coûts varient selon la solution et vos besoins spécifiques. Un chatbot peut commencer à partir de 500€/mois, tandis que les implémentations plus complexes sont tarifées sur mesure. Nous proposons toujours d'abord une consultation gratuite pour analyser votre situation et établir un devis transparent.",
+    "q3": "Combien de temps faut-il pour implémenter une solution d'IA?",
+    "a3": "Le temps de mise en œuvre dépend de la complexité:\n• Chatbot simple: 2-4 semaines\n• Optimisation du site web: 4-6 semaines\n• AI Voice Caller: 3-5 semaines\n• Solutions IA personnalisées: 6-12 semaines\n\nNous travaillons selon un planning clair et vous tenons informé tout au long du processus.",
+    "q4": "Mon entreprise a-t-elle besoin de connaissances techniques pour utiliser l'IA?",
+    "a4": "Non, absolument pas. Nous prenons en charge la mise en œuvre technique complète et la formation. Nos solutions d'IA sont conviviales et nous offrons un support complet. De plus, nous pouvons organiser des formations en IA pour que votre équipe apprenne à travailler de manière optimale avec les nouveaux outils.",
+    "q5": "Mes données sont-elles sécurisées lors de l'utilisation de l'IA?",
+    "a5": "La sécurité des données est notre priorité absolue. Nous travaillons conformément à la législation RGPD, utilisons des connexions cryptées, stockons les données en toute sécurité en Europe, et avons des contrôles d'accès stricts. Notre politique de confidentialité contient tous les détails sur la façon dont nous traitons vos données.",
+    "q6": "Puis-je adapter la solution d'IA à mon entreprise?",
+    "a6": "Oui, toutes les solutions sont personnalisées pour votre entreprise. Nous analysons vos processus, adaptons l'IA à votre identité visuelle et ton de voix, intégrons avec vos systèmes existants, et continuons d'optimiser la solution en fonction des résultats.",
+    "q7": "Que se passe-t-il si l'IA fait une erreur?",
+    "a7": "Nous minimisons les erreurs grâce à des tests approfondis avant le lancement, une surveillance continue des performances, et un support humain pour les situations complexes. Si quelque chose ne va pas, nous disposons d'un support 24/7 et résolvons les problèmes immédiatement.",
+    "q8": "Puis-je étendre la solution d'IA ultérieurement?",
+    "a8": "Absolument. Nos solutions sont conçues pour être évolutives. Vous pouvez commencer avec une fonction et l'étendre plus tard avec de nouvelles fonctionnalités, plus de capacité ou des langues supplémentaires. Nous réfléchissons de manière proactive aux possibilités de croissance future.",
+    "q9": "Offrez-vous un support après la mise en œuvre?",
+    "a9": "Oui, le support continu fait partie de nos services:\n• Support technique par e-mail et téléphone\n• Mises à jour et améliorations régulières\n• Rapports mensuels sur les performances\n• Formations pour les nouveaux employés\n• Propositions d'optimisation proactives",
+    "q10": "Pour quelles entreprises vos solutions d'IA sont-elles adaptées?",
+    "a10": "Nos solutions conviennent à divers secteurs: e-commerce, services professionnels, santé et bien-être, hôtellerie et tourisme, immobilier, et éducation. Que vous soyez une petite entreprise, une PME ou une grande entreprise - nous avons des solutions adaptées à chaque taille.",
+    "contactTitle": "Encore une question?",
+    "contactText": "Votre question n'est pas dans la liste? N'hésitez pas à nous contacter.",
+    "contactButton": "Contactez-Nous"
   }
 }

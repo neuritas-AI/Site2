@@ -162,6 +162,12 @@ export default function Footer() {
                 >
                   {t('footer.terms')}
                 </Link>
+                <Link
+                  to="/faq"
+                  className="text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent text-sm transition-colors"
+                >
+                  FAQ
+                </Link>
               </div>
             </div>
           </div>
