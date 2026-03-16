@@ -151,12 +151,14 @@ export default function Footer() {
                 >
                   {t('footer.privacy')}
                 </Link>
-                <Link
-                  to="/terms"
+                <a
+                  href="/Algemene_voorwaarden.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent text-sm transition-colors"
                 >
                   {t('footer.terms')}
-                </Link>
+                </a>
               </div>
             </div>
           </div>
