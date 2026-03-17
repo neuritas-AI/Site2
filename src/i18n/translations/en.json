@@ -393,6 +393,9 @@
     "a10": "Certainly. We help businesses with modernizing existing websites, improving performance, optimizing user-friendliness, and integrating AI functionalities.",
     "contactTitle": "Still have a question?",
     "contactText": "Is your question not listed? Feel free to contact us.",
-    "contactButton": "Contact Us"
+    "contactButton": "Contact Us",
+    "homeQ4": "Any other questions?",
+    "homeA4": "Check out our FAQ page.",
+    "homeQ4Button": "Go to FAQ"
   }
 }

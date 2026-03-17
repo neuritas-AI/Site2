@@ -393,6 +393,9 @@
     "a10": "Certainement. Nous aidons les entreprises à moderniser les sites web existants, à améliorer les performances, à optimiser la convivialité et à intégrer des fonctionnalités d'IA.",
     "contactTitle": "Encore une question?",
     "contactText": "Votre question n'est pas dans la liste? N'hésitez pas à nous contacter.",
-    "contactButton": "Contactez-Nous"
+    "contactButton": "Contactez-Nous",
+    "homeQ4": "D'autres questions ?",
+    "homeA4": "Consultez notre page FAQ.",
+    "homeQ4Button": "Aller à la FAQ"
   }
 }

@@ -27,8 +27,8 @@ export default function HomeFAQAccordion() {
       answer: t('faq.a3')
     },
     {
-      question: 'Nog andere vragen?',
-      answer: 'Bekijk onze FAQ pagina.',
+      question: t('faq.homeQ4'),
+      answer: t('faq.homeA4'),
       isSpecial: true
     }
   ];
@@ -73,7 +73,7 @@ export default function HomeFAQAccordion() {
                     to="/faq"
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-lg hover:shadow-purple-500/50"
                   >
-                    Ga naar FAQ
+                    {t('faq.homeQ4Button')}
                   </Link>
                 </div>
               ) : (
