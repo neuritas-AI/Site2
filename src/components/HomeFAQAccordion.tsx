@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 interface FAQItem {
   question: string;
   answer: string;
+  isSpecial?: boolean;
 }
 
 export default function HomeFAQAccordion() {
@@ -23,6 +25,11 @@ export default function HomeFAQAccordion() {
     {
       question: t('faq.q3'),
       answer: t('faq.a3')
+    },
+    {
+      question: 'Nog andere vragen?',
+      answer: 'Bekijk onze FAQ pagina.',
+      isSpecial: true
     }
   ];
 
@@ -35,7 +42,7 @@ export default function HomeFAQAccordion() {
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
+          className="group bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-purple-500/10 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
         >
           <button
             onClick={() => toggleFAQ(index)}
@@ -59,9 +66,21 @@ export default function HomeFAQAccordion() {
             }`}
           >
             <div className="px-6 pb-5 pt-2">
-              <div className="text-gray-300 leading-relaxed whitespace-pre-line">
-                {faq.answer}
-              </div>
+              {faq.isSpecial ? (
+                <div className="text-gray-300 leading-relaxed">
+                  <p className="mb-4">{faq.answer}</p>
+                  <Link
+                    to="/faq"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-lg hover:shadow-purple-500/50"
+                  >
+                    Ga naar FAQ
+                  </Link>
+                </div>
+              ) : (
+                <div className="text-gray-300 leading-relaxed whitespace-pre-line">
+                  {faq.answer}
+                </div>
+              )}
             </div>
           </div>
         </div>
