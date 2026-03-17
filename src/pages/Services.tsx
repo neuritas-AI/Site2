@@ -68,7 +68,7 @@ export default function Services() {
         title={t('home.servicesTitle').toUpperCase()}
         subtitle={t('home.servicesSubtitle')}
         description=""
-        backgroundImage="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        backgroundImage="/Onze_diensten.png.png"
         scrollTarget="services-content"
       />
 
