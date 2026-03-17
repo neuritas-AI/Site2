@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import HomeFAQAccordion from '../components/HomeFAQAccordion';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -460,6 +461,32 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 mb-6">
+              <Zap className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm font-medium bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                {t('faq.badge')}
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white via-cyan-100 to-purple-100 bg-clip-text text-transparent">
+                {t('faq.title')}
+              </span>
+            </h2>
+
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              {t('faq.subtitle')}
+            </p>
+          </div>
+
+          <HomeFAQAccordion />
         </div>
       </section>
 

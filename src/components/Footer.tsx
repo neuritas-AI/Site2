@@ -30,10 +30,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-2 mb-6">
+              <Link to="/" className="flex items-center gap-2 mb-6">
                 <Brain className="w-8 h-8 text-cyan-400" />
                 <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">NEURITAS-AI</span>
-              </div>
+              </Link>
               <p className="text-gray-400 leading-relaxed mb-6">
                 {t('footer.tagline')}
               </p>
