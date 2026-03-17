@@ -87,7 +87,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
+              className="group bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-purple-500/10 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
