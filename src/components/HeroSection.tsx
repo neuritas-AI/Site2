@@ -33,7 +33,7 @@ export default function HeroSection({
       {backgroundImage ? (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
           <div className={`absolute inset-0 ${overlayClassName}`} />
