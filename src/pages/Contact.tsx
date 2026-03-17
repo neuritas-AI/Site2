@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, Phone, Send, CheckCircle, Instagram, Facebook, Linkedin } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
+import { createClient } from '@supabase/supabase-js';
 
 const socialLinks = [
   {
@@ -20,6 +21,11 @@ const socialLinks = [
     icon: Linkedin,
   },
 ];
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -43,7 +49,7 @@ export default function Contact() {
     e.preventDefault();
     setError(null);
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim() || !formData.message.trim()) {
       setError('Alle vereiste velden moeten worden ingevuld');
       return;
     }
@@ -53,30 +59,26 @@ export default function Contact() {
       return;
     }
 
+    if (formData.honeypot) {
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      const { error: submitError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            volledige_naam: formData.name,
+            emailadres: formData.email,
+            bedrijfsnaam: formData.company,
+            bericht: formData.message,
+          },
+        ]);
 
-      const response = await fetch(`${supabaseUrl}/functions/v1/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${anonKey}`,
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || undefined,
-          message: formData.message,
-          honeypot: formData.honeypot,
-        }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to send message');
+      if (submitError) {
+        throw new Error(submitError.message);
       }
 
       setSubmitted(true);
@@ -86,7 +88,7 @@ export default function Contact() {
         setSubmitted(false);
       }, 3000);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is een fout opgetreden');
+      setError(err instanceof Error ? err.message : 'Er is een fout opgetreden bij het versturen van uw bericht');
     } finally {
       setLoading(false);
     }
@@ -260,6 +262,7 @@ export default function Contact() {
                       type="text"
                       id="company"
                       name="company"
+                      required
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all text-white placeholder-gray-500"
