@@ -103,7 +103,7 @@ export default function WebsiteOptimization() {
         title={t('websiteOptimization.title1').toUpperCase()}
         subtitle={t('websiteOptimization.title2').toUpperCase()}
         description={t('websiteOptimization.description')}
-        backgroundImage="/Website.png"
+        backgroundImage="/Website_11zon.png"
         scrollTarget="content"
       />
 
