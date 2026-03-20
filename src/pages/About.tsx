@@ -12,7 +12,7 @@ export default function About() {
         title={t('about.title1').toUpperCase()}
         subtitle={t('about.title2').toUpperCase()}
         description={t('about.description')}
-        backgroundImage="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        backgroundImage="/futuristic_compressed.jpg"
         scrollTarget="content"
       />
 
