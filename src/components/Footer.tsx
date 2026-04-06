@@ -45,7 +45,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li>
                   <Link
-                    to="/customer-engagement"
+                    to="/chatbots"
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
@@ -54,7 +54,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/website-optimization"
+                    to="/website-development"
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
@@ -63,7 +63,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/appointment-setting"
+                    to="/ai-training"
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
