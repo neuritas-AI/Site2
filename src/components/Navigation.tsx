@@ -59,9 +59,9 @@ export default function Navigation() {
   }, [location.pathname]);
 
   const serviceItems = [
-    { path: '/customer-engagement', label: t('nav.customerEngagement'), icon: <Bot className="w-4 h-4" /> },
-    { path: '/website-optimization', label: t('nav.websiteOptimization'), icon: <Globe className="w-4 h-4" /> },
-    { path: '/appointment-setting', label: t('nav.appointmentSetting'), icon: <Calendar className="w-4 h-4" /> },
+    { path: '/chatbots', label: t('nav.customerEngagement'), icon: <Bot className="w-4 h-4" /> },
+    { path: '/website-development', label: t('nav.websiteOptimization'), icon: <Globe className="w-4 h-4" /> },
+    { path: '/ai-training', label: t('nav.appointmentSetting'), icon: <Calendar className="w-4 h-4" /> },
     { path: '/ai-voice-caller', label: t('nav.aiVoiceCaller'), icon: <Mic className="w-4 h-4" /> },
   ];
 

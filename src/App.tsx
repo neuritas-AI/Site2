@@ -8,9 +8,9 @@ import ScrollToTop from './components/ScrollToTop';
 import LanguageManager from './components/LanguageManager';
 import Home from './pages/Home';
 import Services from './pages/Services';
-import CustomerEngagement from './pages/CustomerEngagement';
-import WebsiteOptimization from './pages/WebsiteOptimization';
-import AppointmentSetting from './pages/AppointmentSetting';
+import Chatbots from './pages/Chatbots';
+import WebsiteDevelopment from './pages/WebsiteDevelopment';
+import AITraining from './pages/AITraining';
 import AIVoiceCaller from './pages/AIVoiceCaller';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -49,9 +49,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/customer-engagement" element={<CustomerEngagement />} />
-          <Route path="/website-optimization" element={<WebsiteOptimization />} />
-          <Route path="/appointment-setting" element={<AppointmentSetting />} />
+          <Route path="/chatbots" element={<Chatbots />} />
+          <Route path="/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/ai-training" element={<AITraining />} />
           <Route path="/ai-voice-caller" element={<AIVoiceCaller />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
