@@ -112,7 +112,7 @@ export default function Navigation() {
           <Link
             to="/"
             className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-              isActive('/') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+              isActive('/') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
             }`}
           >
             {t('nav.home')}
@@ -127,7 +127,7 @@ export default function Navigation() {
             <Link
               to="/services"
               className={`flex items-center gap-1 text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-                isServicesActive() ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+                isServicesActive() ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
               }`}
             >
               {t('nav.services')}
@@ -169,7 +169,7 @@ export default function Navigation() {
           <Link
             to="/about"
             className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-              isActive('/about') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+              isActive('/about') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
             }`}
           >
             {t('nav.about')}
@@ -218,7 +218,7 @@ export default function Navigation() {
               to="/"
               onClick={() => setMobileMenuOpen(false)}
               className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-                isActive('/') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+                isActive('/') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
               }`}
             >
               {t('nav.home')}
@@ -228,7 +228,7 @@ export default function Navigation() {
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 className={`flex items-center gap-1 text-sm w-full text-left hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-                  isServicesActive() ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+                  isServicesActive() ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
                 }`}
               >
                 {t('nav.services')}
@@ -267,7 +267,7 @@ export default function Navigation() {
               to="/about"
               onClick={() => setMobileMenuOpen(false)}
               className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
-                isActive('/about') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : ''
+                isActive('/about') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
               }`}
             >
               {t('nav.about')}
@@ -276,7 +276,7 @@ export default function Navigation() {
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300"
+              className="block text-sm text-white hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300"
             >
               {t('nav.contact')}
             </Link>
