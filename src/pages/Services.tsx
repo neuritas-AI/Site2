@@ -72,8 +72,6 @@ export default function Services() {
         scrollTarget="services-content"
       />
 
-      <div className="section-divider" />
-
       <section id="services-content" className="relative py-32 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/10 to-black" />
 
@@ -96,8 +94,7 @@ export default function Services() {
               <Link
                 key={index}
                 to={service.link}
-                className={`group relative p-10 rounded-2xl bg-white/[0.03] border border-white/8 ${service.borderHover} card-premium backdrop-blur-sm overflow-hidden`}
-                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}
+                className={`group relative p-10 rounded-2xl bg-white/5 border border-white/10 ${service.borderHover} transition-all duration-500 hover:shadow-2xl ${service.shadowHover} backdrop-blur-sm overflow-hidden`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
@@ -144,8 +141,7 @@ export default function Services() {
       <section className="relative py-20 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/10 to-black" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 border border-white/8 backdrop-blur-xl gradient-border"
-            style={{ boxShadow: '0 0 60px rgba(6,182,212,0.05), 0 40px 80px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
+          <div className="p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 border border-white/10 backdrop-blur-xl">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
               {t('home.ctaTitle')}
               <span className="block bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">
@@ -157,7 +153,7 @@ export default function Services() {
             </p>
             <Link
               to="/contact"
-              className="btn-glow group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-cyan-500/40"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-cyan-500/50"
             >
               {t('home.ctaButton')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

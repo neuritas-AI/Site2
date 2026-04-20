@@ -110,8 +110,6 @@ export default function Contact() {
         scrollTarget="content"
       />
 
-      <div className="section-divider" />
-
       <section id="content" className="relative py-32 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
 
@@ -130,7 +128,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-8">
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/[0.03] border border-white/8 hover:border-purple-500/40 card-premium" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0">
                     <Mail className="w-6 h-6" />
                   </div>
@@ -140,7 +138,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/[0.03] border border-white/8 hover:border-purple-500/40 card-premium" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+                <div className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
@@ -151,7 +149,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/8 gradient-border" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+              <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10">
                 <h3 className="text-2xl font-bold mb-4">{t('contact.quickFactsTitle')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -169,7 +167,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-8 p-8 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-cyan-500/30 card-premium" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+              <div className="mt-8 p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/30 transition-all">
                 <h3 className="text-2xl font-bold mb-3">{t('contact.socialTitle')}</h3>
                 <p className="text-gray-400 mb-6">{t('contact.socialDesc')}</p>
                 <div className="flex items-center gap-4">
@@ -190,7 +188,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <form onSubmit={handleSubmit} className="relative p-8 md:p-12 rounded-3xl bg-white/[0.03] border border-white/8 backdrop-blur-xl gradient-border" style={{ boxShadow: '0 0 40px rgba(168,85,247,0.04), 0 40px 80px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
+              <form onSubmit={handleSubmit} className="relative p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
                 <input
                   type="text"
                   name="honeypot"
@@ -288,7 +286,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="btn-glow w-full group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-cyan-500/40 flex items-center justify-center gap-2"
+                    className="w-full group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
                   >
                     {loading ? t('contact.formSending') : t('contact.formSubmit')}
                     {!loading && <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}

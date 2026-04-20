@@ -60,18 +60,9 @@ export default function HeroSection({
         </>
       )}
 
-      {/* Ambient radial spotlight */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.06) 0%, rgba(168,85,247,0.03) 50%, transparent 70%)' }} />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px"
-          style={{ background: 'linear-gradient(90deg, transparent, rgba(6,182,212,0.15), rgba(168,85,247,0.1), transparent)' }} />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {badge && (
-          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/25 rounded-full backdrop-blur-sm"
-            style={{ boxShadow: '0 0 20px rgba(6,182,212,0.08), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-purple-500/30 rounded-full backdrop-blur-sm">
             {badge.icon}
             <span className="text-sm bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-medium">{badge.text}</span>
           </div>
@@ -95,10 +86,10 @@ export default function HeroSection({
 
       <button
         onClick={() => scrollToSection(scrollTarget)}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-cyan-400 transition-all duration-300 animate-bounce cursor-pointer group"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
       >
-        <span className="text-sm tracking-widest uppercase group-hover:text-cyan-400 transition-colors duration-300">SCROLL TO EXPLORE</span>
-        <ChevronDown className="w-6 h-6 group-hover:text-cyan-400 transition-colors duration-300" />
+        <span className="text-sm tracking-widest">SCROLL TO EXPLORE</span>
+        <ChevronDown className="w-6 h-6" />
       </button>
 
       <style>{`

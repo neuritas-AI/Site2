@@ -85,14 +85,12 @@ export default function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 w-full z-40 bg-black/60 backdrop-blur-2xl"
+      className="fixed top-0 w-full z-40 bg-black/50 backdrop-blur-xl border-b border-white/5"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(-8px)',
         transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
         pointerEvents: visible ? 'auto' : 'none',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        boxShadow: '0 1px 40px rgba(6,182,212,0.05), 0 4px 20px rgba(0,0,0,0.4)',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -141,10 +139,9 @@ export default function Navigation() {
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-64 h-3" />
 
             <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-black/95 backdrop-blur-2xl border border-white/8 rounded-xl overflow-hidden shadow-2xl shadow-black/60 transition-all duration-200 ${
+              className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-black/50 transition-all duration-200 ${
                 servicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
               }`}
-              style={{ boxShadow: '0 0 30px rgba(6,182,212,0.06), 0 20px 60px rgba(0,0,0,0.6)' }}
             >
               <div className="p-1.5">
                 {serviceItems.map((item) => (
@@ -180,7 +177,7 @@ export default function Navigation() {
 
           <Link
             to="/contact"
-            className="btn-glow px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full transition-all hover:shadow-lg hover:shadow-cyan-500/40 text-sm font-semibold uppercase tracking-wide"
+            className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full transition-all hover:shadow-lg hover:shadow-purple-500/50 text-sm font-semibold uppercase"
           >
             {t('nav.contact')}
           </Link>
@@ -215,7 +212,7 @@ export default function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/97 backdrop-blur-2xl border-t border-white/5" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.8)' }}>
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/5">
           <div className="px-6 py-4 space-y-4">
             <Link
               to="/"

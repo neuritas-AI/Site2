@@ -35,7 +35,7 @@ export default function CustomerEngagement() {
             </p>
           </div>
 
-          <div className="mb-32 relative p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/8 backdrop-blur-xl overflow-hidden gradient-border" style={{ boxShadow: '0 0 60px rgba(6,182,212,0.04), 0 40px 80px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+          <div className="mb-32 relative p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
             <div className="relative z-10">
@@ -49,17 +49,17 @@ export default function CustomerEngagement() {
                 {t('chatbots.whatIsChatbotDesc')}
               </p>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="p-6 rounded-xl bg-white/[0.03] border border-white/8 card-premium" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
                   <MessageCircle className="w-8 h-8 text-cyan-400 mb-3" />
                   <h4 className="text-xl font-semibold mb-2">{t('chatbots.capability1Title')}</h4>
                   <p className="text-gray-400">{t('chatbots.capability1Desc')}</p>
                 </div>
-                <div className="p-6 rounded-xl bg-white/[0.03] border border-white/8 card-premium" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
                   <Users className="w-8 h-8 text-cyan-400 mb-3" />
                   <h4 className="text-xl font-semibold mb-2">{t('chatbots.capability2Title')}</h4>
                   <p className="text-gray-400">{t('chatbots.capability2Desc')}</p>
                 </div>
-                <div className="p-6 rounded-xl bg-white/[0.03] border border-white/8 card-premium" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10">
                   <BarChart className="w-8 h-8 text-cyan-400 mb-3" />
                   <h4 className="text-xl font-semibold mb-2">{t('chatbots.capability3Title')}</h4>
                   <p className="text-gray-400">{t('chatbots.capability3Desc')}</p>
@@ -123,8 +123,7 @@ export default function CustomerEngagement() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-cyan-500/40 card-premium backdrop-blur-sm"
-              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}
+                className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 backdrop-blur-sm"
               >
                 <div className="mb-6 w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                   {feature.icon}
@@ -135,7 +134,7 @@ export default function CustomerEngagement() {
             ))}
           </div>
 
-          <div className="relative p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/8 backdrop-blur-xl overflow-hidden mb-20 gradient-border" style={{ boxShadow: '0 0 60px rgba(6,182,212,0.04), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+          <div className="relative p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl overflow-hidden mb-20">
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
             <div className="relative z-10">
               <h3 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
@@ -158,7 +157,7 @@ export default function CustomerEngagement() {
             </div>
           </div>
 
-          <div className="relative p-12 rounded-3xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-white/8 backdrop-blur-xl overflow-hidden text-center gradient-border" style={{ boxShadow: '0 0 60px rgba(168,85,247,0.04), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+          <div className="relative p-12 rounded-3xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-white/10 backdrop-blur-xl overflow-hidden text-center">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
             <div className="relative z-10">
               <h3 className="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
@@ -169,7 +168,7 @@ export default function CustomerEngagement() {
               </p>
               <Link
                 to="/contact"
-                className="btn-glow inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-cyan-500/40"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50"
               >
                 {t('chatbots.ctaButton')}
                 <ArrowRight className="w-5 h-5" />
