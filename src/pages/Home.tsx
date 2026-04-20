@@ -182,18 +182,17 @@ export default function Home() {
               <Link
                 key={index}
                 to={service.link}
-                className={`group relative p-8 rounded-2xl border transition-all duration-300 backdrop-blur-sm ${
+                className={`group relative p-8 rounded-2xl border transition-[border-color,box-shadow] duration-300 backdrop-blur-sm overflow-hidden isolate ${
                   service.color === 'cyan'
-                    ? 'bg-white/5 border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.12),0_0_80px_rgba(6,182,212,0.06),inset_0_0_40px_rgba(6,182,212,0.05)]'
-                    : 'bg-white/5 border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.12),0_0_80px_rgba(168,85,247,0.06),inset_0_0_40px_rgba(168,85,247,0.05)]'
+                    ? 'bg-white/5 border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.12),0_0_80px_rgba(6,182,212,0.06)]'
+                    : 'bg-white/5 border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.12),0_0_80px_rgba(168,85,247,0.06)]'
                 }`}
-                style={undefined}
               >
                 <div
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={service.color === 'cyan'
-                    ? { background: 'radial-gradient(ellipse 80% 70% at 30% 40%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.04) 50%, transparent 80%), linear-gradient(135deg, rgba(6,182,212,0.06) 0%, transparent 60%)' }
-                    : { background: 'radial-gradient(ellipse 80% 70% at 30% 40%, rgba(168,85,247,0.10) 0%, rgba(168,85,247,0.04) 50%, transparent 80%), linear-gradient(135deg, rgba(168,85,247,0.06) 0%, transparent 60%)' }
+                    ? { background: 'radial-gradient(ellipse 80% 70% at 30% 40%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.04) 50%, transparent 80%), linear-gradient(135deg, rgba(6,182,212,0.06) 0%, transparent 60%)', willChange: 'opacity' }
+                    : { background: 'radial-gradient(ellipse 80% 70% at 30% 40%, rgba(168,85,247,0.10) 0%, rgba(168,85,247,0.04) 50%, transparent 80%), linear-gradient(135deg, rgba(168,85,247,0.06) 0%, transparent 60%)', willChange: 'opacity' }
                   }
                 />
                 <div className={`mb-6 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
