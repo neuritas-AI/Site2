@@ -118,7 +118,7 @@ export default function Footer() {
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
-                    Articles
+                    {t('nav.articles')}
                   </Link>
                 </li>
               </ul>

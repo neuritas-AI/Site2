@@ -8,7 +8,8 @@
     "aiVoiceCaller": "AI Voice Caller",
     "about": "À Propos",
     "contact": "Contact",
-    "getStarted": "Commencer"
+    "getStarted": "Commencer",
+    "articles": "Articles"
   },
   "hero": {
     "badge": "Automatisation Alimentée par l'IA",
@@ -360,6 +361,25 @@
     "rights": "Tous droits réservés.",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions d'Utilisation"
+  },
+  "articles": {
+    "badge": "Insights & Actualités",
+    "title": "Derniers Articles",
+    "subtitle": "Gardez une longueur d'avance avec nos analyses approfondies sur l'automatisation intelligente et la stratégie numérique.",
+    "readFull": "Lire l'article complet",
+    "collapse": "Afficher moins",
+    "article1Title": "L'avenir de l'automatisation IA dans les entreprises",
+    "article1Date": "2026-03-15",
+    "article1Summary": "Découvrez comment l'intelligence artificielle transforme les processus ordinaires en workflows intelligents et fluides qui rendent les entreprises plus efficaces.",
+    "article1Content": "L'intelligence artificielle n'est plus seulement un terme à la mode. Elle redéfinit fondamentalement la façon dont les entreprises gèrent leurs processus internes et externes.\n\nDe l'automatisation de la simple saisie de données aux agents de service client entièrement conversationnels — les systèmes d'IA comblent le fossé entre la réactivité humaine et l'efficacité à grande échelle. Les entreprises qui investissent tôt dans une mise en œuvre réfléchie de l'IA récoltent des bénéfices en termes de scores de satisfaction client plus élevés, de coûts opérationnels réduits et de temps de réponse plus rapides.\n\nUn workflow d'automatisation IA bien conçu commence par une analyse approfondie des processus existants. Quelles tâches sont répétitives ? Lesquelles nécessitent un jugement humain ? En traçant clairement cette frontière, les entreprises peuvent déployer l'IA là où elle apporte le plus de valeur sans perdre la touche humaine qui sous-tend les relations clients.\n\nLes applications pratiques comprennent les e-mails de suivi automatisés après le contact client, les chatbots intelligents qui gèrent de manière autonome les questions fréquemment posées, et les agents vocaux qui planifient des rendez-vous sans intervention humaine. Le retour sur investissement pour des projets bien mis en œuvre dépasse fréquemment les attentes initiales.\n\nLes organisations qui considèrent l'IA non pas comme un remplacement des personnes mais comme une amélioration de celles-ci obtiennent les résultats les plus durables. L'IA supprime la charge répétitive ; les personnes se concentrent sur l'empathie, la prise de décision complexe et la croissance stratégique.",
+    "article2Title": "Comprendre l'Answer Engine Optimization (AEO)",
+    "article2Date": "2026-04-05",
+    "article2Summary": "Les moteurs de réponse comme Perplexity et ChatGPT transforment fondamentalement le paysage SEO. Voici ce que vous devez savoir pour rester visible.",
+    "article2Content": "L'optimisation classique des moteurs de recherche (SEO) visait à classer les pages web via des mots-clés et des backlinks. Les utilisateurs modernes se tournent cependant de plus en plus vers des moteurs de réponse génératifs tels que ChatGPT, Claude et Perplexity pour obtenir des réponses directes — sans parcourir une liste de dix liens bleus.\n\nL'Answer Engine Optimization (AEO) consiste à structurer le contenu pour que les modèles d'IA puissent le citer avec confiance. Cela nécessite un état d'esprit différent du SEO traditionnel.\n\nLes principes fondamentaux de l'AEO :\n\n1. Précision factuelle plutôt que densité de mots-clés. Les modèles d'IA évaluent les sources sur leur fiabilité. Le contenu avec des faits vérifiables, des citations et de la cohérence est cité plus souvent.\n\n2. Données structurées via Schema.org. Le balisage des entités, FAQ et articles avec un balisage structuré augmente la probabilité que les moteurs de réponse interprètent et présentent correctement votre contenu.\n\n3. HTML sémantiquement propre. Les titres, paragraphes et listes logiquement construits aident les modèles d'IA à comprendre la hiérarchie de votre contenu.\n\n4. Sections FAQ complètes. Les questions et réponses dans un format structuré fournissent aux moteurs de réponse des informations prêtes à l'emploi et citables.\n\nLes entreprises qui adoptent l'AEO maintenant se positionnent comme des sources faisant autorité dans un monde où la première page de Google devient moins pertinente pour un segment croissant d'utilisateurs.",
+    "article3Title": "Agents Voice IA : réinventer le contact client",
+    "article3Date": "2026-04-18",
+    "article3Summary": "La synthèse vocale avancée et le traitement du langage naturel créent des expériences d'appels automatisés hyper-réalistes qui transforment fondamentalement le contact client.",
+    "article3Content": "Imaginez un client appelant votre entreprise et parlant à un agent qui ne dort jamais, ne perd jamais patience et récupère toute information pertinente de l'entreprise en quelques millisecondes. C'est la réalité que la Voice IA offre aujourd'hui.\n\nEn combinant la technologie avancée de synthèse vocale (TTS) avec des modèles de langage contextuels (LLM), les Voice Callers peuvent mener des conversations autonomes que les clients distinguent à peine de celles avec des employés humains. Les applications sont larges : planifier des rendez-vous, trier les demandes de support, fournir des informations produits et transférer de manière transparente les problèmes critiques à un collègue humain.\n\nL'architecture technique comprend généralement trois couches :\n\n• Reconnaissance vocale (ASR) : convertit les mots parlés en texte, avec une haute précision même dans des environnements bruyants.\n• Modèle de langage (LLM) : interprète l'intention, consulte les données de l'entreprise et formule une réponse appropriée.\n• Synthèse vocale (TTS) : délivre la réponse dans une voix naturelle et humaine.\n\nPour les entreprises avec des volumes d'appels élevés — comme les prestataires de soins de santé, les agences immobilières ou les centres de service — les économies de coûts sont substantielles. Un agent Voice IA bien configuré peut gérer des centaines de conversations parallèles, sans temps d'attente ni pics de charge.\n\nLa clé du succès réside dans la qualité de la configuration : des scripts de conversation clairs, une intégration correcte avec les systèmes d'entreprise et une révision régulière des enregistrements d'appels. La Voice IA n'est pas une solution plug-and-play — c'est un investissement stratégique qui, bien mis en œuvre, améliore structurellement l'expérience client."
   },
   "terms": {
     "title": "Conditions Générales"

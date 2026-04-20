@@ -181,7 +181,7 @@ export default function Navigation() {
               isActive('/articles') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
             }`}
           >
-            Articles
+            {t('nav.articles')}
           </Link>
 
           <Link
@@ -289,7 +289,7 @@ export default function Navigation() {
                 isActive('/articles') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
               }`}
             >
-              Articles
+              {t('nav.articles')}
             </Link>
 
             <Link

@@ -8,7 +8,8 @@
     "aiVoiceCaller": "AI Voice Caller",
     "about": "Over Ons",
     "contact": "Contact",
-    "getStarted": "Start Nu"
+    "getStarted": "Start Nu",
+    "articles": "Artikels"
   },
   "hero": {
     "badge": "AI-Gestuurde Automatisering",
@@ -360,6 +361,25 @@
     "rights": "Alle rechten voorbehouden.",
     "privacy": "Privacybeleid",
     "terms": "Algemene Voorwaarden"
+  },
+  "articles": {
+    "badge": "Inzichten & Updates",
+    "title": "Laatste Artikels",
+    "subtitle": "Blijf voorop met onze diepgaande analyses over intelligente automatisering en digitale strategie.",
+    "readFull": "Lees volledig artikel",
+    "collapse": "Minder tonen",
+    "article1Title": "De Toekomst van AI-Automatisering in Bedrijven",
+    "article1Date": "2026-03-15",
+    "article1Summary": "Ontdek hoe kunstmatige intelligentie alledaagse processen transformeert tot intelligente, naadloze workflows die bedrijven efficiënter maken.",
+    "article1Content": "Kunstmatige intelligentie is allang niet meer alleen een hypeterm. Het herdefinieert fundamenteel hoe bedrijven hun interne en externe processen beheren.\n\nVan het automatiseren van eenvoudige gegevensinvoer tot volledig conversationele klantenservice-agents — AI-systemen overbruggen de kloof tussen menselijke responsiviteit en efficiëntie op schaal. Bedrijven die vroeg investeren in doordachte AI-implementatie plukken daar de vruchten van in hogere klanttevredenheidsscores, lagere operationele kosten en snellere reactietijden.\n\nEen goed ontworpen AI-automatiseringsworkflow begint met een grondige analyse van bestaande processen. Welke taken zijn repetitief? Welke vereisen menselijk oordeel? Door die grens helder te trekken, kunnen bedrijven AI inzetten waar het de meeste waarde toevoegt, zonder de menselijke touch te verliezen die klantrelaties onderbouwt.\n\nPraktische toepassingen omvatten geautomatiseerde opvolgingse-mails na klantcontact, intelligente chatbots die veelgestelde vragen zelfstandig afhandelen, en spraakagenten die afspraken inplannen zonder menselijke tussenkomst. Het rendement op investering overtreft bij goed geïmplementeerde projecten vaak de vroegste verwachtingen.\n\nDe organisaties die AI niet als vervanging van mensen zien, maar als versterking ervan, bereiken de duurzaamste resultaten. AI neemt de repetitieve last weg; mensen concentreren zich op empathie, complexe besluitvorming en strategische groei.",
+    "article2Title": "Answer Engine Optimization (AEO) begrijpen",
+    "article2Date": "2026-04-05",
+    "article2Summary": "Antwoordmachines zoals Perplexity en ChatGPT veranderen het SEO-landschap ingrijpend. Dit is wat u moet weten om zichtbaar te blijven.",
+    "article2Content": "Klassieke zoekmachineoptimalisatie (SEO) draaide om het ranken van webpagina's via zoekwoorden en backlinks. Moderne gebruikers wenden zich echter steeds vaker tot generatieve antwoordmachines zoals ChatGPT, Claude en Perplexity om direct antwoord te krijgen — zonder een lijst van tien blauwe links te doorzoeken.\n\nAnswer Engine Optimization (AEO) richt zich op het structureren van content zodat AI-modellen die vertrouwenswaardig kunnen citeren. Dat vereist een andere mindset dan traditionele SEO.\n\nDe kernprincipes van AEO:\n\n1. Feitelijke nauwkeurigheid boven keyword-dichtheid. AI-modellen beoordelen bronnen op betrouwbaarheid. Content met aantoonbare feiten, bronvermeldingen en consistentie wordt vaker geciteerd.\n\n2. Gestructureerde data via Schema.org. Door entiteiten, FAQ's en artikelen op te maken met gestructureerde markup, vergroot u de kans dat antwoordmachines uw content correct interpreteren en presenteren.\n\n3. Semantisch zuivere HTML. Koppen, alinea's en lijsten die logisch zijn opgebouwd helpen AI-modellen de hiërarchie van uw content te begrijpen.\n\n4. Uitgebreide FAQ-secties. Vragen en antwoorden in gestructureerde vorm bieden antwoordmachines kant-en-klare, citeerbare informatie.\n\nBedrijven die AEO nu omarmen, positioneren zich als gezaghebbende bronnen in een wereld waar de eerste pagina van Google steeds minder relevant wordt voor een groeiend segment van gebruikers.",
+    "article3Title": "Voice AI-agents: de vernieuwing van klantcontact",
+    "article3Date": "2026-04-18",
+    "article3Summary": "Geavanceerde spraaksynthese en natuurlijke taalverwerking creëren hyperrealistische geautomatiseerde gesprekservaringen die klantcontact fundamenteel veranderen.",
+    "article3Content": "Stel u voor: een klant belt uw bedrijf en spreekt met een agent die nooit slaapt, nooit zijn geduld verliest en elke relevante bedrijfsinformatie binnen milliseconden oproept. Dat is de werkelijkheid die Voice AI vandaag realiseert.\n\nDoor geavanceerde tekst-naar-spraaktechnologie (TTS) te combineren met contextbewuste taalmodellen (LLM's) kunnen Voice Callers zelfstandig gesprekken voeren die klanten nauwelijks van menselijke medewerkers onderscheiden. De toepassingen zijn breed: afspraken inplannen, supportverzoeken triëren, productinformatie verstrekken en kritieke kwesties naadloos doorverbinden naar een menselijke collega.\n\nDe technische architectuur omvat doorgaans drie lagen:\n\n• Spraakherkenning (ASR): zet gesproken woord om in tekst, met hoge nauwkeurigheid ook in omgevingen met achtergrondgeluid.\n• Taalmodel (LLM): interpreteert de intentie, raadpleegt bedrijfsdata en formuleert een gepast antwoord.\n• Spraaksynthese (TTS): levert het antwoord terug in een natuurlijke, menselijke stem.\n\nVoor bedrijven met hoge belvolumes — denk aan zorgaanbieders, makelaars of servicecentra — zijn de kostenbesparingen substantieel. Eén goed geconfigureerde Voice AI-agent kan honderden parallelle gesprekken voeren, zonder wachttijden of pieken in de bezetting.\n\nDe sleutel tot succes ligt in de kwaliteit van de configuratie: duidelijke gespreksscripts, correcte koppeling met bedrijfssystemen en regelmatige evaluatie van gespreksopnames. Voice AI is geen plug-and-play oplossing — het is een strategische investering die, mits goed uitgevoerd, de klantbeleving structureel verbetert."
   },
   "terms": {
     "title": "Algemene Voorwaarden"

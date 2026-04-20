@@ -8,7 +8,8 @@
     "aiVoiceCaller": "AI Voice Caller",
     "about": "About",
     "contact": "Contact",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "articles": "Articles"
   },
   "hero": {
     "badge": "AI-Powered Automation",
@@ -360,6 +361,25 @@
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "articles": {
+    "badge": "Insights & Updates",
+    "title": "Latest Articles",
+    "subtitle": "Stay ahead of the curve with our deep dives into intelligent automation and digital strategy.",
+    "readFull": "Read full article",
+    "collapse": "Show less",
+    "article1Title": "The Future of AI Automation in Business",
+    "article1Date": "2026-03-15",
+    "article1Summary": "Discover how artificial intelligence is transforming mundane processes into intelligent, seamless workflows that make businesses more efficient.",
+    "article1Content": "Artificial Intelligence is no longer just a buzzword. It is fundamentally reshaping how businesses manage their internal and external processes.\n\nFrom automating simple data entry to fully conversational customer service agents — AI systems are bridging the gap between human responsiveness and efficiency at scale. Companies that invest early in thoughtful AI implementation reap rewards in higher customer satisfaction scores, lower operational costs and faster response times.\n\nA well-designed AI automation workflow begins with a thorough analysis of existing processes. Which tasks are repetitive? Which require human judgement? By drawing that boundary clearly, businesses can deploy AI where it adds the most value without losing the human touch that underpins customer relationships.\n\nPractical applications include automated follow-up emails after customer contact, intelligent chatbots that independently handle frequently asked questions, and voice agents that schedule appointments without human intervention. Return on investment for well-implemented projects frequently exceeds early expectations.\n\nOrganisations that see AI not as a replacement for people but as an enhancement of them achieve the most sustainable results. AI removes the repetitive burden; people focus on empathy, complex decision-making and strategic growth.",
+    "article2Title": "Understanding Answer Engine Optimization (AEO)",
+    "article2Date": "2026-04-05",
+    "article2Summary": "Answer engines like Perplexity and ChatGPT are fundamentally changing the SEO landscape. Here is what you need to know to remain visible.",
+    "article2Content": "Classic Search Engine Optimization (SEO) focused on ranking web pages via keywords and backlinks. Modern users, however, are increasingly turning to generative answer engines such as ChatGPT, Claude and Perplexity to get direct answers — without scanning a list of ten blue links.\n\nAnswer Engine Optimization (AEO) is about structuring content so that AI models can cite it with confidence. That requires a different mindset than traditional SEO.\n\nThe core principles of AEO:\n\n1. Factual accuracy over keyword density. AI models assess sources on trustworthiness. Content with verifiable facts, citations and consistency is cited more often.\n\n2. Structured data via Schema.org. Marking up entities, FAQs and articles with structured markup increases the chance that answer engines interpret and present your content correctly.\n\n3. Semantically clean HTML. Headings, paragraphs and lists that are logically constructed help AI models understand the hierarchy of your content.\n\n4. Comprehensive FAQ sections. Questions and answers in a structured format provide answer engines with ready-made, citable information.\n\nBusinesses that embrace AEO now are positioning themselves as authoritative sources in a world where the first page of Google is becoming less relevant for a growing segment of users.",
+    "article3Title": "Voice AI Agents: Reinventing Customer Contact",
+    "article3Date": "2026-04-18",
+    "article3Summary": "Advanced speech synthesis and natural language processing are creating hyper-realistic automated call experiences that fundamentally change customer contact.",
+    "article3Content": "Imagine a customer calling your business and speaking to an agent that never sleeps, never loses patience, and retrieves any relevant company information within milliseconds. That is the reality Voice AI delivers today.\n\nBy combining advanced text-to-speech technology (TTS) with context-aware language models (LLMs), Voice Callers can conduct autonomous conversations that customers can barely distinguish from those with human employees. Applications are broad: scheduling appointments, triaging support requests, providing product information and seamlessly transferring critical issues to a human colleague.\n\nThe technical architecture typically comprises three layers:\n\n• Speech recognition (ASR): converts spoken words into text, with high accuracy even in noisy environments.\n• Language model (LLM): interprets intent, consults business data and formulates an appropriate response.\n• Speech synthesis (TTS): delivers the response back in a natural, human-sounding voice.\n\nFor businesses with high call volumes — think healthcare providers, real estate agencies or service centres — the cost savings are substantial. One well-configured Voice AI agent can handle hundreds of parallel conversations, without wait times or staffing peaks.\n\nThe key to success lies in configuration quality: clear conversation scripts, correct integration with business systems, and regular review of call recordings. Voice AI is not a plug-and-play solution — it is a strategic investment that, when implemented well, structurally improves the customer experience."
   },
   "terms": {
     "title": "Terms and Conditions"
