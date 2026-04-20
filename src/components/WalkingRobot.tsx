@@ -1,365 +1,345 @@
-import { useEffect, useState } from 'react';
-
 export default function WalkingRobot() {
-  const [isWaving, setIsWaving] = useState(false);
-
-  useEffect(() => {
-    const handleAnimation = () => {
-      setTimeout(() => {
-        setIsWaving(true);
-        setTimeout(() => setIsWaving(false), 1500);
-      }, 3000);
-    };
-
-    handleAnimation();
-    const interval = setInterval(handleAnimation, 14000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="walking-robot-container">
-      <div className="walking-robot">
+    <div className="robot-scene-container">
+      <div className="robot-scene">
         <svg
-          viewBox="0 0 240 340"
+          viewBox="0 0 240 360"
           className="robot-svg"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <linearGradient id="metalBodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#cbd5e1" />
-              <stop offset="35%" stopColor="#94a3b8" />
-              <stop offset="65%" stopColor="#64748b" />
-              <stop offset="100%" stopColor="#475569" />
-            </linearGradient>
-
-            <linearGradient id="metalDarkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#64748b" />
-              <stop offset="50%" stopColor="#475569" />
-              <stop offset="100%" stopColor="#334155" />
-            </linearGradient>
-
-            <linearGradient id="metalLightGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#f1f5f9" />
-              <stop offset="50%" stopColor="#cbd5e1" />
+            <linearGradient id="shellWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f8fafc" />
+              <stop offset="30%" stopColor="#e2e8f0" />
+              <stop offset="70%" stopColor="#cbd5e1" />
               <stop offset="100%" stopColor="#94a3b8" />
             </linearGradient>
 
-            <linearGradient id="chestPanelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id="shellWhiteSide" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#f1f5f9" />
+              <stop offset="40%" stopColor="#e2e8f0" />
+              <stop offset="100%" stopColor="#94a3b8" />
+            </linearGradient>
+
+            <linearGradient id="shellHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+              <stop offset="20%" stopColor="#f1f5f9" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#cbd5e1" stopOpacity="0.2" />
+            </linearGradient>
+
+            <linearGradient id="darkFrame" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#1e293b" />
               <stop offset="50%" stopColor="#0f172a" />
               <stop offset="100%" stopColor="#020617" />
             </linearGradient>
 
-            <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#06b6d4" stopOpacity="1" />
-              <stop offset="50%" stopColor="#0891b2" stopOpacity="0.8" />
+            <linearGradient id="darkMid" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#334155" />
+              <stop offset="100%" stopColor="#1e293b" />
+            </linearGradient>
+
+            <linearGradient id="shoulderRing" cx="50%" cy="50%" r="50%" gradientUnits="objectBoundingBox">
+              <stop offset="0%" stopColor="#1e3a5f" />
+              <stop offset="40%" stopColor="#0e4a7a" />
+              <stop offset="100%" stopColor="#0a1929" />
+            </linearGradient>
+
+            <radialGradient id="eyeCore" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="#67e8f9" stopOpacity="1" />
+              <stop offset="40%" stopColor="#06b6d4" stopOpacity="1" />
+              <stop offset="100%" stopColor="#0e7490" stopOpacity="0.6" />
+            </radialGradient>
+
+            <radialGradient id="eyeOuter" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#0891b2" stopOpacity="0.5" />
               <stop offset="100%" stopColor="#0e7490" stopOpacity="0" />
             </radialGradient>
 
-            <filter id="metalReflection">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
-              <feOffset dx="0" dy="-1" result="offsetblur" />
-              <feComponentTransfer>
-                <feFuncA type="linear" slope="0.3" />
-              </feComponentTransfer>
+            <radialGradient id="chestCore" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stopColor="#38bdf8" stopOpacity="1" />
+              <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0369a1" stopOpacity="0.4" />
+            </radialGradient>
+
+            <radialGradient id="groundGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(6,182,212,0.25)" />
+              <stop offset="100%" stopColor="rgba(6,182,212,0)" />
+            </radialGradient>
+
+            <filter id="glowCyan" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
               <feMerge>
-                <feMergeNode />
+                <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
 
-            <filter id="softGlow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <filter id="glowSoft" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="2" result="blur" />
               <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
 
-            <filter id="deepShadow">
-              <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.4"/>
+            <filter id="dropShadowDeep">
+              <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#000000" floodOpacity="0.5" />
             </filter>
+
+            <filter id="bodyAmbient">
+              <feDropShadow dx="2" dy="4" stdDeviation="4" floodColor="#000000" floodOpacity="0.3" />
+            </filter>
+
+            <clipPath id="headClip">
+              <rect x="90" y="55" width="60" height="58" rx="8" />
+            </clipPath>
           </defs>
 
-          <g className="robot-body">
-            <ellipse cx="120" cy="320" rx="45" ry="10" fill="rgba(0,0,0,0.4)" className="robot-shadow" filter="url(#softGlow)" />
+          <ellipse cx="120" cy="348" rx="52" ry="8" fill="url(#groundGlow)" />
+          <ellipse cx="120" cy="348" rx="32" ry="4" fill="rgba(0,0,0,0.5)" />
 
-            <g className="leg left-leg">
-              <rect x="88" y="240" width="18" height="35" rx="3" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" />
-              <rect x="90" y="240" width="3" height="35" fill="rgba(241,245,249,0.3)" />
-              <rect x="88" y="275" width="18" height="30" rx="2" fill="url(#metalDarkGradient)" />
-              <rect x="84" y="305" width="26" height="16" rx="4" fill="url(#metalBodyGradient)" filter="url(#deepShadow)" />
-              <ellipse cx="97" cy="316" rx="11" ry="5" fill="#1e293b" />
+          <g className="robot-idle">
+
+            <g className="leg-left">
+              <rect x="86" y="255" width="22" height="42" rx="4" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="88" y="255" width="5" height="42" rx="2" fill="url(#shellHighlight)" />
+              <rect x="104" y="255" width="3" height="42" fill="rgba(51,65,85,0.2)" />
+              <rect x="84" y="294" width="26" height="8" rx="2" fill="url(#darkMid)" />
+              <rect x="86" y="302" width="22" height="30" rx="3" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="88" y="302" width="4" height="30" rx="2" fill="url(#shellHighlight)" />
+              <rect x="83" y="330" width="28" height="14" rx="5" fill="url(#shellWhite)" filter="url(#dropShadowDeep)" />
+              <rect x="85" y="332" width="8" height="10" rx="2" fill="url(#shellHighlight)" />
+              <rect x="83" y="340" width="28" height="4" rx="2" fill="url(#darkFrame)" />
+              <rect x="86" y="338" width="22" height="2" rx="1" fill="rgba(6,182,212,0.4)" />
             </g>
 
-            <g className="leg right-leg">
-              <rect x="134" y="240" width="18" height="35" rx="3" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" />
-              <rect x="147" y="240" width="3" height="35" fill="rgba(241,245,249,0.3)" />
-              <rect x="134" y="275" width="18" height="30" rx="2" fill="url(#metalDarkGradient)" />
-              <rect x="130" y="305" width="26" height="16" rx="4" fill="url(#metalBodyGradient)" filter="url(#deepShadow)" />
-              <ellipse cx="143" cy="316" rx="11" ry="5" fill="#1e293b" />
+            <g className="leg-right">
+              <rect x="132" y="255" width="22" height="42" rx="4" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="134" y="255" width="5" height="42" rx="2" fill="url(#shellHighlight)" />
+              <rect x="150" y="255" width="3" height="42" fill="rgba(51,65,85,0.2)" />
+              <rect x="130" y="294" width="26" height="8" rx="2" fill="url(#darkMid)" />
+              <rect x="132" y="302" width="22" height="30" rx="3" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="134" y="302" width="4" height="30" rx="2" fill="url(#shellHighlight)" />
+              <rect x="129" y="330" width="28" height="14" rx="5" fill="url(#shellWhite)" filter="url(#dropShadowDeep)" />
+              <rect x="131" y="332" width="8" height="10" rx="2" fill="url(#shellHighlight)" />
+              <rect x="129" y="340" width="28" height="4" rx="2" fill="url(#darkFrame)" />
+              <rect x="132" y="338" width="22" height="2" rx="1" fill="rgba(6,182,212,0.4)" />
             </g>
 
             <g className="torso">
-              <rect x="85" y="150" width="70" height="95" rx="8" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" className="torso-main" />
-              <rect x="88" y="150" width="4" height="95" fill="rgba(241,245,249,0.4)" />
-              <rect x="148" y="150" width="4" height="95" fill="rgba(51,65,85,0.3)" />
+              <rect x="82" y="155" width="76" height="105" rx="10" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="86" y="155" width="8" height="105" rx="4" fill="url(#shellHighlight)" />
+              <rect x="150" y="155" width="5" height="105" fill="rgba(51,65,85,0.15)" />
 
-              <rect x="95" y="165" width="50" height="60" rx="4" fill="url(#chestPanelGradient)" filter="url(#deepShadow)" />
-              <rect x="98" y="168" width="44" height="54" rx="3" fill="rgba(6,182,212,0.05)" />
+              <rect x="92" y="162" width="56" height="70" rx="6" fill="url(#darkFrame)" filter="url(#dropShadowDeep)" />
+              <rect x="94" y="164" width="52" height="66" rx="5" fill="rgba(2,6,23,0.95)" />
 
-              <line x1="120" y1="170" x2="120" y2="220" stroke="rgba(6,182,212,0.2)" strokeWidth="0.5" />
-              <line x1="100" y1="195" x2="140" y2="195" stroke="rgba(6,182,212,0.2)" strokeWidth="0.5" />
+              <line x1="94" y1="186" x2="146" y2="186" stroke="rgba(6,182,212,0.15)" strokeWidth="0.5" />
+              <line x1="94" y1="206" x2="146" y2="206" stroke="rgba(6,182,212,0.15)" strokeWidth="0.5" />
+              <line x1="120" y1="164" x2="120" y2="230" stroke="rgba(6,182,212,0.08)" strokeWidth="0.5" />
 
-              <circle cx="120" cy="195" r="6" fill="url(#eyeGlow)" className="chest-core" filter="url(#softGlow)">
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
+              <circle cx="120" cy="197" r="14" fill="rgba(6,182,212,0.08)" />
+              <circle cx="120" cy="197" r="10" fill="rgba(6,182,212,0.12)" />
+              <circle cx="120" cy="197" r="6" fill="url(#chestCore)" filter="url(#glowCyan)">
+                <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite" />
               </circle>
-              <circle cx="120" cy="195" r="3" fill="#22d3ee">
-                <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" />
+              <circle cx="120" cy="197" r="2.5" fill="#bae6fd">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
               </circle>
 
-              <circle cx="107" cy="180" r="2.5" fill="#06b6d4" opacity="0.6" className="status-light">
-                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="133" cy="180" r="2.5" fill="#06b6d4" opacity="0.6" className="status-light">
-                <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite" />
-              </circle>
+              <rect x="100" y="212" width="40" height="12" rx="3" fill="rgba(6,182,212,0.05)" />
+              <rect x="102" y="214" width="8" height="8" rx="1" fill="rgba(6,182,212,0.25)">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+              </rect>
+              <rect x="114" y="214" width="8" height="8" rx="1" fill="rgba(6,182,212,0.15)">
+                <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+              </rect>
+              <rect x="126" y="214" width="8" height="8" rx="1" fill="rgba(6,182,212,0.25)">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" />
+              </rect>
+
+              <rect x="92" y="232" width="56" height="16" rx="4" fill="url(#darkMid)" />
+              <rect x="96" y="235" width="12" height="4" rx="1" fill="rgba(6,182,212,0.3)" />
+              <rect x="112" y="235" width="8" height="4" rx="1" fill="rgba(6,182,212,0.15)" />
+              <rect x="124" y="235" width="12" height="4" rx="1" fill="rgba(6,182,212,0.3)" />
+              <rect x="140" y="235" width="6" height="4" rx="1" fill="rgba(6,182,212,0.2)" />
+
+              <rect x="82" y="248" width="76" height="10" rx="3" fill="url(#darkMid)" />
+              <rect x="84" y="250" width="72" height="3" rx="1" fill="rgba(6,182,212,0.2)" />
             </g>
 
-            <circle cx="120" cy="148" r="8" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" />
-
-            <g className={`arm left-arm ${isWaving ? 'waving' : ''}`}>
-              <rect x="62" y="155" width="16" height="42" rx="4" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" />
-              <rect x="64" y="155" width="3" height="42" fill="rgba(241,245,249,0.3)" />
-              <circle cx="70" cy="197" r="6" fill="url(#metalDarkGradient)" />
-              <rect x="63" y="197" width="14" height="32" rx="3" fill="url(#metalBodyGradient)" />
-              <rect x="65" y="197" width="2" height="32" fill="rgba(241,245,249,0.25)" />
-              <rect x="61" y="229" width="18" height="12" rx="3" fill="url(#metalDarkGradient)" filter="url(#deepShadow)" />
+            <g className="shoulder-left">
+              <rect x="60" y="158" width="22" height="18" rx="5" fill="url(#darkFrame)" />
+              <rect x="62" y="160" width="6" height="14" rx="3" fill="rgba(255,255,255,0.06)" />
+              <circle cx="82" cy="167" r="9" fill="url(#darkFrame)" />
+              <circle cx="82" cy="167" r="6" fill="#0f172a" />
+              <circle cx="82" cy="167" r="4" fill="rgba(6,182,212,0.6)" filter="url(#glowSoft)">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="82" cy="167" r="2" fill="#67e8f9" />
             </g>
 
-            <g className={`arm right-arm ${isWaving ? 'waving' : ''}`}>
-              <rect x="162" y="155" width="16" height="42" rx="4" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" />
-              <rect x="173" y="155" width="3" height="42" fill="rgba(51,65,85,0.4)" />
-              <circle cx="170" cy="197" r="6" fill="url(#metalDarkGradient)" />
-              <rect x="163" y="197" width="14" height="32" rx="3" fill="url(#metalBodyGradient)" />
-              <rect x="173" y="197" width="2" height="32" fill="rgba(51,65,85,0.3)" />
-              <rect x="161" y="229" width="18" height="12" rx="3" fill="url(#metalDarkGradient)" filter="url(#deepShadow)" />
+            <g className="arm-left">
+              <rect x="60" y="173" width="20" height="50" rx="6" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="62" y="173" width="5" height="50" rx="3" fill="url(#shellHighlight)" />
+              <rect x="76" y="173" width="3" height="50" fill="rgba(51,65,85,0.2)" />
+              <rect x="58" y="220" width="24" height="10" rx="3" fill="url(#darkMid)" />
+              <rect x="61" y="230" width="18" height="36" rx="5" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="63" y="230" width="4" height="36" rx="2" fill="url(#shellHighlight)" />
+              <rect x="59" y="262" width="22" height="10" rx="3" fill="url(#darkFrame)" />
+              <g>
+                <rect x="60" y="272" width="6" height="14" rx="3" fill="url(#shellWhite)" />
+                <rect x="68" y="270" width="6" height="16" rx="3" fill="url(#shellWhite)" />
+                <rect x="76" y="272" width="4" height="12" rx="2" fill="url(#shellWhite)" />
+                <rect x="62" y="272" width="3" height="5" rx="1" fill="url(#shellHighlight)" />
+                <rect x="70" y="270" width="3" height="5" rx="1" fill="url(#shellHighlight)" />
+              </g>
+            </g>
+
+            <g className="shoulder-right">
+              <rect x="158" y="158" width="22" height="18" rx="5" fill="url(#darkFrame)" />
+              <rect x="172" y="160" width="6" height="14" rx="3" fill="rgba(255,255,255,0.06)" />
+              <circle cx="158" cy="167" r="9" fill="url(#darkFrame)" />
+              <circle cx="158" cy="167" r="6" fill="#0f172a" />
+              <circle cx="158" cy="167" r="4" fill="rgba(6,182,212,0.6)" filter="url(#glowSoft)">
+                <animate attributeName="opacity" values="1;0.6;1" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="158" cy="167" r="2" fill="#67e8f9" />
+            </g>
+
+            <g className="arm-right">
+              <rect x="160" y="173" width="20" height="50" rx="6" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="162" y="173" width="5" height="50" rx="3" fill="url(#shellHighlight)" />
+              <rect x="176" y="173" width="3" height="50" fill="rgba(51,65,85,0.2)" />
+              <rect x="158" y="220" width="24" height="10" rx="3" fill="url(#darkMid)" />
+              <rect x="161" y="230" width="18" height="36" rx="5" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="163" y="230" width="4" height="36" rx="2" fill="url(#shellHighlight)" />
+              <rect x="159" y="262" width="22" height="10" rx="3" fill="url(#darkFrame)" />
+              <g>
+                <rect x="160" y="272" width="4" height="12" rx="2" fill="url(#shellWhite)" />
+                <rect x="166" y="270" width="6" height="16" rx="3" fill="url(#shellWhite)" />
+                <rect x="174" y="272" width="6" height="14" rx="3" fill="url(#shellWhite)" />
+                <rect x="168" y="270" width="3" height="5" rx="1" fill="url(#shellHighlight)" />
+                <rect x="176" y="272" width="3" height="5" rx="1" fill="url(#shellHighlight)" />
+              </g>
+            </g>
+
+            <g className="neck">
+              <rect x="108" y="148" width="24" height="10" rx="3" fill="url(#darkFrame)" />
+              <rect x="112" y="149" width="16" height="4" rx="2" fill="rgba(255,255,255,0.06)" />
+              <rect x="110" y="152" width="4" height="4" rx="1" fill="rgba(6,182,212,0.3)" />
+              <rect x="118" y="152" width="4" height="4" rx="1" fill="rgba(6,182,212,0.2)" />
+              <rect x="126" y="152" width="4" height="4" rx="1" fill="rgba(6,182,212,0.3)" />
             </g>
 
             <g className="head">
-              <rect x="95" y="100" width="50" height="52" rx="6" fill="url(#metalBodyGradient)" filter="url(#metalReflection)" />
-              <rect x="98" y="100" width="3" height="52" fill="rgba(241,245,249,0.35)" />
-              <rect x="139" y="100" width="3" height="52" fill="rgba(51,65,85,0.3)" />
+              <rect x="88" y="55" width="64" height="58" rx="10" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="92" y="55" width="10" height="58" rx="5" fill="url(#shellHighlight)" />
+              <rect x="142" y="55" width="6" height="58" fill="rgba(51,65,85,0.18)" />
+              <rect x="140" y="57" width="8" height="54" rx="4" fill="rgba(51,65,85,0.12)" />
 
-              <rect x="100" y="108" width="40" height="36" rx="4" fill="url(#chestPanelGradient)" filter="url(#deepShadow)" />
+              <rect x="98" y="64" width="44" height="40" rx="6" fill="url(#darkFrame)" filter="url(#dropShadowDeep)" />
+              <rect x="100" y="66" width="40" height="36" rx="5" fill="rgba(2,6,23,0.98)" />
 
-              <g className="eye-panel">
-                <ellipse cx="110" cy="126" rx="7" ry="8" fill="#0e7490" opacity="0.3" filter="url(#softGlow)" />
-                <ellipse cx="110" cy="126" rx="5" ry="6" fill="url(#eyeGlow)" className="eye-left" filter="url(#softGlow)">
-                  <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite" />
-                </ellipse>
-                <ellipse cx="110" cy="124" rx="2" ry="2.5" fill="#22d3ee" />
+              <ellipse cx="112" cy="84" rx="9" ry="8" fill="rgba(6,182,212,0.08)" />
+              <ellipse cx="112" cy="84" rx="6.5" ry="5.5" fill="rgba(6,182,212,0.18)" />
+              <ellipse cx="112" cy="84" rx="4.5" ry="4" fill="url(#eyeCore)" filter="url(#glowCyan)">
+                <animate attributeName="opacity" values="0.9;1;0.9" dur="5s" repeatCount="indefinite" />
+              </ellipse>
+              <ellipse cx="112" cy="83" rx="1.8" ry="1.6" fill="#e0f7ff" />
 
-                <ellipse cx="130" cy="126" rx="7" ry="8" fill="#0e7490" opacity="0.3" filter="url(#softGlow)" />
-                <ellipse cx="130" cy="126" rx="5" ry="6" fill="url(#eyeGlow)" className="eye-right" filter="url(#softGlow)">
-                  <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite" />
-                </ellipse>
-                <ellipse cx="130" cy="124" rx="2" ry="2.5" fill="#22d3ee" />
-              </g>
+              <ellipse cx="128" cy="84" rx="9" ry="8" fill="rgba(6,182,212,0.08)" />
+              <ellipse cx="128" cy="84" rx="6.5" ry="5.5" fill="rgba(6,182,212,0.18)" />
+              <ellipse cx="128" cy="84" rx="4.5" ry="4" fill="url(#eyeCore)" filter="url(#glowCyan)">
+                <animate attributeName="opacity" values="0.9;1;0.9" dur="5s" repeatCount="indefinite" />
+              </ellipse>
+              <ellipse cx="128" cy="83" rx="1.8" ry="1.6" fill="#e0f7ff" />
 
-              <rect x="104" y="138" width="32" height="2" rx="1" fill="rgba(6,182,212,0.3)" />
+              <rect x="108" y="96" width="24" height="3" rx="1.5" fill="rgba(100,116,139,0.5)" />
+              <rect x="113" y="97" width="14" height="1" rx="0.5" fill="rgba(6,182,212,0.2)" />
+
+              <rect x="102" y="72" width="12" height="3" rx="1" fill="rgba(6,182,212,0.15)" />
+              <rect x="126" y="72" width="12" height="3" rx="1" fill="rgba(6,182,212,0.15)" />
             </g>
 
-            <rect x="108" y="90" width="24" height="8" rx="2" fill="url(#metalBodyGradient)" className="head-vent" filter="url(#metalReflection)" />
-            <line x1="112" y1="92" x2="112" y2="96" stroke="#475569" strokeWidth="1" />
-            <line x1="116" y1="92" x2="116" y2="96" stroke="#475569" strokeWidth="1" />
-            <line x1="120" y1="92" x2="120" y2="96" stroke="#475569" strokeWidth="1" />
-            <line x1="124" y1="92" x2="124" y2="96" stroke="#475569" strokeWidth="1" />
-            <line x1="128" y1="92" x2="128" y2="96" stroke="#475569" strokeWidth="1" />
+            <g className="head-top">
+              <rect x="104" y="44" width="32" height="14" rx="4" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <rect x="107" y="45" width="7" height="12" rx="3" fill="url(#shellHighlight)" />
+              <rect x="106" y="52" width="4" height="5" rx="1" fill="url(#darkFrame)" />
+              <rect x="114" y="52" width="4" height="5" rx="1" fill="url(#darkFrame)" />
+              <rect x="122" y="52" width="4" height="5" rx="1" fill="url(#darkFrame)" />
+              <rect x="130" y="52" width="4" height="5" rx="1" fill="url(#darkFrame)" />
+              <rect x="107" y="53" width="2" height="3" rx="0.5" fill="rgba(6,182,212,0.4)" />
+              <rect x="115" y="53" width="2" height="3" rx="0.5" fill="rgba(6,182,212,0.3)" />
+              <rect x="123" y="53" width="2" height="3" rx="0.5" fill="rgba(6,182,212,0.4)" />
+              <rect x="131" y="53" width="2" height="3" rx="0.5" fill="rgba(6,182,212,0.3)" />
+            </g>
+
+            <g className="knee-left">
+              <circle cx="97" cy="254" r="10" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <circle cx="97" cy="254" r="6" fill="url(#darkFrame)" />
+              <circle cx="97" cy="254" r="3.5" fill="rgba(6,182,212,0.15)" />
+              <circle cx="97" cy="254" r="2" fill="rgba(6,182,212,0.5)" />
+            </g>
+
+            <g className="knee-right">
+              <circle cx="143" cy="254" r="10" fill="url(#shellWhite)" filter="url(#bodyAmbient)" />
+              <circle cx="143" cy="254" r="6" fill="url(#darkFrame)" />
+              <circle cx="143" cy="254" r="3.5" fill="rgba(6,182,212,0.15)" />
+              <circle cx="143" cy="254" r="2" fill="rgba(6,182,212,0.5)" />
+            </g>
+
           </g>
         </svg>
       </div>
 
       <style>{`
-        .walking-robot-container {
+        .robot-scene-container {
           position: absolute;
-          bottom: 10%;
-          left: 0;
-          width: 100%;
-          height: 340px;
+          bottom: 8%;
+          right: 6%;
+          width: 220px;
+          height: 380px;
           pointer-events: none;
           z-index: 5;
         }
 
-        .walking-robot {
-          position: absolute;
-          bottom: 0;
-          width: 140px;
-          height: 340px;
-          animation: walkAcross 14s linear infinite;
+        .robot-scene {
+          width: 100%;
+          height: 100%;
         }
 
         .robot-svg {
           width: 100%;
           height: 100%;
-          filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.5)) drop-shadow(0 5px 15px rgba(6, 182, 212, 0.15));
+          filter:
+            drop-shadow(0 20px 50px rgba(0,0,0,0.6))
+            drop-shadow(0 6px 20px rgba(6,182,212,0.18))
+            drop-shadow(0 0 60px rgba(6,182,212,0.08));
         }
 
-        @keyframes walkAcross {
-          0% {
-            left: -180px;
-          }
-          100% {
-            left: calc(100% + 180px);
-          }
+        .robot-idle {
+          animation: idleFloat 6s ease-in-out infinite;
+          transform-origin: 120px 200px;
         }
 
-        .left-leg {
-          transform-origin: 97px 240px;
-          animation: walkLeftLeg 1s ease-in-out infinite;
+        @keyframes idleFloat {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-5px); }
         }
 
-        .right-leg {
-          transform-origin: 143px 240px;
-          animation: walkRightLeg 1s ease-in-out infinite;
-        }
-
-        @keyframes walkLeftLeg {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          25% {
-            transform: rotate(-8deg);
-          }
-          75% {
-            transform: rotate(10deg);
-          }
-        }
-
-        @keyframes walkRightLeg {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          25% {
-            transform: rotate(10deg);
-          }
-          75% {
-            transform: rotate(-8deg);
-          }
-        }
-
-        .left-arm {
-          transform-origin: 70px 155px;
-          animation: swingLeftArm 1s ease-in-out infinite;
-        }
-
-        .right-arm {
-          transform-origin: 170px 155px;
-          animation: swingRightArm 1s ease-in-out infinite;
-        }
-
-        @keyframes swingLeftArm {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          50% {
-            transform: rotate(12deg);
-          }
-        }
-
-        @keyframes swingRightArm {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          50% {
-            transform: rotate(-12deg);
-          }
-        }
-
-        .right-arm.waving {
-          animation: wave 0.6s ease-in-out 2;
-        }
-
-        @keyframes wave {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          20% {
-            transform: rotate(-25deg);
-          }
-          40% {
-            transform: rotate(-15deg);
-          }
-          60% {
-            transform: rotate(-25deg);
-          }
-          80% {
-            transform: rotate(-15deg);
-          }
-        }
-
-        .robot-body {
-          animation: subtleBob 1s ease-in-out infinite;
-        }
-
-        @keyframes subtleBob {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-3px);
-          }
-        }
-
-        .robot-shadow {
-          animation: shadowSync 1s ease-in-out infinite;
-        }
-
-        @keyframes shadowSync {
-          0%, 100% {
-            opacity: 0.4;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.35;
-            transform: scale(0.95);
-          }
-        }
-
-        .torso-main {
-          animation: subtleBreath 3s ease-in-out infinite;
-        }
-
-        @keyframes subtleBreath {
-          0%, 100% {
-            transform: scaleY(1);
-          }
-          50% {
-            transform: scaleY(1.01);
+        @media (max-width: 1024px) {
+          .robot-scene-container {
+            width: 170px;
+            height: 300px;
+            right: 3%;
+            bottom: 10%;
           }
         }
 
         @media (max-width: 768px) {
-          .walking-robot {
-            width: 100px;
-            height: 240px;
-          }
-
-          .walking-robot-container {
-            height: 240px;
-            bottom: 15%;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .walking-robot {
-            width: 70px;
-            height: 170px;
-          }
-
-          .walking-robot-container {
-            height: 170px;
-            bottom: 20%;
+          .robot-scene-container {
+            display: none;
           }
         }
       `}</style>
