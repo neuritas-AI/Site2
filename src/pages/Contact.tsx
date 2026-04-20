@@ -77,9 +77,8 @@ export default function Contact() {
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || 'Failed to send message'    </>
-  );
-}
+        throw new Error(data.error || 'Failed to send message');
+      }
 
       setSubmitted(true);
       setFormData({ name: '', email: '', company: '', message: '', honeypot: '' });
@@ -302,5 +301,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }
