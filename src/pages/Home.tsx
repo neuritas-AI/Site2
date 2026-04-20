@@ -3,7 +3,6 @@ import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu, Bot } from
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HomeFAQAccordion from '../components/HomeFAQAccordion';
-import WalkingRobot from '../components/WalkingRobot';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -46,8 +45,6 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 40% 40% at 50% 45%, rgba(6,182,212,0.07) 0%, transparent 70%)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 100%)' }} />
         <div className="absolute top-0 left-0 right-0 h-32 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)' }} />
-
-        <WalkingRobot />
 
         <div
           className="absolute inset-0 flex items-center justify-center"
