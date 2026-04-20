@@ -2,12 +2,15 @@ import { Phone, Calendar, Clock, Users, Sparkles, ArrowRight, Headphones, Messag
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 export default function AIVoiceCaller() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="AI Voice Callers | Neuritas-AI" description="Replace traditional call centers with intelligent AI voice agents." url="/ai-voice-caller" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Phone className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('aiVoiceCaller.badge') }}
         title={t('aiVoiceCaller.title1').toUpperCase()}
@@ -182,5 +185,6 @@ export default function AIVoiceCaller() {
         </div>
       </section>
     </div>
+      </>
   );
 }

@@ -112,6 +112,15 @@ export default function Footer() {
                     FAQ
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/articles"
+                    className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
+                  >
+                    <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
+                    Articles
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -140,6 +149,9 @@ export default function Footer() {
                 </p>
                 <p className="text-gray-500 text-sm mt-1">
                   BTW: BE 1035.569.723
+                </p>
+                <p className="text-gray-500 text-sm mt-1">
+                  <time dateTime="2026-04-20">Last Updated: April 20, 2026</time>
                 </p>
               </div>
 

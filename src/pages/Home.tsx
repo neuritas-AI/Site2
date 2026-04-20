@@ -3,6 +3,7 @@ import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu, Bot } from
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HomeFAQAccordion from '../components/HomeFAQAccordion';
+import SEO from '../components/SEO';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -20,8 +21,20 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-black text-white">
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <>
+      <SEO 
+        title="Intelligente Automatisering" 
+        description="Neuritas-AI offers advanced AI automations to transform your business operations." 
+        url="/" 
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Neuritas-AI",
+          "url": "https://neuritas-ai.com/"
+        }}
+      />
+      <div className="bg-black text-white">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black">
           <div className="absolute inset-0 opacity-30">
             {[...Array(50)].map((_, i) => (
@@ -533,6 +546,7 @@ export default function Home() {
           animation: gradient 3s ease infinite;
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 }

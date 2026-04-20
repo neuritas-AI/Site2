@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, Phone, Send, CheckCircle, Instagram, Facebook, Linkedin } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const socialLinks = [
   {
@@ -76,8 +77,9 @@ export default function Contact() {
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || 'Failed to send message');
-      }
+        throw new Error(data.error || 'Failed to send message'    </>
+  );
+}
 
       setSubmitted(true);
       setFormData({ name: '', email: '', company: '', message: '', honeypot: '' });
@@ -100,7 +102,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="Contact Us | Neuritas-AI" description="Get in touch with Neuritas-AI to discuss custom AI solutions." url="/contact" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Mail className="w-4 h-4 text-cyan-400" />, text: t('contact.badge') }}
         title={t('contact.title1').toUpperCase()}

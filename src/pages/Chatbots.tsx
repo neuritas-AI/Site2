@@ -2,12 +2,15 @@ import { Bot, MessageCircle, Users, Clock, TrendingUp, Sparkles, ArrowRight, Cal
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 export default function CustomerEngagement() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="AI Chatbots | Neuritas-AI" description="Engage your customers 24/7 with our intelligent conversational AI agents." url="/chatbots" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Bot className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('chatbots.badge') }}
         title={t('chatbots.title1').toUpperCase()}
@@ -178,5 +181,6 @@ export default function CustomerEngagement() {
         </div>
       </section>
     </div>
+      </>
   );
 }

@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import SEO from '../components/SEO';
 
 export default function AppointmentSetting() {
   const { t } = useTranslation();
@@ -13,7 +14,9 @@ export default function AppointmentSetting() {
   };
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="AI Training & Consulting | Neuritas-AI" description="Train your teams with our expert AI consulting and interactive learning programs." url="/ai-training" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <GraduationCap className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent" />, text: t('aiTraining.badge') }}
         title={t('aiTraining.title1').toUpperCase()}
@@ -191,5 +194,6 @@ export default function AppointmentSetting() {
         </div>
       </section>
     </div>
+      </>
   );
 }

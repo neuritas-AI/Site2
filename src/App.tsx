@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import Navigation from './components/Navigation';
@@ -17,6 +18,7 @@ import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import FAQ from './pages/FAQ';
+import Articles from './pages/Articles';
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -31,7 +33,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
       <ScrollToTop />
       <LanguageManager />
       <div className="bg-black text-white overflow-x-hidden min-h-screen">
@@ -58,6 +61,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/articles" element={<Articles />} />
         </Routes>
 
         <Footer />
@@ -65,6 +69,7 @@ function App() {
         <Analytics />
       </div>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

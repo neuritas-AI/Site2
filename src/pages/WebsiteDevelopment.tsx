@@ -2,6 +2,7 @@ import { Globe, Smartphone, ShoppingCart, Mail, Zap, BarChart3, Share2, Calendar
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const generalColors = [
   {
@@ -97,7 +98,9 @@ export default function WebsiteOptimization() {
   ];
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="Website Development | Neuritas-AI" description="State of the art website development optimized for SEO and AEO." url="/website-development" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Code2 className="w-4 h-4 text-blue-400" />, text: t('websiteOptimization.badge') }}
         title={t('websiteOptimization.title1').toUpperCase()}
@@ -203,5 +206,6 @@ export default function WebsiteOptimization() {
         </div>
       </section>
     </div>
+      </>
   );
 }

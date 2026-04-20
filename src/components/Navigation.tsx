@@ -176,6 +176,15 @@ export default function Navigation() {
           </Link>
 
           <Link
+            to="/articles"
+            className={`text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+              isActive('/articles') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
+            }`}
+          >
+            Articles
+          </Link>
+
+          <Link
             to="/contact"
             className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full transition-all hover:shadow-lg hover:shadow-purple-500/50 text-sm font-semibold uppercase"
           >
@@ -271,6 +280,16 @@ export default function Navigation() {
               }`}
             >
               {t('nav.about')}
+            </Link>
+
+            <Link
+              to="/articles"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block text-sm hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 ${
+                isActive('/articles') ? 'bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent' : 'text-white'
+              }`}
+            >
+              Articles
             </Link>
 
             <Link

@@ -1,12 +1,15 @@
 import { Lightbulb, Target, Rocket, Sparkles } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="About Us | Neuritas-AI" description="Learn more about Neuritas-AI, our mission, and our intelligent robotics." url="/about" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Sparkles className="w-4 h-4 text-cyan-400" />, text: t('about.badge') }}
         title={t('about.title1').toUpperCase()}
@@ -220,5 +223,6 @@ export default function About() {
         </div>
       </section>
     </div>
+      </>
   );
 }

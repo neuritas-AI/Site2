@@ -2,6 +2,7 @@ import { ArrowRight, Bot, Globe, Calendar, Mic, Cpu, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HeroSection from '../components/HeroSection';
+import SEO from '../components/SEO';
 
 export default function Services() {
   const { t } = useTranslation();
@@ -62,7 +63,9 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="Services | Neuritas-AI" description="Discover our comprehensive AI and Automation services for modern businesses." url="/services" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Cpu className="w-4 h-4 text-cyan-400" />, text: t('home.servicesBadge') }}
         title={t('home.servicesTitle').toUpperCase()}
@@ -162,5 +165,6 @@ export default function Services() {
         </div>
       </section>
     </div>
+      </>
   );
 }

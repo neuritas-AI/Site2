@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -58,8 +59,28 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <div className="relative min-h-screen bg-black pt-32 pb-24">
+    <>
+      <SEO 
+        title="FAQ | Neuritas-AI" 
+        description="Frequently Asked Questions about our AI Automations and services." 
+        url="/faq" 
+        schema={schema} 
+      />
+      <div className="relative min-h-screen bg-black pt-32 pb-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(168,85,247,0.05),transparent_50%)]" />
 
@@ -138,5 +159,6 @@ export default function FAQ() {
         </div>
       </div>
     </div>
+    </>
   );
 }
