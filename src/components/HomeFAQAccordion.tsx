@@ -42,7 +42,8 @@ export default function HomeFAQAccordion() {
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className="group bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-purple-500/10 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
+          className="group bg-gradient-to-r from-purple-500/8 via-cyan-500/5 to-purple-500/8 border border-white/8 rounded-xl overflow-hidden hover:border-cyan-500/25 transition-all duration-300"
+          style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}
         >
           <button
             onClick={() => toggleFAQ(index)}

@@ -23,8 +23,10 @@ const socialLinks = [
 export default function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="relative border-t border-white/5">
+    <footer className="relative" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', boxShadow: 'inset 0 1px 0 rgba(6,182,212,0.05)' }}>
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black/90" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(6,182,212,0.12), rgba(168,85,247,0.08), transparent)' }} />
 
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-16">
@@ -132,7 +134,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-white/5 pt-8">
+          <div className="pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="text-center md:text-left">
                 <p className="text-gray-500 text-sm">

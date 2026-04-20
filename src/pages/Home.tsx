@@ -80,7 +80,8 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full backdrop-blur-sm">
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/25 rounded-full backdrop-blur-sm"
+            style={{ boxShadow: '0 0 20px rgba(6,182,212,0.1), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
             <Sparkles className="w-4 h-4 text-cyan-400" />
             <span className="text-sm text-cyan-400 font-medium">{t('hero.badge')}</span>
           </div>
@@ -102,14 +103,15 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection('services')}
-              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
+              className="btn-glow group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold transition-all hover:shadow-2xl hover:shadow-cyan-500/40 flex items-center justify-center gap-2"
             >
               {t('hero.ctaMain')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <Link
               to="/contact"
-              className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center"
+              className="px-8 py-4 bg-white/5 hover:bg-white/8 border border-white/10 hover:border-white/20 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center"
+              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)' }}
             >
               {t('hero.cta')}
             </Link>
@@ -118,11 +120,13 @@ export default function Home() {
 
         <button
           onClick={() => scrollToSection('services')}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 animate-bounce cursor-pointer"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-cyan-400 transition-all duration-300 animate-bounce cursor-pointer group"
         >
-          <span className="text-sm tracking-widest uppercase">{t('hero.scrollExplore')}</span>
+          <span className="text-sm tracking-widest uppercase group-hover:text-cyan-400 transition-colors duration-300">{t('hero.scrollExplore')}</span>
         </button>
       </section>
+
+      <div className="section-divider mx-auto max-w-5xl" />
 
       <section id="services" className="relative py-32 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
@@ -174,11 +178,12 @@ export default function Home() {
               <Link
                 key={index}
                 to={service.link}
-                className={`group relative p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 hover:shadow-2xl backdrop-blur-sm ${
+                className={`group relative p-8 rounded-2xl bg-white/[0.03] border border-white/8 card-premium backdrop-blur-sm ${
                   service.color === 'cyan'
-                    ? 'hover:border-cyan-500/50 hover:shadow-cyan-500/20'
-                    : 'hover:border-purple-500/50 hover:shadow-purple-500/20'
+                    ? 'hover:border-cyan-500/40 hover:shadow-cyan-500/15'
+                    : 'hover:border-purple-500/40 hover:shadow-purple-500/15'
                 }`}
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}
               >
                 <div className={`mb-6 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
                   service.color === 'cyan'
@@ -202,6 +207,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider mx-auto max-w-5xl" />
 
       <section id="features" className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0">
@@ -434,10 +441,17 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-divider mx-auto max-w-5xl" />
+
       <section id="contact" className="relative py-32 px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/20 to-black" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full"
+            style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.05) 0%, transparent 70%)' }} />
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl">
+          <div className="p-12 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/8 backdrop-blur-xl gradient-border"
+            style={{ boxShadow: '0 0 60px rgba(6,182,212,0.05), 0 40px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
               {t('home.ctaTitle')}
               <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -451,14 +465,15 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-3"
+                className="btn-glow group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 rounded-full font-semibold text-lg transition-all hover:shadow-2xl hover:shadow-cyan-500/40 flex items-center justify-center gap-3"
               >
                 {t('home.ctaButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/contact"
-                className="px-10 py-5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-semibold text-lg transition-all backdrop-blur-sm flex items-center justify-center"
+                className="px-10 py-5 bg-white/5 hover:bg-white/8 border border-white/10 hover:border-white/20 rounded-full font-semibold text-lg transition-all backdrop-blur-sm flex items-center justify-center"
+                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)' }}
               >
                 {t('home.ctaButton2')}
               </Link>
@@ -466,6 +481,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider mx-auto max-w-5xl" />
 
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/30 to-black" />

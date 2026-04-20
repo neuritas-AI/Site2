@@ -65,7 +65,8 @@ export default function FAQ() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 mb-6"
+            style={{ boxShadow: '0 0 20px rgba(6,182,212,0.08), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
             <HelpCircle className="w-4 h-4 text-cyan-400" />
             <span className="text-sm font-medium bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               {t('faq.badge')}
@@ -87,7 +88,8 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-purple-500/10 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
+              className="group bg-gradient-to-r from-purple-500/8 via-cyan-500/5 to-purple-500/8 border border-white/8 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300"
+              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)' }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -120,7 +122,8 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-cyan-500/10 border border-cyan-500/20">
+        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-cyan-500/10 border border-cyan-500/20 gradient-border"
+          style={{ boxShadow: '0 0 40px rgba(6,182,212,0.05), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               {t('faq.contactTitle')}
@@ -130,7 +133,7 @@ export default function FAQ() {
             </p>
             <a
               href="mailto:chat@neuritas-ai.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+              className="btn-glow inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30"
             >
               {t('faq.contactButton')}
             </a>
