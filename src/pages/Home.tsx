@@ -182,12 +182,20 @@ export default function Home() {
               <Link
                 key={index}
                 to={service.link}
-                className={`group relative p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 hover:shadow-2xl backdrop-blur-sm ${
+                className={`group relative p-8 rounded-2xl border transition-all duration-300 backdrop-blur-sm ${
                   service.color === 'cyan'
-                    ? 'hover:border-cyan-500/50 hover:shadow-cyan-500/20'
-                    : 'hover:border-purple-500/50 hover:shadow-purple-500/20'
+                    ? 'bg-white/5 border-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.12),0_0_80px_rgba(6,182,212,0.06),inset_0_0_40px_rgba(6,182,212,0.05)]'
+                    : 'bg-white/5 border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.12),0_0_80px_rgba(168,85,247,0.06),inset_0_0_40px_rgba(168,85,247,0.05)]'
                 }`}
+                style={undefined}
               >
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={service.color === 'cyan'
+                    ? { background: 'radial-gradient(ellipse 80% 70% at 30% 40%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.04) 50%, transparent 80%), linear-gradient(135deg, rgba(6,182,212,0.06) 0%, transparent 60%)' }
+                    : { background: 'radial-gradient(ellipse 80% 70% at 30% 40%, rgba(168,85,247,0.10) 0%, rgba(168,85,247,0.04) 50%, transparent 80%), linear-gradient(135deg, rgba(168,85,247,0.06) 0%, transparent 60%)' }
+                  }
+                />
                 <div className={`mb-6 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
                   service.color === 'cyan'
                     ? 'bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 text-cyan-400'
