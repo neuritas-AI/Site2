@@ -258,10 +258,10 @@ export default function Home() {
 
               <div className="space-y-6">
                 {[
-                  { label: 'Response Time', value: '<100ms' },
-                  { label: 'Accuracy Rate', value: '99.9%' },
-                  { label: 'Uptime', value: '24/7' },
-                  { label: 'Scalability', value: 'Unlimited' },
+                  { label: t('home.statResponseTime'), value: '<100ms' },
+                  { label: t('home.statAccuracyRate'), value: '99.9%' },
+                  { label: t('home.statUptime'), value: '24/7' },
+                  { label: t('home.statScalability'), value: 'Unlimited' },
                 ].map((stat, index) => (
                   <div key={index} className="flex items-center gap-4">
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
