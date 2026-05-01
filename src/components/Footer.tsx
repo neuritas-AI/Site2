@@ -151,7 +151,7 @@ export default function Footer() {
                   BTW: BE 1035.569.723
                 </p>
                 <p className="text-gray-500 text-sm mt-1">
-                  <time dateTime="2026-04-20">{t('footer.lastUpdated')} Mei 1, 2026</time>
+                  <time dateTime="2026-04-20">{t('footer.lastUpdated')} 1 Mei, 2026</time>
                 </p>
               </div>
 
