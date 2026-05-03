@@ -1,24 +1,6 @@
-import { Brain, Mail, Clock, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Brain, Mail, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
-const socialLinks = [
-  {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/neuritas_ai/',
-    icon: Instagram,
-  },
-  {
-    name: 'Facebook',
-    href: 'https://www.facebook.com/profile.php?id=61586244849568',
-    icon: Facebook,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/111895558/',
-    icon: Linkedin,
-  },
-];
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -30,10 +12,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div className="lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-2 mb-6">
                 <Brain className="w-8 h-8 text-cyan-400" />
                 <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">NEURITAS-AI</span>
-              </Link>
+              </div>
               <p className="text-gray-400 leading-relaxed mb-6">
                 {t('footer.tagline')}
               </p>
@@ -41,11 +23,11 @@ export default function Footer() {
             </div>
 
             <div>
-              <Link to="/services" className="text-lg font-semibold mb-6 text-white hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors block">{t('footer.services')}</Link>
+              <h3 className="text-lg font-semibold mb-6 text-white">{t('footer.services')}</h3>
               <ul className="space-y-4">
                 <li>
                   <Link
-                    to="/chatbots"
+                    to="/customer-engagement"
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
@@ -54,7 +36,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/website-development"
+                    to="/website-optimization"
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
@@ -63,20 +45,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/ai-training"
+                    to="/appointment-setting"
                     className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
                     {t('nav.appointmentSetting')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/ai-voice-caller"
-                    className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
-                    {t('nav.aiVoiceCaller')}
                   </Link>
                 </li>
               </ul>
@@ -103,73 +76,37 @@ export default function Footer() {
                     {t('nav.contact')}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/faq"
-                    className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/articles"
-                    className="text-gray-400 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-4 transition-all duration-300" />
-                    {t('nav.articles')}
-                  </Link>
-                </li>
               </ul>
             </div>
 
             <div>
-              <Link to="/contact" className="text-lg font-semibold mb-6 text-white hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors block">{t('footer.contact')}</Link>
+              <h3 className="text-lg font-semibold mb-6 text-white">{t('footer.contact')}</h3>
               <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                  <a href="mailto:chat@neuritas-ai.com" className="hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors">
-                    chat@neuritas-ai.com
-                  </a>
+                <li className="flex items-start gap-3 text-gray-400">
+                  <Mail className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm text-gray-500 mb-1">{t('footer.email')}</p>
+                    <a href="mailto:info@neuritas-ai.com" className="hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-colors">
+                      info@neuritas-ai.com
+                    </a>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Clock className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                  <p>{t('footer.hours')}</p>
+                <li className="flex items-start gap-3 text-gray-400">
+                  <Clock className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm text-gray-500 mb-1">{t('footer.businessHours')}</p>
+                    <p>{t('footer.hours')}</p>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-white/5 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="text-center md:text-left">
-                <p className="text-gray-500 text-sm">
-                  © 2026 Neuritas-AI. {t('footer.rights')}
-                </p>
-                <p className="text-gray-500 text-sm mt-1">
-                  BTW: BE 1035.569.723
-                </p>
-                <p className="text-gray-500 text-sm mt-1">
-                  <time dateTime="2026-04-20">{t('footer.lastUpdated')} 1 Mei, 2026</time>
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className={`w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 transition-all duration-300 social-icon-${social.name.toLowerCase()}`}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
-
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-500 text-sm">
+                © 2026 Neuritas-AI. {t('footer.rights')}
+              </p>
               <div className="flex items-center gap-6">
                 <Link
                   to="/privacy"
@@ -182,12 +119,6 @@ export default function Footer() {
                   className="text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent text-sm transition-colors"
                 >
                   {t('footer.terms')}
-                </Link>
-                <Link
-                  to="/faq"
-                  className="text-gray-500 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent text-sm transition-colors"
-                >
-                  FAQ
                 </Link>
               </div>
             </div>

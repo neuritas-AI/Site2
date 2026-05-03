@@ -1,26 +1,7 @@
 import { useState } from 'react';
-import { Mail, Phone, Send, CheckCircle, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
-import SEO from '../components/SEO';
-
-const socialLinks = [
-  {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/neuritas_ai/',
-    icon: Instagram,
-  },
-  {
-    name: 'Facebook',
-    href: 'https://www.facebook.com/profile.php?id=61586244849568',
-    icon: Facebook,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/111895558/',
-    icon: Linkedin,
-  },
-];
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -101,9 +82,7 @@ export default function Contact() {
   };
 
   return (
-    <>
-      <SEO title="Contact Us | Neuritas-AI" description="Get in touch with Neuritas-AI to discuss custom AI solutions." url="/contact" />
-      <div className="bg-black text-white">
+    <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Mail className="w-4 h-4 text-cyan-400" />, text: t('contact.badge') }}
         title={t('contact.title1').toUpperCase()}
@@ -137,7 +116,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">{t('contact.emailTitle')}</h3>
-                    <p className="text-gray-400">chat@neuritas-ai.com</p>
+                    <p className="text-gray-400">info@neuritas-ai.com</p>
                   </div>
                 </div>
 
@@ -167,25 +146,6 @@ export default function Contact() {
                     <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                     <span className="text-gray-300">{t('contact.fact3')}</span>
                   </div>
-                </div>
-              </div>
-
-              <div className="mt-8 p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/30 transition-all">
-                <h3 className="text-2xl font-bold mb-3">{t('contact.socialTitle')}</h3>
-                <p className="text-gray-400 mb-6">{t('contact.socialDesc')}</p>
-                <div className="flex items-center gap-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.name}
-                      className={`w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:scale-110 transition-all duration-300 social-icon-${social.name.toLowerCase()}`}
-                    >
-                      <social.icon className="w-6 h-6" />
-                    </a>
-                  ))}
                 </div>
               </div>
             </div>
@@ -301,6 +261,5 @@ export default function Contact() {
         </div>
       </section>
     </div>
-    </>
   );
 }
