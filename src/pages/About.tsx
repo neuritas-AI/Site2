@@ -1,18 +1,21 @@
 import { Lightbulb, Target, Rocket, Sparkles } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-black text-white">
+    <>
+      <SEO title="About Us | Neuritas-AI" description="Learn more about Neuritas-AI, our mission, and our intelligent robotics." url="/about" />
+      <div className="bg-black text-white">
       <HeroSection
         badge={{ icon: <Sparkles className="w-4 h-4 text-cyan-400" />, text: t('about.badge') }}
         title={t('about.title1').toUpperCase()}
         subtitle={t('about.title2').toUpperCase()}
         description={t('about.description')}
-        backgroundImage="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        backgroundImage="/futuristic_compressed.jpg"
         scrollTarget="content"
       />
 
@@ -114,7 +117,7 @@ export default function About() {
               <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-4xl">
                 {t('about.whatWeDoDesc')}
               </p>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all">
                   <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{t('about.service1Title')}</h3>
                   <p className="text-gray-400">
@@ -131,6 +134,12 @@ export default function About() {
                   <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{t('about.service3Title')}</h3>
                   <p className="text-gray-400">
                     {t('about.service3Desc')}
+                  </p>
+                </div>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all">
+                  <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{t('about.service4Title')}</h3>
+                  <p className="text-gray-400">
+                    {t('about.service4Desc')}
                   </p>
                 </div>
               </div>
@@ -214,5 +223,6 @@ export default function About() {
         </div>
       </section>
     </div>
+      </>
   );
 }

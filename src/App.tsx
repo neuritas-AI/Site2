@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import Navigation from './components/Navigation';
@@ -7,11 +8,17 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LanguageManager from './components/LanguageManager';
 import Home from './pages/Home';
-import CustomerEngagement from './pages/CustomerEngagement';
-import WebsiteOptimization from './pages/WebsiteOptimization';
-import AppointmentSetting from './pages/AppointmentSetting';
+import Services from './pages/Services';
+import Chatbots from './pages/Chatbots';
+import WebsiteDevelopment from './pages/WebsiteDevelopment';
+import AITraining from './pages/AITraining';
+import AIVoiceCaller from './pages/AIVoiceCaller';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import FAQ from './pages/FAQ';
+import Articles from './pages/Articles';
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -26,7 +33,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
       <ScrollToTop />
       <LanguageManager />
       <div className="bg-black text-white overflow-x-hidden min-h-screen">
@@ -43,11 +51,17 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/customer-engagement" element={<CustomerEngagement />} />
-          <Route path="/website-optimization" element={<WebsiteOptimization />} />
-          <Route path="/appointment-setting" element={<AppointmentSetting />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/chatbots" element={<Chatbots />} />
+          <Route path="/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/ai-training" element={<AITraining />} />
+          <Route path="/ai-voice-caller" element={<AIVoiceCaller />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/articles" element={<Articles />} />
         </Routes>
 
         <Footer />
@@ -55,6 +69,7 @@ function App() {
         <Analytics />
       </div>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

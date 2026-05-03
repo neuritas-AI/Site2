@@ -10,6 +10,7 @@ interface HeroSectionProps {
   subtitle?: string;
   description: string;
   backgroundImage?: string;
+  overlayClassName?: string;
   scrollTarget?: string;
 }
 
@@ -19,6 +20,7 @@ export default function HeroSection({
   subtitle,
   description,
   backgroundImage,
+  overlayClassName = 'bg-gradient-to-b from-black/80 via-black/70 to-black',
   scrollTarget = 'content',
 }: HeroSectionProps) {
   const scrollToSection = (id: string) => {
@@ -31,10 +33,10 @@ export default function HeroSection({
       {backgroundImage ? (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-contain md:bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black" />
+          <div className={`absolute inset-0 ${overlayClassName}`} />
         </>
       ) : (
         <>
@@ -66,14 +68,18 @@ export default function HeroSection({
           </div>
         )}
 
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 tracking-tighter">
           <span className="block bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-transparent animate-gradient">
             {title}
           </span>
-          {subtitle && <span className="block text-white mt-2">{subtitle}</span>}
         </h1>
+        {subtitle && (
+          <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-300 mb-6 max-w-3xl mx-auto">
+            {subtitle}
+          </p>
+        )}
 
-        <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
           {description}
         </p>
       </div>
