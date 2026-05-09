@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { ArrowRight, Zap, Globe, Calendar, Mic, Sparkles, Brain, Cpu, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -5,7 +6,14 @@ import HomeFAQAccordion from '../components/HomeFAQAccordion';
 import SEO from '../components/SEO';
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -27,19 +35,64 @@ export default function Home() {
       />
       <div className="bg-black text-white">
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
-
-        <div className="absolute inset-0 pointer-events-none z-[1]">
-          <iframe
-            src="/spline-hero.html"
-            title="Spline 3D Animation"
-            className="w-full h-full border-0"
-            style={{ display: 'block' }}
-          />
+        <div className="absolute inset-0 bg-black">
+          <div className="absolute inset-0 opacity-30">
+            {[...Array(50)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${2 + Math.random() * 3}s`,
+                }}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[2]" style={{ background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 100%)' }} />
-        <div className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-[2]" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%)' }} />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]" />
+
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(6,182,212,0.13) 0%, rgba(168,85,247,0.08) 55%, transparent 80%)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 40% 40% at 50% 45%, rgba(6,182,212,0.07) 0%, transparent 70%)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 100%)' }} />
+        <div className="absolute top-0 left-0 right-0 h-32 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)' }} />
+
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
+          <div className="relative w-[600px] h-[600px]">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 animate-pulse shadow-2xl shadow-cyan-500/50" />
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute top-1/2 left-1/2 w-4 h-4"
+                style={{
+                  transform: `rotate(${i * 45}deg) translateX(200px)`,
+                  animation: `orbit ${10 + i}s linear infinite`,
+                }}
+              >
+                <div className="w-4 h-4 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/50" />
+              </div>
+            ))}
+            <svg className="absolute inset-0 w-full h-full">
+              {[...Array(8)].map((_, i) => (
+                <line
+                  key={i}
+                  x1="50%"
+                  y1="50%"
+                  x2={`${50 + 33 * Math.cos((i * 45 * Math.PI) / 180)}%`}
+                  y2={`${50 + 33 * Math.sin((i * 45 * Math.PI) / 180)}%`}
+                  stroke="rgba(6, 182, 212, 0.2)"
+                  strokeWidth="2"
+                  className="animate-pulse"
+                />
+              ))}
+            </svg>
+          </div>
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full backdrop-blur-sm">
@@ -480,6 +533,10 @@ export default function Home() {
       </section>
 
       <style>{`
+        @keyframes orbit {
+          from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+          to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+        }
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
