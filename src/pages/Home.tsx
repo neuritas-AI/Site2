@@ -31,8 +31,7 @@ export default function Home() {
 
         <div className="absolute inset-0 pointer-events-none z-[1]">
           <iframe
-            src="https://my.spline.design/cf9e2ab0-e35e-4a15-8953-64779802e58d/"
-            loading="lazy"
+            src="/spline-hero.html"
             title="Spline 3D Animation"
             className="w-full h-full border-0"
             style={{ display: 'block' }}
